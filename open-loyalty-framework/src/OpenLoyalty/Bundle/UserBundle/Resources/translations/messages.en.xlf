@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="customer.level.downgrade_mode.not_supported">
+                <source>customer.level.downgrade_mode.not_supported</source>
+                <target>Selected level downgrade mode is not supported.</target>
+            </trans-unit>
+            <trans-unit id="customer.level.downgrade_mode.not_available_when_tier_assignment_type_is_not_points">
+                <source>customer.level.downgrade_mode.not_available_when_tier_assignment_type_is_not_points</source>
+                <target>Recalculation customer level is not possible when tier assignment type is not points.</target>
+            </trans-unit>
+            <trans-unit id="customer.registration.invalid_phone_number">
+                <source>customer.registration.invalid_phone_number</source>
+                <target>Incorrect phone number format, use 00000000000.</target>
+            </trans-unit>
+            <trans-unit id="customer.registration.email_exists">
+                <source>customer.registration.email_exists</source>
+                <target>Customer with such email already exists.</target>
+            </trans-unit>
+            <trans-unit id="customer.registration.invalid_email">
+                <source>customer.registration.invalid_email</source>
+                <target>Incorrect e-mail address.</target>
+            </trans-unit>
+            <trans-unit id="customer.registration.loyalty_card_number_exists">
+                <source>customer.registration.loyalty_card_number_exists</source>
+                <target>Customer with such loyalty card number already exists.</target>
+            </trans-unit>
+            <trans-unit id="customer.registration.phone_number_exists">
+                <source>customer.registration.phone_number_exists</source>
+                <target>Customer with such phone already exists.</target>
+            </trans-unit>
+            <trans-unit id="customer.registration.start_level_not_found">
+                <source>customer.registration.start_level_not_found</source>
+                <target>Neither level is not available as start level for this customer.</target>
+            </trans-unit>
+            <trans-unit id="customer.profile_edit.invalid_value_type">
+                <source>customer.profile_edit.invalid_value_type</source>
+                <target>Type of the %field% field value is incorrect. The correct type is %type%.</target>
+            </trans-unit>
+            <trans-unit id="customer.profile_edit.field_edit_not_allowed">
+                <source>customer.profile_edit.field_edit_not_allowed</source>
+                <target>You don't have permission to edit this data.</target>
+            </trans-unit>
+            <trans-unit id="user.acl.access.view">
+                <source>user.acl.access.view</source>
+                <target>View</target>
+            </trans-unit>
+            <trans-unit id="user.acl.access.modify">
+                <source>user.acl.access.modify</source>
+                <target>Modify</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.level">
+                <source>user.acl.resource.level</source>
+                <target>Levels</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.utility">
+                <source>user.acl.resource.utility</source>
+                <target>Utilities</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.earningRule">
+                <source>user.acl.resource.earningRule</source>
+                <target>Earning rules</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.transaction">
+                <source>user.acl.resource.transaction</source>
+                <target>Transactions</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.rewardCampaign">
+                <source>user.acl.resource.rewardCampaign</source>
+                <target>Reward Campaign</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.seller">
+                <source>user.acl.resource.seller</source>
+                <target>Merchants</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.admin">
+                <source>user.acl.resource.admin</source>
+                <target>Admins</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.acl">
+                <source>user.acl.resource.acl</source>
+                <target>ACL</target>
+            </trans-unit>
+            <trans-unit id="user.acl.can_not_delete_master_role">
+                <source>user.acl.can_not_delete_master_role</source>
+                <target>Can not remove master role.</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.customer">
+                <source>user.acl.resource.customer</source>
+                <target>Customers</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.user_settings">
+                <source>user.acl.resource.user_settings</source>
+                <target>Optional User Settings</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.segment">
+                <source>user.acl.resource.segment</source>
+                <target>Segments</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.settings">
+                <source>user.acl.resource.settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.pos">
+                <source>user.acl.resource.pos</source>
+                <target>POS</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.pointsTransfer">
+                <source>user.acl.resource.pointsTransfer</source>
+                <target>Points transfers</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.analytics">
+                <source>user.acl.resource.analytics</source>
+                <target>Dashboard</target>
+            </trans-unit>
+            <trans-unit id="user.acl.resource.audit">
+                <source>user.acl.resource.audit</source>
+                <target>Audit</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

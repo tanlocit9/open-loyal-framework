@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers>
+    <customer>
+        <active>true</active>
+        <sendActivationMail>false</sendActivationMail>
+        <address>
+            <address1>Dream street 33</address1>
+            <address2>Room 2</address2>
+            <city>New york</city>
+            <country>US</country>
+            <postal>00-000</postal>
+            <province>Maryland</province>
+            <street>Dream street</street>
+        </address>
+        <agreement1>true</agreement1>
+        <agreement2>false</agreement2>
+        <agreement3>false</agreement3>
+        <birthDate>2018-02-03</birthDate>
+        <company>
+            <name>Corporation</name>
+            <nip>888-22-33-334</nip>
+        </company>
+        <email>jon_unique456@example.com</email>
+        <firstName>Jon</firstName>
+        <lastName>Doe</lastName>
+        <gender>male</gender>
+        <labels>
+            <label>
+                <key>label_key_1</key>
+                <value>label_value_1</value>
+            </label>
+            <label>
+                <key>label_key_2</key>
+                <value>label_value_2</value>
+            </label>
+        </labels>
+        <loyaltyCardNumber>936592999</loyaltyCardNumber>
+        <phone>+48888887779</phone>
+        <levelId>000096cf-32a3-43bd-9034-4df343e5fd93</levelId>
+        <posId>adcf9c44-7401-43b1-98b9-59cff2ca3af7</posId>
+        <sellerId>00000000-0000-474c-b092-b0dd880c07e4</sellerId>
+    </customer>
+</customers>

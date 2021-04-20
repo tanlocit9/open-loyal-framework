@@ -1,0 +1,26 @@
+OpenLoyalty\Component\Campaign\Domain\CampaignTranslation:
+  type: entity
+  fields:
+    name:
+      type: string
+      nullable: true
+    shortDescription:
+      type: text
+      nullable: true
+      column: short_description
+    conditionsDescription:
+      type: text
+      nullable: true
+      column: conditions_description
+    usageInstruction:
+      type: text
+      nullable: true
+      column: usage_instruction
+    brandDescription:
+      type: text
+      nullable: true
+      column: brand_description
+    brandName:
+      type: text
+      nullable: true
+      column: brand_name

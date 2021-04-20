@@ -1,0 +1,6 @@
+services:
+  oloy.activation_code.repository:
+    class: OpenLoyalty\Component\ActivationCode\Infrastructure\Persistence\Doctrine\Repository\DoctrineActivationCodeRepository
+    factory: ['@doctrine.orm.entity_manager', getRepository]
+    arguments:
+      - 'OpenLoyalty\Component\ActivationCode\Domain\ActivationCode'

@@ -1,0 +1,69 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Psr\Log\LoggerInterface: '@logger'
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Service\:
+        resource: '../../Service/*'
+
+    OpenLoyaltyPlugin\SalesManagoBundle\DataProvider\:
+        resource: '../../DataProvider/*'
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Event\Listener\:
+        resource: '../../Event/Listener/*'
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Repository\:
+        resource: '../../Repository/*'
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Form\Type\:
+        resource: '../../Form/Type/*'
+        tags: ['form.type']
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Config\Config:
+        tags: ['ol.settings.marketing.vendors.config']
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Service\SalesManagoContactSegmentTagsSender:
+        lazy: true
+        arguments:
+            $dataProvider: '@OpenLoyaltyPlugin\SalesManagoBundle\DataProvider\TagsDataProvider'
+        tags:
+            - { name: monolog.logger, channel: plugins }
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Service\SalesManagoContactTransactionSender:
+        lazy: true
+        arguments:
+            $dataProvider: '@OpenLoyaltyPlugin\SalesManagoBundle\DataProvider\TransactionsDataProvider'
+        tags:
+            - { name: monolog.logger, channel: plugins }
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Service\SalesManagoContactUpdateSender:
+        lazy: true
+        arguments:
+            $dataProvider: '@OpenLoyaltyPlugin\SalesManagoBundle\DataProvider\ContactDataProvider'
+        tags:
+            - { name: monolog.logger, channel: plugins }
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Event\Listener\CustomerCreateListener:
+        tags:
+            - { name: broadway.event_listener, event: oloy.customer.registered, method: onCustomerCreated }
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Event\Listener\CustomerAgreementUpdateListener:
+        tags:
+            - { name: broadway.event_listener, event: oloy.customer.agreements_updated, method: onCustomerAgreementUpdate }
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Event\Listener\CustomerUpdateListener:
+        tags:
+            - { name: broadway.event_listener, event: oloy.customer.updated, method: onCustomerUpdated }
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Event\Listener\CustomerSegmentListener:
+        tags:
+            - { name: broadway.event_listener, event: oloy.segment.customer_added_to_segment, method: onCustomerAddedToSegment }
+            - { name: broadway.event_listener, event: oloy.segment.customer_removed_from_segment, method: onCustomerRemovedFromSegment }
+
+    OpenLoyaltyPlugin\SalesManagoBundle\Event\Listener\CustomerTransactionListener:
+        tags:
+            - { name: broadway.event_listener, event: oloy.transaction.customer_assigned, method: onCustomerTransactionRegistered }
+

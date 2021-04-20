@@ -1,0 +1,24 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    OpenLoyalty\Bundle\EmailSettingsBundle\Command\AddEmailTemplate: ~
+
+    OpenLoyalty\Bundle\EmailSettingsBundle\Service\EmailSettings:
+        arguments: ['%oloy.email.emails%', '@twig.loader.filesystem', '@twig']
+        calls:
+            - ['addDefaultSettings', ['mailer_from_name', '%mailer_from_name%']]
+            - ['addDefaultSettings', ['mailer_from_address', '%mailer_from_address%']]
+
+    OpenLoyalty\Bundle\EmailSettingsBundle\Form\Type\EmailFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\EmailSettingsBundle\Controller\Api\SettingsController:
+        arguments:
+            - '@form.factory'
+            - '@oloy.email.read_model.repository'
+            - '@OpenLoyalty\Bundle\EmailSettingsBundle\Service\EmailSettings'
+            - '@broadway.command_handling.command_bus'

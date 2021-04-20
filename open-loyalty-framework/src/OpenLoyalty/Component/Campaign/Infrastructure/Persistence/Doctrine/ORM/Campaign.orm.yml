@@ -1,0 +1,127 @@
+OpenLoyalty\Component\Campaign\Domain\Campaign:
+    type: entity
+    repositoryClass: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Repository\DoctrineCampaignRepository
+    table: ol__campaign
+    id:
+        campaignId:
+            type: campaign_id
+            column: id
+    fields:
+        reward:
+            type: string
+        moreInformationLink:
+            type: text
+            nullable: true
+            column: more_information_link
+        pushNotificationText:
+            type: text
+            nullable: true
+            column: push_notification_text
+        active:
+            type: boolean
+            options:
+                default: 0
+        pointValue:
+            type: decimal
+            scale: 2
+            precision: 14
+            nullable: true
+        costInPoints:
+            type: decimal
+            scale: 2
+            precision: 14
+            column: cost_in_points
+        levels:
+            type: campaign_levels_json_array
+        segments:
+            type: campaign_segments_json_array
+        unlimited:
+            type: boolean
+            options:
+                default: 1
+        singleCoupon:
+            type: boolean
+            options:
+                default: 1
+        limit:
+            type: integer
+            nullable: true
+            column: usage_limit
+        limitPerUser:
+            type: integer
+            nullable: true
+            column: limit_per_user
+        coupons:
+            type: campaign_coupons_json_array
+        rewardValue:
+            type: decimal
+            scale: 2
+            precision: 14
+            nullable: true
+            column: reward_value
+        tax:
+            type: integer
+            nullable: true
+            column: tax
+        taxPriceValue:
+            type: decimal
+            scale: 2
+            precision: 14
+            nullable: true
+            column: tax_price_value
+        labels:
+            type: labels_json_array
+            column: labels
+            nullable: true
+        daysInactive:
+            type: integer
+            nullable: true
+            column: days_inactive
+        daysValid:
+            type: integer
+            nullable: true
+            column: daysValid
+        transactionPercentageValue:
+            type: integer
+            nullable: true
+            column: transaction_percentage_value
+        categories:
+            type: campaign_categories_json_array
+            nullable: true
+        featured:
+            type: boolean
+            options:
+                default: 1
+        public:
+            type: boolean
+            options:
+                default: 0
+        connectType:
+            type: string
+            nullable: true
+            column: connect_type
+        earningRuleId:
+            type: guid
+            nullable: true
+            column: earning_rule_id
+        fulfillmentTracking:
+            type: boolean
+            options:
+                default: false
+            column: fulfillment_tracking
+    embedded:
+        campaignActivity:
+            class: OpenLoyalty\Component\Campaign\Domain\Model\CampaignActivity
+        campaignVisibility:
+            class: OpenLoyalty\Component\Campaign\Domain\Model\CampaignVisibility
+        brandIcon:
+            class: OpenLoyalty\Component\Campaign\Domain\Model\CampaignBrandIcon
+
+    oneToMany:
+        photos:
+            targetEntity: OpenLoyalty\Component\Campaign\Domain\Entity\CampaignPhoto
+            mappedBy: campaign
+            fetch: EAGER
+            cascade: ["persist", "remove"]
+            orphanRemoval: true
+            onDelete: CASCADE

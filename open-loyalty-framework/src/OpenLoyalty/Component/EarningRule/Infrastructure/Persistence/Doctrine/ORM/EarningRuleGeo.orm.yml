@@ -1,0 +1,25 @@
+OpenLoyalty\Component\EarningRule\Domain\EarningRuleGeo:
+  type: entity
+  repositoryClass: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Repository\DoctrineEarningRuleGeoRepository
+  fields:
+    latitude:
+      type: decimal
+      scale: 5
+      precision: 14
+      column: latitude
+    longitude:
+      type: decimal
+      scale: 5
+      precision: 14
+      column: longitude
+    radius:
+      type: float
+      column: radius
+    pointsAmount:
+      type: decimal
+      scale: 2
+      precision: 14
+      column: points_amount
+  embedded:
+    limit:
+      class: OpenLoyalty\Component\EarningRule\Domain\EarningRuleLimit

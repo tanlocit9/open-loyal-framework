@@ -1,0 +1,114 @@
+{
+  "name": "divante-ltd/open-loyalty-framework",
+  "license": "proprietary",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "OpenLoyalty\\": "src/OpenLoyalty",
+      "OpenLoyaltyPlugin\\": "src/OpenLoyaltyPlugin"
+    },
+    "classmap": [
+      "app/AppKernel.php",
+      "app/AppCache.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+
+    "ext-json": "*",
+    "ext-simplexml": "*",
+
+    "a2lix/translation-form-bundle": "^3.0",
+    "beberlei/DoctrineExtensions": "^1.0",
+    "broadway/broadway": "^2.0.1",
+    "broadway/broadway-bundle": "^0.4.1",
+    "broadway/uuid-generator": "^0.4.0",
+    "broadway/read-model-elasticsearch": "^0.3.0",
+    "broadway/event-store-dbal": "^0.2.0",
+    "broadway/snapshotting": "^0.2.0",
+    "doctrine/orm": "^2.5",
+    "doctrine/doctrine-bundle": "^1.6",
+    "doctrine/doctrine-cache-bundle": "^1.2",
+    "doctrine/doctrine-fixtures-bundle": "^2.3",
+    "elasticsearch/elasticsearch": "^5.0",
+    "erusev/parsedown": "^1.7",
+    "friendsofsymfony/rest-bundle": "^2.0",
+    "fzaninotto/faker": "^1.6",
+    "gesdinet/jwt-refresh-token-bundle": "^0.1.7",
+    "gumlet/php-image-resize": "^1.9",
+    "guzzlehttp/guzzle": "~6.0",
+    "incenteev/composer-parameter-handler": "^2.0",
+    "jms-serializer/serializer-bundle": "^1.1",
+    "knplabs/doctrine-behaviors": "~1.1",
+    "knplabs/knp-gaufrette-bundle": "^0.3.0",
+    "lexik/jwt-authentication-bundle": "^1.6",
+    "misd/phone-number-bundle": "^1.3",
+    "nelmio/api-doc-bundle": "^2.13",
+    "nelmio/cors-bundle": "^1.4",
+    "ocramius/proxy-manager": "^1.0",
+    "pixers/salesmanago-api": "1.1.1",
+    "prewk/xml-string-streamer": "^0.11.0",
+    "phpdocumentor/reflection-docblock": "^3.2",
+    "phpdocumentor/type-resolver": "^0.3",
+    "ramsey/uuid-doctrine": "1.4.3",
+    "smsapi/php-client": "^1.8",
+    "sensio/distribution-bundle": "^5.0",
+    "sensio/framework-extra-bundle": "^3.0.2",
+    "sensio/generator-bundle": "^3.0",
+    "symfony/symfony": "3.4.14",
+    "symfony/monolog-bundle": "^2.8",
+    "symfony/polyfill-apcu": "^1.0",
+    "symfony/swiftmailer-bundle": "^2.3",
+    "doctrine/doctrine-migrations-bundle": "^1.3"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.10",
+    "phpunit/phpunit": "^7.0",
+    "symfony/phpunit-bridge": "^3.0",
+    "phpstan/phpstan": "^0.10.5",
+    "phpstan/phpstan-symfony": "^0.10.2",
+    "phpstan/phpstan-doctrine": "^0.10.0",
+    "phpstan/phpstan-webmozart-assert": "^0.10.0",
+    "phpstan/phpstan-phpunit": "^0.10.0"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+    ],
+    "post-update-cmd": [
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+    ]
+  },
+  "config": {
+    "bin-dir": "var/bin"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.3.x-dev"
+    },
+    "symfony-app-dir": "app",
+    "symfony-bin-dir": "bin",
+    "symfony-var-dir": "var",
+    "symfony-web-dir": "web",
+    "symfony-tests-dir": "tests",
+    "symfony-assets-install": "relative",
+    "incenteev-parameters": {
+      "file": "app/config/parameters.yml"
+    }
+  }
+}

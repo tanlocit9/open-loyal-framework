@@ -1,0 +1,15 @@
+services:
+  _defaults:
+      autowire: true
+      autoconfigure: true
+      public: false
+
+  OpenLoyalty\Bundle\ImportBundle\Importer\XMLImporter: ~
+
+  oloy.import.import_filesystem:
+    class:     Gaufrette\Filesystem
+    factory:   ["@knp_gaufrette.filesystem_map", get]
+    arguments: ["import"]
+
+  OpenLoyalty\Bundle\ImportBundle\Service\ImportFileManager:
+    arguments: ["@oloy.import.import_filesystem", "%oloy.import.dir%"]

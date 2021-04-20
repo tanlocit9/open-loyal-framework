@@ -1,0 +1,14 @@
+OpenLoyalty\Component\EarningRule\Domain\EarningRuleQrcode:
+  type: entity
+  repositoryClass: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Repository\DoctrineEarningRuleQrcodeRepository
+  fields:
+    code:
+      type: string
+    pointsAmount:
+      type: decimal
+      scale: 2
+      precision: 14
+      column: points_amount
+  embedded:
+    limit:
+      class: OpenLoyalty\Component\EarningRule\Domain\EarningRuleLimit

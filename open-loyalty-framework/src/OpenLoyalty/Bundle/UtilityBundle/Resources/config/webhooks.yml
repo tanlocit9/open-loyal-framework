@@ -1,0 +1,47 @@
+services:
+
+  OpenLoyalty\Bundle\UtilityBundle\Provider\DefaultWebhookConfigProvider:
+    arguments: ['@ol.doctrine_settings.manager']
+
+  OpenLoyalty\Component\Webhook\Domain\Command\WebhookCommandHandler:
+    autowire: true
+    lazy: true
+    tags:
+      - { name: broadway.command_handler }
+
+  OpenLoyalty\Component\Webhook\Infrastructure\SystemEvent\Listener\BaseWebhookListener:
+    abstract: true
+    calls:
+        - [setCommandBus, ['@broadway.command_handling.command_bus']]
+
+  OpenLoyalty\Component\Webhook\Infrastructure\Client\DefaultWebhookClient:
+    arguments:
+      - '@logger'
+      - '@OpenLoyalty\Component\Webhook\Infrastructure\Client\Request\Header\DefaultRequestHeader'
+
+  OpenLoyalty\Component\Webhook\Infrastructure\Client\Request\Header\DefaultRequestHeader:
+    arguments:
+      - '@ol.doctrine_settings.manager'
+  # Webhooks event listeners
+
+  OpenLoyalty\Component\Customer\Infrastructure\SystemEvent\Listener\WebhookListener:
+    parent: OpenLoyalty\Component\Webhook\Infrastructure\SystemEvent\Listener\BaseWebhookListener
+    tags:
+      - { name: broadway.event_listener, event: oloy.customer.updated, method: onCustomerUpdated }
+      - { name: broadway.event_listener, event: oloy.customer.registered, method: onCustomerRegistered }
+      - { name: broadway.event_listener, event: oloy.customer.deactivated, method: onCustomerDeactivated }
+      - { name: broadway.event_listener, event: oloy.customer.level_changed_automatically, method: onCustomerLevelChangedAutomatically }
+      - { name: broadway.event_listener, event: oloy.customer.level_changed, method: onCustomerLevelChanged }
+
+  OpenLoyalty\Component\Transaction\Infrastructure\SystemEvent\Listener\WebhookListener:
+    parent: OpenLoyalty\Component\Webhook\Infrastructure\SystemEvent\Listener\BaseWebhookListener
+    tags:
+      - { name: broadway.event_listener, event: oloy.transaction.registered, method: onTransactionRegistered }
+      - { name: broadway.event_listener, event: oloy.transaction.customer_assigned, method: onTransactionAssignedToCustomer }
+
+  OpenLoyalty\Component\Account\Infrastructure\SystemEvent\Listener\WebhookListener:
+    parent: OpenLoyalty\Component\Webhook\Infrastructure\SystemEvent\Listener\BaseWebhookListener
+    tags:
+      - { name: broadway.event_listener, event: oloy.account.available_points_amount_changed, method: onAccountAvailablePointsAmountChanged }
+
+

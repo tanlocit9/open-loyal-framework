@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    OpenLoyalty\Bundle\PointsBundle\Command\SendExpireLevelNotifications:
+        tags:
+            - { name: console.command }
+
+    OpenLoyalty\Bundle\PointsBundle\Command\SendExpirePointsNotifications:
+        tags:
+            - { name: console.command }

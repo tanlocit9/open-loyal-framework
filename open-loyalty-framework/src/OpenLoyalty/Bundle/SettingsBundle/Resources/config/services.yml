@@ -1,0 +1,101 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    _instanceof:
+        OpenLoyalty\Bundle\SettingsBundle\Provider\ChoiceProvider:
+            tags:
+            - { name: ol.settings.choices }
+
+    OpenLoyalty\Bundle\SettingsBundle\Service\GeneralSettingsManagerInterface: '@OpenLoyalty\Bundle\SettingsBundle\Service\GeneralSettingsManager'
+    OpenLoyalty\Bundle\SettingsBundle\Service\SettingsManager: '@OpenLoyalty\Bundle\SettingsBundle\Service\GeneralSettingsManager'
+    OpenLoyalty\Bundle\SettingsBundle\Service\TranslationsProvider: '@OpenLoyalty\Bundle\SettingsBundle\Service\DoctrineTranslationsManager'
+
+    OpenLoyalty\Bundle\SettingsBundle\EventSubscriber\TimezoneSubscriber: ~
+
+    OpenLoyalty\Bundle\SettingsBundle\Provider\:
+        resource: '../../Provider/*'
+
+    OpenLoyalty\Bundle\SettingsBundle\Service\:
+        resource: '../../Service/*'
+
+    OpenLoyalty\Bundle\SettingsBundle\Form\Type\:
+        resource: '../../Form/Type/*'
+        tags: ['form.type']
+
+    OpenLoyalty\Bundle\SettingsBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+
+    OpenLoyalty\Bundle\SettingsBundle\Validator\Constraints\:
+        resource: '../../Validator/Constraints/*'
+        tags: ['validator.constraint_validator']
+
+    OpenLoyalty\Bundle\SettingsBundle\Service\DoctrineTranslationsManager:
+        arguments:
+            $commandBus: '@broadway.command_handling.command_bus'
+            $uuidGenerator: '@broadway.uuid.generator'
+
+    OpenLoyalty\Bundle\SettingsBundle\Service\ConditionsUploader:
+        arguments: ['@oloy.settings.uploads_filesystem', '%frontend_customer_panel_url%']
+
+    OpenLoyalty\Bundle\SettingsBundle\Service\LogoUploader:
+        arguments: ['@oloy.settings.photos_filesystem']
+
+    OpenLoyalty\Bundle\SettingsBundle\Service\LocaleProvider:
+        scope: prototype
+        arguments:
+            $defaultLocale: '%locale%'
+
+    ol.settings.frontend_translations_filesystem:
+        class:     Gaufrette\Filesystem
+        factory:   ['@knp_gaufrette.filesystem_map', get]
+        arguments: ['frontend_translations']
+        public: true
+
+    oloy.settings.photos_filesystem:
+        class:     Gaufrette\Filesystem
+        factory:   ['@knp_gaufrette.filesystem_map', get]
+        arguments: ['logo']
+
+    oloy.settings.uploads_filesystem:
+        class:     Gaufrette\Filesystem
+        factory:   ['@knp_gaufrette.filesystem_map', get]
+        arguments: ['uploads']
+
+    OpenLoyalty\Component\Translation\Infrastructure\Persistence\Doctrine\Repository\DoctrineLanguageRepository:
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+          - 'OpenLoyalty\Component\Translation\Domain\Language'
+
+    OpenLoyalty\Component\Translation\Domain\Command\LanguageCommandHandler:
+        tags:
+          - { name: broadway.command_handler }
+
+    OpenLoyalty\Bundle\SettingsBundle\Command\MigrateTranslationCommand:
+        arguments:
+            $filesystem: '@ol.settings.frontend_translations_filesystem'
+        tags:
+          - { name: 'console.command', command: 'oloy:translation:migrate2database' }
+
+    OpenLoyalty\Component\Core\Domain\Command\LogoCommandHandler:
+      lazy: true
+      tags:
+        - { name: broadway.command_handler }
+
+    OpenLoyalty\Component\Core\Domain\Command\PhotoCommandHandler:
+        lazy: true
+        tags:
+        - { name: broadway.command_handler }
+
+    OpenLoyalty\Bundle\SettingsBundle\Service\ImageResizer:
+      arguments:
+        $directory: '%kernel.project_dir%/app/uploads'
+        $config: '%oloy.logo.resize.mapping%'
+
+    OpenLoyalty\Bundle\SettingsBundle\Event\Listener\LogoResizedListener:
+      tags:
+        - { name: broadway.event_listener, method: onChange, event: !php/const:OpenLoyalty\Component\Core\Domain\SystemEvent\LogoSystemEvents::RESIZED_LOGO_EVENT }
+

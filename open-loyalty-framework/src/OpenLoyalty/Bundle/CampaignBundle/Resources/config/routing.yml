@@ -1,0 +1,19 @@
+campaign:
+    resource: '@OpenLoyaltyCampaignBundle/Controller/Api/CampaignController.php'
+    type: annotation
+
+campaign_photo:
+    resource: '@OpenLoyaltyCampaignBundle/Controller/Api/CampaignPhotoController.php'
+    type: annotation
+
+customer_campaign:
+    resource: '@OpenLoyaltyCampaignBundle/Controller/Api/CustomerCampaignsController.php'
+    type: annotation
+
+campaign_category:
+    resource: '@OpenLoyaltyCampaignBundle/Controller/Api/CampaignCategoryController.php'
+    type: annotation
+
+cashback:
+    resource: '@OpenLoyaltyCampaignBundle/Controller/Api/CashbackController.php'
+    type: annotation

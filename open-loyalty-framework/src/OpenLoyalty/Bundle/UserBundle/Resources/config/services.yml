@@ -1,0 +1,380 @@
+parameters:
+    oloy.emails:
+        - { template: 'OpenLoyaltyUserBundle:email:registration.html.twig', subject: 'Account created', variables: ['url', 'conditions_file'] }
+        - { template: 'OpenLoyaltyUserBundle:email:registration_with_temporary_password.html.twig', subject: 'Account created', variables: ['program_name', 'email', 'loyalty_card_number', 'phone', 'password', 'customer_panel_url', 'conditions_file'] }
+        - { template: 'OpenLoyaltyUserBundle:email:password_reset.html.twig', subject: 'Password reset requested', variables: ['program_name', 'url_reset_password'] }
+        - { template: 'OpenLoyaltyUserBundle:email:customer_reward_bought.html.twig', subject: '{{ program_name }} - new reward', variables: ['program_name', 'reward_name', 'reward_code', 'reward_instructions', 'ecommerce_address'] }
+        - { template: 'OpenLoyaltyUserBundle:email:new_points.html.twig', subject: '{{ program_name }} - new points', variables: ['program_name', 'added_points_amount', 'active_points_amount', 'ecommerce_address'] }
+        - { template: 'OpenLoyaltyUserBundle:email:new_level.html.twig', subject: '{{ program_name }} - new level', variables: ['program_name', 'level_name', 'level_discount', 'ecommerce_address'] }
+        - { template: 'OpenLoyaltyUserBundle:email:invitation.html.twig', subject: 'Invitation', variables: ['referrerName', 'url'] }
+        - { template: 'OpenLoyaltyUserBundle:email:reward_redeemed.html.twig', subject: 'Reward Redeemed', variables: ['coupon_code', 'customer_name', 'customer_last_name', 'customer_phone_number', 'customer_email', 'reward_name', 'reward_description', 'customer_street', 'customer_state', 'customer_country', 'customer_address1', 'customer_address2', 'customer_city', 'customer_postal'] }
+
+imports:
+    - { resource: services/*.yml }
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Symfony\Component\Translation\TranslationInterface: '@translator'
+
+    OpenLoyalty\Bundle\UserBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+
+    oloy.user.all_users_provider:
+        class: OpenLoyalty\Bundle\UserBundle\Service\UserProvider
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    oloy.user.admin_provider:
+        class: OpenLoyalty\Bundle\UserBundle\Service\AdminProvider
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    oloy.user.seller_provider:
+        class: OpenLoyalty\Bundle\UserBundle\Service\SellerProvider
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    oloy.user.customer_provider:
+        class: OpenLoyalty\Bundle\UserBundle\Service\CustomerProvider
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@oloy.user.read_model.repository.customer_details'
+
+    oloy.user.user_manager:
+        class: OpenLoyalty\Bundle\UserBundle\Service\UserManager
+        arguments:
+            $passwordEncoder: '@security.password_encoder'
+            $em: '@doctrine.orm.entity_manager'
+            $passwordGenerator: '@oloy.user.password_generator'
+            $activationMethodProvider: '@oloy.action_token_manager'
+            $customerDetailsRepository: '@oloy.user.read_model.repository.customer_details'
+
+    oloy.user.event.authentication_success_listener:
+        class: OpenLoyalty\Bundle\UserBundle\EventListener\AuthenticationListener
+        arguments: ['@oloy.user.user_manager', '@broadway.event_dispatcher']
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_failure, method: onAuthenticationFailureResponse }
+
+    OpenLoyalty\Bundle\UserBundle\EventListener\CustomerDetailsWereUpdatedListener:
+        arguments:
+            $repository: '@oloy.user.customer.repository'
+        tags:
+            - { name: broadway.event_listener, event: oloy.customer.updated, method: handle }
+
+    oloy.user.form_type.change_password:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Type\ChangePasswordFormType
+        tags:
+            - { name: form.type }
+
+    oloy.user.form_type.admin:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Type\AdminFormType
+        tags:
+            - { name: form.type }
+
+    oloy.user.form_type.password_reset:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Type\PasswordResetFormType
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\UserBundle\Form\Type\CustomerRegistrationFormType:
+        arguments:
+            $sellerRepository: '@oloy.user.read_model.repository.seller_details'
+        tags:
+            - { name: form.type }
+
+    oloy.user.form_type.customer_self_registration:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Type\CustomerSelfRegistrationFormType
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\UserBundle\Form\Listener\AllowUserToEditProfileSubscriber:
+        arguments:
+            - '@OpenLoyalty\Bundle\SettingsBundle\Service\DoctrineSettingsManager'
+            - '@security.token_storage'
+            - '@translator.default'
+
+    oloy.user.form_type.customer_edit:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Type\CustomerEditFormType
+        arguments:
+            - '@OpenLoyalty\Bundle\UserBundle\Form\Listener\AllowUserToEditProfileSubscriber'
+        tags:
+            - { name: form.type }
+
+    oloy.user.form_type.seller_registration:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Type\SellerRegistrationFormType
+        arguments:
+            - '@oloy.pos.repository'
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\UserBundle\Form\Type\InvitationFormType:
+        tags:
+            - { name: form.type }
+
+    oloy.user.form_handler.customer_registration:
+        autowire: true
+        class: OpenLoyalty\Bundle\UserBundle\Form\Handler\CustomerRegistrationFormHandler
+        arguments:
+            - '@broadway.command_handling.command_bus'
+            - '@oloy.user.user_manager'
+            - '@doctrine.orm.entity_manager'
+            - '@broadway.uuid.generator'
+            - '@oloy.user.customer.unique_validator'
+            - '@oloy.action_token_manager'
+
+    oloy.user.form_handler.invitation:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Handler\InvitationFormHandler
+        arguments:
+            - '@broadway.command_handling.command_bus'
+            - '@oloy.user.read_model.repository.invitation_details'
+            - '@oloy.user.read_model.repository.customer_details'
+            - '@broadway.uuid.generator'
+
+    oloy.user.form_handler.seller_registration:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Handler\SellerRegistrationFormHandler
+        arguments:
+            - '@broadway.command_handling.command_bus'
+            - '@oloy.user.user_manager'
+            - '@doctrine.orm.entity_manager'
+
+    OpenLoyalty\Bundle\UserBundle\Form\Handler\CustomerEditFormHandler:
+        arguments:
+            - '@broadway.command_handling.command_bus'
+            - '@oloy.user.user_manager'
+            - '@doctrine.orm.entity_manager'
+            - '@oloy.user.customer.unique_validator'
+
+    oloy.user.form_handler.seller_edit:
+        class: OpenLoyalty\Bundle\UserBundle\Form\Handler\SellerEditFormHandler
+        arguments:
+            - '@broadway.command_handling.command_bus'
+            - '@oloy.user.user_manager'
+            - '@doctrine.orm.entity_manager'
+
+    oloy.user.random_password_generator:
+        class: OpenLoyalty\Bundle\UserBundle\Service\RandomStringPasswordGenerator
+
+    oloy.user.password_generator:
+        alias: 'oloy.user.random_password_generator'
+
+    oloy.user.email_provider:
+        class: OpenLoyalty\Bundle\UserBundle\Service\EmailProvider
+        arguments:
+            $mailer: '@oloy.mailer'
+            $parameters: {from_name: '%mailer_from_name%', from_address: '%mailer_from_address%', reset_password_url: '%reset_password_url%', ecommerce_address: '%ecommerce_address%', customer_url: '%customer_url%', admin_url: '%admin_url%', merchant_url: '%merchant_url%', frontend_invitation_url: '%frontend_invitation_url%'}
+
+    oloy.user.es_param_manager:
+        class: OpenLoyalty\Bundle\UserBundle\Service\EsParamManager
+
+    oloy.user.param_manager:
+        alias: 'oloy.user.es_param_manager'
+
+    oloy.user.listener.customer_serialization_listener:
+        class: OpenLoyalty\Bundle\UserBundle\EventListener\CustomerSerializationListener
+        arguments: ['@oloy.level.repository', '@ol.settings.manager', '@oloy.pos.repository']
+        tags:
+            - { name: jms_serializer.event_subscriber }
+
+    oloy.user.settings_based_tier_assign_type_provider:
+        class: 'OpenLoyalty\Bundle\UserBundle\Service\SettingsBasedTierAssignTypeProvider'
+        arguments:
+            - '@ol.settings.manager'
+
+    oloy.user.settings_based_exclude_delivery_costs_provider:
+        class: 'OpenLoyalty\Bundle\UserBundle\Service\SettingsBasedExcludeDeliveryCostsProvider'
+        arguments:
+            - '@ol.settings.manager'
+
+    oloy.user.tier_assign_type_provider:
+        alias: oloy.user.settings_based_tier_assign_type_provider
+
+    oloy.user.exclude_delivery_costs_provider:
+        alias: oloy.user.settings_based_exclude_delivery_costs_provider
+
+    oloy.user.random_number_token_generator:
+        class: OpenLoyalty\Bundle\UserBundle\Service\RandomNumberTokenGenerator
+
+    oloy.user.token_generator:
+        alias: oloy.user.random_number_token_generator
+
+    oloy.customer_status_provider:
+        class: OpenLoyalty\Bundle\UserBundle\Status\CustomerStatusProvider
+        arguments:
+            - '@oloy.points.account.repository.account_details'
+            - '@oloy.level.repository'
+            - '@OpenLoyalty\Component\Customer\Infrastructure\Provider\CustomerDetailsProviderInterface'
+            - '@oloy.user.tier_assign_type_provider'
+            - '@oloy.user.exclude_delivery_costs_provider'
+            - '@ol.settings.manager'
+            - '@OpenLoyalty\Bundle\UserBundle\Service\SettingsBasedLevelDowngradeModeProvider'
+            - '@OpenLoyalty\Component\Account\Infrastructure\Provider\AccountDetailsProviderInterface'
+
+    oloy.user.param_converter.customer:
+        class: OpenLoyalty\Bundle\UserBundle\ParamConverter\CustomerDetailsParamConverter
+        arguments: ['@oloy.user.read_model.repository.customer_details']
+        tags:
+            - { name: request.param_converter, priority: -2, converter: customer_details_converter }
+
+    oloy.user.param_converter.seller:
+        class: OpenLoyalty\Bundle\UserBundle\ParamConverter\SellerDetailsParamConverter
+        arguments: ['@oloy.user.read_model.repository.seller_details']
+        tags:
+            - { name: request.param_converter, priority: -2, converter: seller_details_converter }
+
+    oloy.user.guard.token:
+        class: OpenLoyalty\Bundle\UserBundle\Security\Authenticator\TokenAuthenticator
+        public: false
+        autowire: true
+
+    oloy.user.doctrine_repository.admin:
+        class: OpenLoyalty\Bundle\UserBundle\Entity\Repository\DoctrineAdminRepository
+        factory:
+            - '@doctrine.orm.default_entity_manager'
+            - getRepository
+        arguments:
+            - 'OpenLoyalty\Bundle\UserBundle\Entity\Admin'
+
+    oloy.user.repository.admin:
+        alias: oloy.user.doctrine_repository.admin
+
+    oloy.user.admin.command_handler:
+        class: OpenLoyalty\Bundle\UserBundle\CQRS\Handler\AdminHandler
+        arguments:
+            - '@oloy.user.user_manager'
+            - '@oloy.user.repository.admin'
+        lazy: true
+        tags:
+            - { name: broadway.command_handler }
+
+    oloy.user.listener.customer_level_changed:
+        class: OpenLoyalty\Bundle\UserBundle\EventListener\CustomerLevelChangedListener
+        arguments:
+            - '@oloy.user.email_provider'
+            - '@oloy.level.repository'
+            - '@oloy.user.read_model.repository.customer_details'
+        tags:
+            - { name: broadway.event_listener, event: oloy.customer.level_changed_automatically, method: sendEmail }
+
+    OpenLoyalty\Bundle\UserBundle\EventListener\UserRegisteredWithInvitationTokenListener:
+        arguments:
+            $invitationDetailsRepository: '@oloy.user.read_model.repository.invitation_details'
+            $commandBus: '@broadway.command_handling.command_bus'
+            $customerRepository: '@oloy.user.customer.repository'
+            $invitationRepository: '@oloy.user.invitation.repository'
+        tags:
+            - { name: kernel.event_listener, event: user.invitation.user_registered_with_invitation_token, method: handle }
+
+    OpenLoyalty\Bundle\UserBundle\Service\AccountDetailsProviderInterface:
+        alias: OpenLoyalty\Bundle\UserBundle\Service\AccountDetailsProvider
+
+    OpenLoyalty\Bundle\UserBundle\Service\AccountDetailsProvider:
+        public: true
+        arguments:
+            - '@oloy.user.customer.repository'
+            - '@oloy.points.account.repository.account_details'
+
+    OpenLoyalty\Bundle\UserBundle\Service\RegisterCustomerManager:
+        arguments:
+            - '@oloy.user.user_manager'
+            - '@oloy.user.customer.unique_validator'
+            - '@broadway.command_handling.command_bus'
+            - '@oloy.user.read_model.repository.customer_details'
+            - '@doctrine.orm.entity_manager'
+
+    OpenLoyalty\Bundle\UserBundle\Import\CustomerNodeStreamer: ~
+
+    OpenLoyalty\Bundle\UserBundle\Import\CustomerImportProcessor:
+        autowire: true
+        arguments:
+            - '@broadway.uuid.generator'
+            - '@broadway.command_handling.command_bus'
+            - '@oloy.action_token_manager'
+
+    OpenLoyalty\Bundle\UserBundle\Import\CustomerXmlImportConverter: ~
+
+    OpenLoyalty\Bundle\UserBundle\Import\CustomerXmlImporter:
+        calls:
+            - [setProcessor, ['@OpenLoyalty\Bundle\UserBundle\Import\CustomerImportProcessor']]
+            - [setXmlStreamer, ['@OpenLoyalty\Bundle\UserBundle\Import\CustomerNodeStreamer']]
+            - [setConverter, ['@OpenLoyalty\Bundle\UserBundle\Import\CustomerXmlImportConverter']]
+
+    OpenLoyalty\Bundle\UserBundle\Service\MasterAdminProvider:
+        autowire: true
+        arguments:
+            - '%master_api_key%'
+
+    OpenLoyalty\Bundle\UserBundle\Command\CustomerImportCommand: ~
+
+    OpenLoyalty\Bundle\UserBundle\Service\OloyLevelIdProvider:
+        arguments:
+            - '@oloy.level.repository'
+
+    OpenLoyalty\Bundle\UserBundle\Entity\Repository\RoleRepository:
+        factory:
+            - '@doctrine.orm.default_entity_manager'
+            - getRepository
+        arguments:
+            - 'OpenLoyalty\Bundle\UserBundle\Entity\Role'
+
+    OpenLoyalty\Bundle\UserBundle\Service\AclManager: ~
+
+    OpenLoyalty\Bundle\UserBundle\CQRS\Handler\RoleHandler:
+        tags:
+            - { name: broadway.command_handler }
+
+    OpenLoyalty\Bundle\UserBundle\Form\Type\RoleFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\UserBundle\Form\Type\PermissionFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\UserBundle\Service\InvitationSender: ~
+
+    OpenLoyalty\Bundle\UserBundle\Notification\Transport\SmsNotificationTransport:
+        arguments:
+            $parameters: {customer_url: '%customer_url%', frontend_invitation_url: '%frontend_invitation_url%'}
+
+    OpenLoyalty\Bundle\UserBundle\Notification\Transport\EmailNotificationTransport: ~
+
+    OpenLoyalty\Bundle\UserBundle\Notification\Transport\PushyNotificationTransport: ~
+
+    OpenLoyalty\Bundle\UserBundle\Service\NotificationService:
+        calls:
+            - [addTransport, ['@OpenLoyalty\Bundle\UserBundle\Notification\Transport\EmailNotificationTransport']]
+            - [addTransport, ['@OpenLoyalty\Bundle\UserBundle\Notification\Transport\SmsNotificationTransport']]
+            - [addTransport, ['@OpenLoyalty\Bundle\UserBundle\Notification\Transport\PushyNotificationTransport']]
+
+    OpenLoyalty\Bundle\UserBundle\Form\Type\ConfigurablePasswordType:
+        arguments:
+            - '%password_security_level%'
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\UserBundle\Form\Type\CampaignBoughtDeliveryStatusFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\UserBundle\Form\Type\AdminSelfEditFormType:
+        tags:
+            - { name: form.type }
+
+    oloy.user.avatar_filesystem:
+        class:     Gaufrette\Filesystem
+        factory:   ['@knp_gaufrette.filesystem_map', get]
+        arguments: ['customers_avatars']
+
+    OpenLoyalty\Bundle\UserBundle\Service\AvatarUploader:
+        arguments:
+            $filesystem: "@oloy.user.avatar_filesystem"
+
+    OpenLoyalty\Bundle\UserBundle\Service\UserSettingsManagerFactory:
+        arguments:
+            - '@doctrine.orm.entity_manager'

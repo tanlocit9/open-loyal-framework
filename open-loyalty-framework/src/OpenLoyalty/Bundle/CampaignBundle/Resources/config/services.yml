@@ -1,0 +1,147 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    OpenLoyalty\Bundle\CampaignBundle\Controller\Api\:
+        resource: '../../Controller/Api/*'
+        tags: ['controller.service_arguments']
+
+    OpenLoyalty\Bundle\CampaignBundle\Controller\Api\CampaignController:
+        arguments:
+            $transactionRepository: '@oloy.transaction.repository'
+
+    Broadway\CommandHandling\CommandBus: '@broadway.command_handling.command_bus'
+    Symfony\Component\Translation\TranslationInterface: '@translator'
+    OpenLoyalty\Component\Segment\Domain\ReadModel\SegmentedCustomersRepository: '@oloy.segment.read_model.repository.segmented_customers'
+
+    oloy.campaign.form_type.campaign_activity:
+        class: OpenLoyalty\Bundle\CampaignBundle\Form\Type\CampaignActivityFormType
+        tags:
+            - { name: form.type }
+
+    oloy.campaign.form_type.campaign_visibility:
+        class: OpenLoyalty\Bundle\CampaignBundle\Form\Type\CampaignVisibilityFormType
+        tags:
+            - { name: form.type }
+
+    oloy.campaign.form_type.labels:
+        class: OpenLoyalty\Bundle\CampaignBundle\Form\Type\LabelsFormType
+        tags:
+            - { name: form.type }
+
+    oloy.campaign.param_converter:
+        class: OpenLoyalty\Bundle\CampaignBundle\ParamConverter\CampaignParamConverter
+        arguments: ['@oloy.campaign.repository']
+        tags:
+            - { name: request.param_converter, priority: 2, converter: campaign_converter }
+
+    OpenLoyalty\Bundle\CampaignBundle\Service\CampaignProvider:
+        arguments:
+            $segmentedCustomersRepository: '@oloy.segment.read_model.repository.segmented_customers'
+            $customerBelongingToOneLevelRepository: '@oloy.user.read_model.repository.customers_belonging_to_one_level'
+            $couponUsageRepository: '@oloy.campaign.read_model.repository.coupon_usage'
+            $campaignValidator: '@OpenLoyalty\Bundle\CampaignBundle\Service\CampaignValidator'
+            $campaignRepository: '@oloy.campaign.repository'
+
+    OpenLoyalty\Bundle\CampaignBundle\Service\CampaignValidator:
+        arguments:
+            - '@oloy.campaign.read_model.repository.coupon_usage'
+            - '@oloy.points.account.repository.account_details'
+            - '@ol.settings.manager'
+
+    OpenLoyalty\Bundle\CampaignBundle\Service\EarningRuleCampaignProvider:
+        class: OpenLoyalty\Bundle\CampaignBundle\Service\EarningRuleCampaignProvider
+        arguments:
+            - '@OpenLoyalty\Bundle\CampaignBundle\Service\CampaignProvider'
+            - '@OpenLoyalty\Bundle\CampaignBundle\Service\CampaignValidator'
+            - '@oloy.campaign.repository'
+
+    OpenLoyalty\Bundle\CampaignBundle\Event\Listener\CampaignSerializationListener:
+        arguments:
+            $campaignValidator: '@OpenLoyalty\Bundle\CampaignBundle\Service\CampaignValidator'
+            $segmentRepository: '@oloy.segment.repository'
+            $levelRepository: '@oloy.level.repository'
+            $couponUsageRepository: '@oloy.campaign.read_model.repository.coupon_usage'
+            $campaignProvider: '@OpenLoyalty\Bundle\CampaignBundle\Service\CampaignProvider'
+            $customerStatusProvider: '@oloy.customer_status_provider'
+        tags:
+            - { name: jms_serializer.event_subscriber }
+
+    oloy.campaign.photos_filesystem:
+        public: true
+        class:     Gaufrette\Filesystem
+        factory:   ['@knp_gaufrette.filesystem_map', get]
+        arguments: ['campaign_photos']
+
+    OpenLoyalty\Bundle\CampaignBundle\Service\CampaignBrandIconUploader:
+        arguments: ["@oloy.campaign.photos_filesystem"]
+
+    oloy.campaign.validator.image:
+        class: OpenLoyalty\Bundle\CampaignBundle\Validator\Constraints\ImageValidator
+        arguments:
+            - '%oloy.campaign.photos_min_width%'
+            - '%oloy.campaign.photos_min_height%'
+        tags:
+            - { name: validator.constraint_validator }
+
+    OpenLoyalty\Bundle\CampaignBundle\Command\SetCouponsAsActiveCommand:
+        arguments:
+            - '@oloy.user.read_model.repository.customer_details'
+            - '@broadway.command_handling.command_bus'
+            - '@logger'
+        tags:
+            - { name: 'console.command', command: 'oloy:coupons:set_active' }
+
+    OpenLoyalty\Bundle\CampaignBundle\Command\SetCouponsAsExpiredCommand:
+        arguments:
+            - '@oloy.user.read_model.repository.customer_details'
+            - '@broadway.command_handling.command_bus'
+            - '@logger'
+        tags:
+            - { name: 'console.command', command: 'oloy:coupons:set_expired' }
+
+    OpenLoyalty\Bundle\CampaignBundle\Command\SendExpireCouponNotifications:
+        tags:
+            - { name: 'console.command' }
+
+    OpenLoyalty\Bundle\CampaignBundle\Command\SendNewCampaignsAvailableNotifications:
+        tags:
+            - { name: 'console.command' }
+
+    OpenLoyalty\Bundle\CampaignBundle\Service\MultipleCampaignCouponUsageProvider:
+        arguments:
+            - '@oloy.campaign.repository'
+            - '@oloy.user.read_model.repository.customer_details'
+            - '@translator'
+    OpenLoyalty\Bundle\CampaignBundle\Service\EarningRuleReturnCampaignBoughtProvider: ~
+
+    OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignBoughtRepository: '@OpenLoyalty\Component\Campaign\Infrastructure\Repository\CampaignBoughtElasticsearchRepository'
+    OpenLoyalty\Bundle\CampaignBundle\Service\EarningRuleCampaignProviderInterface: '@OpenLoyalty\Bundle\CampaignBundle\Service\EarningRuleCampaignProvider'
+    OpenLoyalty\Component\Campaign\Domain\Provider\EarningRuleReturnCampaignBoughtProviderInterface: '@OpenLoyalty\Bundle\CampaignBundle\Service\EarningRuleReturnCampaignBoughtProvider'
+
+    OpenLoyalty\Bundle\CampaignBundle\ParamConverter\CampaignCategoryParamConverter:
+        tags:
+            - { name: request.param_converter, priority: 2, converter: campaign_category_converter }
+
+    OpenLoyalty\Bundle\CampaignBundle\Form\Type\CampaignFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\CampaignBundle\Form\Type\EditCampaignFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\CampaignBundle\Form\Type\CampaignCategoryFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\CampaignBundle\Form\Type\EditCampaignCategoryFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\CampaignBundle\Form\Type\CampaignBoughtDeliveryStatusFormType:
+        tags:
+            - { name: form.type }
+
+    OpenLoyalty\Bundle\CampaignBundle\Form\CampaignEditFormHandler: ~

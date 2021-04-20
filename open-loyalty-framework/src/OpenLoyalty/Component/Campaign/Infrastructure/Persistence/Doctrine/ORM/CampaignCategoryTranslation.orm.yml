@@ -1,0 +1,6 @@
+OpenLoyalty\Component\Campaign\Domain\CampaignCategoryTranslation:
+  type: entity
+  fields:
+    name:
+      type: string
+      nullable: true

@@ -1,0 +1,33 @@
+doctrine:
+    dbal:
+        types:
+            campaign_id: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Type\CampaignIdDoctrineType
+            photo_id: OpenLoyalty\Component\Campaign\Infrastructure\Doctrine\Type\PhotoIdDoctrineType
+            campaign_levels_json_array: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Type\CampaignLevelsJsonArrayDoctrineType
+            campaign_segments_json_array: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Type\CampaignSegmentsJsonArrayDoctrineType
+            campaign_coupons_json_array: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Type\CampaignCouponsJsonArrayDoctrineType
+            labels_json_array: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Type\LabelsJsonArrayDoctrineType
+            campaign_category_id: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Type\CampaignCategoryIdDoctrineType
+            campaign_categories_json_array: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Type\CampaignCategoriesJsonArrayDoctrineType
+jms_serializer:
+    metadata:
+      directories:
+        Campaign:
+          namespace_prefix: "OpenLoyalty\\Component\\Campaign\\Domain"
+          path: "@OpenLoyaltyCampaignBundle/Resources/config/serializer"
+
+open_loyalty_campaign:
+  photos_adapter: "%campaign_photos_adapter%"
+  photos_adapter_env: "%campaign_photos_adapter_env%"
+  photos_min_width: 600
+  photos_min_height: 600
+  campaign_bought:
+    export:
+      filename_prefix: 'redeemed_rewards_report'
+      default_headers: ['Name', 'Date', 'Cost', 'Tax value', 'email', 'phone', 'Firstname', 'Surname','Points balance', 'Is used']
+      default_fields: ['campaignName', 'purchasedAt', 'costInPoints', 'taxValue', 'customerEmail', 'phone', 'customerName', 'customerLastname','currentPointsAmount', 'used']
+      mappings:
+        purchasedAt:
+          conversion: timeToString
+        used:
+          conversion: boolToString

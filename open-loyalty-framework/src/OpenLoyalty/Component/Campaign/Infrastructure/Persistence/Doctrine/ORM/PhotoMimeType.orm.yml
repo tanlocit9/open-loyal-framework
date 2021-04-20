@@ -1,0 +1,7 @@
+OpenLoyalty\Component\Campaign\Domain\PhotoMimeType:
+  type: embeddable
+  fields:
+    value:
+      type: string
+      column: mime_type
+      nullable: false

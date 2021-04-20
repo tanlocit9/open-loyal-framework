@@ -1,0 +1,32 @@
+OpenLoyalty\Component\Level\Domain\Level:
+  exlusion_policy: ALL
+  serialize_null: true
+  properties:
+    levelId:
+      expose: true
+      inline: true
+    photo:
+      exclude: true
+    conditionValue:
+      groups: ['Default', 'customer']
+    newTranslations:
+      exclude: true
+    currentLocale:
+      exclude: true
+    defaultLocale:
+      exclude: true
+  virtual_properties:
+    getName:
+      serialized_name: name
+      groups: ['Default', 'customer']
+    getDescription:
+      serialized_name: description
+      groups: ['Default', 'customer']
+    hasLevelPhoto:
+      serialized_name: hasPhoto
+      type: boolean
+      groups: ['Default', 'customer']
+    getIdAsString:
+      serialized_name: levelId
+      type: string
+      groups: ['customer']

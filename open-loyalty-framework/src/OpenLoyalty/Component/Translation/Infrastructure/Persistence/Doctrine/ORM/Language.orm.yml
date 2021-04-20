@@ -1,0 +1,30 @@
+OpenLoyalty\Component\Translation\Domain\Language:
+  type: entity
+  repositoryClass: OpenLoyalty\Component\Translation\Infrastructure\Persistence\Doctrine\Repository\DoctrineLanguageRepository
+  table: ol__language
+  id:
+    languageId:
+      type: language_id
+      column: language_id
+  fields:
+    name:
+      type: string
+    code:
+      type: string
+    translations:
+      type: json_array
+    order:
+      type: integer
+      column: position
+      nullable: true
+      options:
+        default: 0
+    default:
+      column: is_default
+      type: boolean
+      options:
+        default: 0
+    updatedAt:
+      type: datetime
+      options:
+        default: 0

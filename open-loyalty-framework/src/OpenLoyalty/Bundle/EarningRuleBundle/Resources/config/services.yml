@@ -1,0 +1,76 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    OpenLoyalty\Bundle\EarningRuleBundle\Validator\Constraints\GeoTypeValidator:
+        arguments:
+            - "@translator"
+
+    OpenLoyalty\Bundle\EarningRuleBundle\Validator\Constraints\EarningRuleExistValidator:
+        arguments:
+            - '@oloy.earning_rule.geo_repository'
+
+    OpenLoyalty\Bundle\EarningRuleBundle\Controller\Api\:
+        resource: '../../Controller/Api'
+        tags: ['controller.service_arguments']
+
+    oloy.earning_rule.param_converter:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\ParamConverter\EarningRuleParamConverter
+        arguments: ['@oloy.earning_rule.repository']
+        tags:
+            - { name: request.param_converter, priority: 2, converter: earning_rule_converter }
+    oloy.earning_rule.form_type.create:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Form\Type\CreateEarningRuleFormType
+        tags:
+            - { name: form.type }
+    oloy.earning_rule.form_type.edit:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Form\Type\EditEarningRuleFormType
+        tags:
+            - { name: form.type }
+    oloy.earning_rule.form_type.excluded_labels:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Form\Type\ExcludedLabelsFormType
+        tags:
+            - { name: form.type }
+    oloy.earning_rule.form_type.excluded_skus:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Form\Type\ExcludedSKUsFormType
+        tags:
+            - { name: form.type }
+    oloy.earning_rule.form_type.labels:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Form\Type\LabelsFormType
+        tags:
+            - { name: form.type }
+    OpenLoyalty\Bundle\EarningRuleBundle\Form\Type\CampaignIdFormType:
+        arguments:
+            - '@oloy.campaign.repository'
+            - "@translator"
+        tags:
+            - { name: form.type }
+    OpenLoyalty\Bundle\EarningRuleBundle\Event\Listener\EarningRuleSerializationListener:
+        public: true
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Event\Listener\EarningRuleSerializationListener
+        arguments: ['@router', '@oloy.segment.repository', '@oloy.level.repository', '@oloy.pos.repository']
+        tags:
+            - { name: jms_serializer.event_subscriber }
+    oloy.earning_rule.algorithm_factory:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Service\EarningRuleAlgorithmFactory
+    oloy.earning_rule.validator:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Service\OloyEarningRuleValidator
+        arguments: ['@oloy.earning_rule.usage_repository', '@oloy.earning_rule.repository']
+
+    oloy.earning_rule.photos_filesystem:
+        class:     Gaufrette\Filesystem
+        factory:   ['@knp_gaufrette.filesystem_map', get]
+        arguments: ['earning_rule_photos']
+
+    OpenLoyalty\Bundle\EarningRuleBundle\Service\EarningRulePhotoUploader:
+        arguments: ["@oloy.campaign.photos_filesystem"]
+
+    oloy.earning_rule.validator.image:
+        class: OpenLoyalty\Bundle\EarningRuleBundle\Validator\Constraints\ImageValidator
+        arguments:
+            - '%oloy.earning_rule.photos_min_width%'
+            - '%oloy.earning_rule.photos_min_height%'
+        tags:
+            - { name: validator.constraint_validator }

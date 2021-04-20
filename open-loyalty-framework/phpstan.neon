@@ -1,0 +1,11 @@
+includes:
+	- vendor/phpstan/phpstan-symfony/extension.neon
+	- vendor/phpstan/phpstan-doctrine/extension.neon
+	- vendor/phpstan/phpstan-phpunit/extension.neon
+	- vendor/phpstan/phpstan-phpunit/rules.neon
+	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
+parameters:
+    ignoreErrors:
+        - '#[a-zA-Z0-9_\:\\\(\)]+ does not call parent constructor from [a-zA-Z0-9_\:\\\(\)]+.#'
+    symfony:
+        container_xml_path: %rootDir%/../../../var/cache/test/appTestDebugProjectContainer.xml

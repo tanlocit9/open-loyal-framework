@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="campaign.bought.deliver_status.changed">
+                <source>campaign.bought.deliver_status.changed</source>
+                <target>Status został zmieniony.</target>
+            </trans-unit>
+            <trans-unit id="campaign.bought.deliver_status.empty">
+                <source>campaign.bought.deliver_status.empty</source>
+                <target>Pole status dostawy jest wymagane i nie może być puste!</target>
+            </trans-unit>
+            <trans-unit id="campaign.invalid_data">
+                <source>campaign.invalid_data</source>
+                <target>Nieprawidłowe dane</target>
+            </trans-unit>
+            <trans-unit id="campaign.missing_data_in_rows">
+                <source>campaign.missing_data_in_rows</source>
+                <target>Brakuje pól w wierszach</target>
+            </trans-unit>
+            <trans-unit id="campaign.invalid_value_field_in_row">
+                <source>campaign.invalid_value_field_in_row</source>
+                <target>Nieprawidłowa wartość dla pola %name% w wierszu %row%</target>
+            </trans-unit>
+            <trans-unit id="campaign.purchase_not_available">
+                <source>campaign.purchase_not_available</source>
+                <target>Brak aktywnego zakupu odpowiadającego wartości pola %name% w wierszu %row%. Może użytkownik nie wykupił jeszcze nagrody z tej kampanii, zakup jest nieaktywny albo dany couponId nie jest przypisany do tego użytkownika?</target>
+            </trans-unit>
+            <trans-unit id="campaign.purchase_not_found">
+                <source>campaign.purchase_not_found</source>
+                <target>Brak zakupu odpowiadającego wartości pola %name% w wierszu %row%. Może użytkownik nie wykupił jeszcze nagrody z tej kampanii albo dany couponId nie jest przypisany do tego użytkownika?</target>
+            </trans-unit>
+            <trans-unit id="campaign.invalid_value_in_row">
+                <source>campaign.invalid_value_in_row</source>
+                <target>%content% w wierszu %row%</target>
+            </trans-unit>
+            <trans-unit id="campaign.no_coupons_left">
+                <source>campaign.no_coupons_left</source>
+                <target>Brak wolnych kuponów</target>
+            </trans-unit>
+            <trans-unit id="campaign.too_low_coupon_value">
+                <source>campaign.too_low_coupon_value</source>
+                <target>Wartość kuponu jest równa 0</target>
+            </trans-unit>
+            <trans-unit id="campaign.transaction_required">
+                <source>campaign.transaction_required</source>
+                <target>Transakcja wymagana</target>
+            </trans-unit>
+            <trans-unit id="campaign.invalid_transaction">
+                <source>campaign.invalid_transaction</source>
+                <target>Nieprawidłowa transakcja</target>
+            </trans-unit>
+            <trans-unit id="campaign.not_allowed">
+                <source>campaign.not_allowed</source>
+                <target>Akcja niedozwolona</target>
+            </trans-unit>
+            <trans-unit id="campaign.not_enough_points">
+                <source>campaign.not_enough_points</source>
+                <target>Brak wystarczającej ilości punktów</target>
+            </trans-unit>
+            <trans-unit id="campaign.limit_per_customer_exceeded">
+                <source>campaign.limit_per_customer_exceeded</source>
+                <target>Wyczerpano limit dla tego użytkownika</target>
+            </trans-unit>
+            <trans-unit id="campaign.limit_exceeded">
+                <source>campaign.limit_exceeded</source>
+                <target>Wyczerpano limit</target>
+            </trans-unit>
+            <trans-unit id="campaign.field_used_is_required">
+                <source>campaign.field_used_is_required</source>
+                <target>P0le "użyto" jest wymagane</target>
+            </trans-unit>
+            <trans-unit id="campaign.cannot_be_bought_manually">
+                <source>campaign.cannot_be_bought_manually</source>
+                <target>Kampania nie może zostać wykupiona manualnie.</target>
+            </trans-unit>
+            <trans-unit id="campaign.removing_used_coupons_is_not_permitted">
+                <source>campaign.removing_used_coupons_is_not_permitted</source>
+                <target>Usunięcie użytych kuponów (%s) nie jest możliwe</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

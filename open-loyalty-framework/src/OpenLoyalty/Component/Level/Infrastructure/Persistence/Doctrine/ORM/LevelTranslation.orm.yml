@@ -1,0 +1,10 @@
+OpenLoyalty\Component\Level\Domain\LevelTranslation:
+  type: entity
+  fields:
+    name:
+      type: string
+      nullable: true
+    description:
+      type: text
+      nullable: true
+      column: description

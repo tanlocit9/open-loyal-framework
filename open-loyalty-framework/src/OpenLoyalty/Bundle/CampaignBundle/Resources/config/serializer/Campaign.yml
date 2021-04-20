@@ -1,0 +1,63 @@
+OpenLoyalty\Component\Campaign\Domain\Campaign:
+  properties:
+    name:
+      expose: true
+    shortDescription:
+      expose: true
+    campaignId:
+      expose: true
+      inline: true
+    levels:
+      exclude: true
+    categories:
+      exclude: true
+    segments:
+      exclude: true
+    coupons:
+      exclude: true
+    limit:
+      access_type: public_method
+    limitPerUser:
+      access_type: public_method
+    campaignPhoto:
+      exclude: true
+    brandIcon:
+      exclude: true
+    newTranslations:
+      exclude: true
+    currentLocale:
+      exclude: true
+    defaultLocale:
+      exclude: true
+  virtual_properties:
+    getName:
+      serialized_name: name
+    getShortDescription:
+      serialized_name: shortDescription
+    getConditionsDescription:
+      serialized_name: conditionsDescription
+    getUsageInstruction:
+      serialized_name: usageInstruction
+    getBrandDescription:
+      serialized_name: brandDescription
+    getBrandName:
+      serialized_name: brandName
+    getFlatLevels:
+      serialized_name: levels
+      type: array
+      groups: ['admin']
+    getFlatSegments:
+      serialized_name: segments
+      type: array
+      groups: ['admin']
+    getFlatCategories:
+      serialized_name: categories
+      type: array
+      groups: ['admin']
+    getFlatCoupons:
+      serialized_name: coupons
+      type: array
+      groups: ['admin']
+    getBrandIcon:
+      serialized_name: brandIcon
+      type: boolean

@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    OpenLoyalty\Bundle\CoreBundle\Command\:
+        resource: '../../Command'

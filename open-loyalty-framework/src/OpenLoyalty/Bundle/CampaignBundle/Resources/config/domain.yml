@@ -1,0 +1,181 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    oloy.campaign.command_handler:
+        class: OpenLoyalty\Component\Campaign\Domain\Command\CampaignCommandHandler
+        arguments:
+            - '@oloy.campaign.repository'
+        tags:
+            - { name: broadway.command_handler }
+
+    OpenLoyalty\Component\Campaign\Domain\Command\InstantRewardHandler:
+        arguments:
+            $campaignRepository: '@oloy.campaign.repository'
+            $commandBus: '@broadway.command_handling.command_bus'
+        tags:
+            - { name: broadway.command_handler }
+
+    OpenLoyalty\Component\Campaign\Domain\Command\BuyCampaignHandler:
+        arguments:
+            $campaignRepository: '@oloy.campaign.repository'
+            $commandBus: '@broadway.command_handling.command_bus'
+        tags:
+            - { name: broadway.command_handler }
+
+    oloy.campaign.repository:
+        class: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Repository\DoctrineCampaignRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - 'OpenLoyalty\Component\Campaign\Domain\Campaign'
+
+    OpenLoyalty\Component\Campaign\Domain\CampaignRepository: '@oloy.campaign.repository'
+
+    oloy.campaign.read_model.repository.coupon_usage:
+        class: 'Broadway\ReadModel\ReadModel'
+        factory: ['@oloy.read_model.repository.factory', create]
+        arguments:
+            - 'oloy.coupon_usage'
+            - 'OpenLoyalty\Component\Campaign\Domain\ReadModel\CouponUsage'
+            - 'OpenLoyalty\Component\Campaign\Infrastructure\Repository\CouponUsageElasticsearchRepository'
+
+    oloy.campaign.read_model.projector.coupon_usage:
+        class: OpenLoyalty\Component\Campaign\Infrastructure\ReadModel\CouponUsageProjector
+        arguments:
+            - '@oloy.campaign.read_model.repository.coupon_usage'
+        lazy: true
+        tags:
+            - { name: broadway.domain.event_listener }
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Repository\AvailableCampaignsCacheElasticsearchRepository:
+        class: 'Broadway\ReadModel\ReadModel'
+        factory: ['@oloy.read_model.repository.factory', create]
+        arguments:
+        - 'oloy.available_campaigns_cache'
+        - 'OpenLoyalty\Component\Campaign\Domain\ReadModel\AvailableCampaignsCache'
+        - 'OpenLoyalty\Component\Campaign\Infrastructure\Repository\AvailableCampaignsCacheElasticsearchRepository'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Repository\CampaignUsageElasticsearchRepository:
+        class: 'Broadway\ReadModel\ReadModel'
+        factory: ['@oloy.read_model.repository.factory', create]
+        arguments:
+            - 'oloy.campaign_usage'
+            - 'OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignUsage'
+            - 'OpenLoyalty\Component\Campaign\Infrastructure\Repository\CampaignUsageElasticsearchRepository'
+
+    oloy.campaign.read_model.projector.campaign_usage:
+        class: OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignUsageProjector
+        arguments:
+            - '@OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignUsageRepository'
+        calls:
+            - [setLogger, ['@logger']]
+        tags:
+            - { name: broadway.domain.event_listener }
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Repository\CampaignBoughtElasticsearchRepository:
+        class: 'Broadway\ReadModel\ReadModel'
+        factory: ['@oloy.read_model.repository.factory', create]
+        arguments:
+            - 'oloy.campaign_bought'
+            - 'OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignBought'
+            - 'OpenLoyalty\Component\Campaign\Infrastructure\Repository\CampaignBoughtElasticsearchRepository'
+
+    OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignBoughtRepository: '@OpenLoyalty\Component\Campaign\Infrastructure\Repository\CampaignBoughtElasticsearchRepository'
+
+    oloy.campaign.read_model.projector.campaign_bought:
+        class: OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignBoughtProjector
+        arguments:
+            $repository: '@OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignBoughtRepository'
+            $campaignBoughtRepository: '@OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignBoughtRepository'
+            $campaignRepository: '@oloy.campaign.repository'
+            $customerRepository: '@oloy.user.customer.repository'
+            $accountRepository: '@oloy.points.account.repository'
+        tags:
+            - { name: broadway.domain.event_listener }
+
+    OpenLoyalty\Component\Campaign\Domain\Coupon\CouponCodeProvider: ~
+
+    OpenLoyalty\Component\Campaign\Domain\Provider\CouponActivationDateProvider: ~
+    OpenLoyalty\Component\Campaign\Domain\Provider\CouponExpirationDateProvider: ~
+
+    OpenLoyalty\Component\Campaign\Infrastructure\EventListener\SaveFileListener:
+        arguments:
+            - '@oloy.campaign.photos_filesystem'
+        tags:
+            - { name: broadway.event_listener, event: !php/const:OpenLoyalty\Component\Campaign\Domain\Event\CampaignPhotoSavedEvent::NAME, method: __invoke }
+
+    OpenLoyalty\Component\Campaign\Domain\Repository\CampaignRepositoryInterface: '@OpenLoyalty\Component\Campaign\Infrastructure\Doctrine\ORM\Repository\CampaignRepository'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Doctrine\ORM\Repository\CampaignRepository: ~
+
+    OpenLoyalty\Component\Campaign\Domain\Repository\CampaignPhotoRepositoryInterface: '@OpenLoyalty\Component\Campaign\Infrastructure\Doctrine\ORM\Repository\CampaignPhotoRepository'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Doctrine\ORM\Repository\CampaignPhotoRepository: ~
+
+    OpenLoyalty\Component\Campaign\Domain\Factory\PhotoEntityFactoryInterface: '@OpenLoyalty\Component\Campaign\Domain\Factory\PhotoEntityFactory'
+
+    OpenLoyalty\Component\Campaign\Domain\Factory\PhotoEntityFactory: ~
+
+    OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignUsageRepository: '@OpenLoyalty\Component\Campaign\Infrastructure\Repository\CampaignUsageElasticsearchRepository'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Repository\DoctrineCampaignCategoryRepository:
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - 'OpenLoyalty\Component\Campaign\Domain\CampaignCategory'
+
+    OpenLoyalty\Component\Campaign\Domain\Command\CampaignCategoryCommandHandler:
+        tags:
+            - { name: broadway.command_handler }
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Notifier\ExpireCouponsNotifierInterface: '@OpenLoyalty\Component\Campaign\Infrastructure\Notifier\ExpireCouponsNotifier'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Notifier\ExpireCouponsNotifier: ~
+
+    OpenLoyalty\Bundle\CampaignBundle\Service\CampaignPhotoContentGeneratorInterface: '@OpenLoyalty\Bundle\CampaignBundle\Service\CampaignPhotoContentGenerator'
+
+    OpenLoyalty\Bundle\CampaignBundle\Service\CampaignPhotoContentGenerator:
+        arguments:
+            $filesystem: '@oloy.campaign.photos_filesystem'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\EventListener\DeleteFileListenerInterface: '@OpenLoyalty\Component\Campaign\Infrastructure\EventListener\DeleteFileListener'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\EventListener\DeleteFileListener:
+        arguments:
+            - '@oloy.campaign.photos_filesystem'
+        tags:
+            - { name: broadway.event_listener, event: !php/const:OpenLoyalty\Component\Campaign\Domain\Event\CampaignPhotoRemovedEvent::NAME, method: __invoke }
+
+    OpenLoyalty\Component\Campaign\Domain\Command\AddPhotoCommandHandler:
+        arguments:
+            $uuidGenerator: '@broadway.uuid.generator'
+        tags:
+            - { name: broadway.command_handler }
+
+    OpenLoyalty\Component\Campaign\Domain\Command\RemovePhotoCommandHandler:
+        tags:
+            - { name: broadway.command_handler }
+
+    OpenLoyalty\Component\Campaign\Infrastructure\EventListener\CampaignRewardRedeemedSendEmailListener:
+        arguments:
+            $campaignBoughtRepository: '@OpenLoyalty\Component\Campaign\Infrastructure\Repository\CampaignBoughtElasticsearchRepository'
+            $campaignRepository: '@OpenLoyalty\Component\Campaign\Domain\CampaignRepository'
+        tags:
+            - { name: broadway.event_listener, event: 'oloy.campaign.campaign_usage_was_changed', method: __invoke }
+
+    OpenLoyalty\Component\Campaign\Infrastructure\EventListener\CampaignRewardRedeemedSendEmailListenerInterface: '@OpenLoyalty\Component\Campaign\Infrastructure\EventListener\CampaignRewardRedeemedSendEmailListener'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Service\CampaignRewardRedeemedTemplateParameterCreator: ~
+    OpenLoyalty\Component\Campaign\Infrastructure\Service\CampaignRewardRedeemedTemplateParameterCreatorInterface: '@OpenLoyalty\Component\Campaign\Infrastructure\Service\CampaignRewardRedeemedTemplateParameterCreator'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Provider\RewardCampaignProvider: ~
+    OpenLoyalty\Component\Campaign\Infrastructure\Provider\RewardCampaignProviderInterface: '@OpenLoyalty\Component\Campaign\Infrastructure\Provider\RewardCampaignProvider'
+
+    OpenLoyalty\Component\Campaign\Infrastructure\Service\CampaignRewardRedeemedEmailSender:
+        arguments:
+            - '@oloy.email.read_model.repository'
+            - '@OpenLoyalty\Bundle\EmailBundle\Service\EmailMessageSenderInterface'
+            - '@OpenLoyalty\Component\Campaign\Infrastructure\Service\CampaignRewardRedeemedTemplateParameterCreator'
+            - '%mailer_from_address%'
+            - '%mailer_from_name%'
+

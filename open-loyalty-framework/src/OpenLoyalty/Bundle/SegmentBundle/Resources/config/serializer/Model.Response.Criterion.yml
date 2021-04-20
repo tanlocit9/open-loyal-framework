@@ -1,0 +1,6 @@
+OpenLoyalty\Bundle\SegmentBundle\Model\Response\Criterion:
+  properties:
+    data:
+      inline: true
+
+

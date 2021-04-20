@@ -1,0 +1,28 @@
+OpenLoyalty\Component\Campaign\Domain\Entity\CampaignPhoto:
+  type: entity
+  table: ol__campaign_photo
+  id:
+    photoId:
+      type: photo_id
+      column: photo_id
+
+  embedded:
+    path:
+      class: OpenLoyalty\Component\Campaign\Domain\PhotoPath
+      columnPrefix: false
+    mimeType:
+      class: OpenLoyalty\Component\Campaign\Domain\PhotoMimeType
+      columnPrefix: false
+    originalName:
+      class: OpenLoyalty\Component\Campaign\Domain\PhotoOriginalName
+      columnPrefix: false
+
+  manyToOne:
+    campaign:
+      targetEntity: OpenLoyalty\Component\Campaign\Domain\Campaign
+      inversedBy: photos
+      fetch: EAGER
+      joinColumn:
+        name: campaign_id
+        referencedColumnName: id
+

@@ -1,0 +1,8 @@
+OpenLoyalty\Component\Campaign\Domain\PhotoPath:
+  type: embeddable
+  fields:
+    value:
+      type: string
+      column: path
+      nullable: false
+

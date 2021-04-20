@@ -1,0 +1,18 @@
+doctrine:
+    dbal:
+        types:
+          level_id: OpenLoyalty\Component\Level\Infrastructure\Persistence\Doctrine\Type\LevelIdDoctrineType
+          special_reward_id: OpenLoyalty\Component\Level\Infrastructure\Persistence\Doctrine\Type\SpecialRewardIdDoctrineType
+
+jms_serializer:
+    metadata:
+      directories:
+        Level:
+          namespace_prefix: "OpenLoyalty\\Component\\Level\\Domain"
+          path: "@OpenLoyaltyLevelBundle/Resources/config/serializer"
+
+open_loyalty_level:
+    photos_adapter: "%level_photos_adapter%"
+    photos_adapter_env: "%level_photos_adapter_env%"
+    photos_min_width: 600
+    photos_min_height: 600

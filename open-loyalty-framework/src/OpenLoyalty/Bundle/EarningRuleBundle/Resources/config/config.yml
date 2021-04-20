@@ -1,0 +1,26 @@
+doctrine:
+    dbal:
+        types:
+            labels_json_array: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\LabelsJsonArrayDoctrineType
+            label_multipliers_json_array: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\LabelMultipliersJsonArrayDoctrineType
+            skus_json_array: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\SKUsJsonArrayDoctrineType
+            earning_rule_id: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\EarningRuleIdDoctrineType
+            earning_rule_usage_id: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\EarningRuleUsageIdDoctrineType
+            earning_rule_usage_subject: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\EarningRuleUsageSubjectDoctrineType
+            earning_rule_levels_json_array: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\EarningRuleLevelsJsonArrayDoctrineType
+            earning_rule_segments_json_array: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\EarningRuleSegmentsJsonArrayDoctrineType
+            earning_rule_pos_json_array: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\EarningRulePosJsonArrayDoctrineType
+            reward_campaign_id: OpenLoyalty\Component\EarningRule\Infrastructure\Persistence\Doctrine\Type\CampaignIdDoctrineType
+
+jms_serializer:
+    metadata:
+      directories:
+        EarningRule:
+          namespace_prefix: "OpenLoyalty\\Component\\EarningRule\\Domain"
+          path: "@OpenLoyaltyEarningRuleBundle/Resources/config/serializer"
+
+open_loyalty_earning_rule:
+    photos_adapter: "%earning_rule_photos_adapter%"
+    photos_adapter_env: "%earning_rule_photos_adapter_env%"
+    photos_min_width: 600
+    photos_min_height: 600

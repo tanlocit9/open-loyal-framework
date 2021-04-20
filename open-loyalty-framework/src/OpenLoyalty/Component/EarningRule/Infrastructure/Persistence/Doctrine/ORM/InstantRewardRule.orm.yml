@@ -1,0 +1,7 @@
+OpenLoyalty\Component\EarningRule\Domain\InstantRewardRule:
+  type: entity
+  fields:
+    rewardCampaignId:
+      type: reward_campaign_id
+      column: reward_campaign_id
+      nullable: true

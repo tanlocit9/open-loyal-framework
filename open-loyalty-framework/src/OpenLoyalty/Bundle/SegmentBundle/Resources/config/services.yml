@@ -1,0 +1,57 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  OpenLoyalty\Bundle\SegmentBundle\Validator\Constraints\:
+    resource: '../../Validator/Constraints/*'
+
+  OpenLoyalty\Component\Segment\Domain\Segmentation\CriteriaEvaluators\CustomerValidator: '@OpenLoyalty\Bundle\SegmentBundle\Service\OloyCustomerValidator'
+
+  OpenLoyalty\Bundle\SegmentBundle\Form\Type\CriterionFormType:
+      arguments:
+        $posRepository: '@oloy.pos.repository'
+        $uuidGenerator: '@broadway.uuid.generator'
+      tags:
+        - { name: form.type }
+  OpenLoyalty\Bundle\SegmentBundle\Form\Type\SegmentPartFormType:
+      arguments:
+        $uuidGenerator: '@broadway.uuid.generator'
+      tags:
+        - { name: form.type }
+  OpenLoyalty\Bundle\SegmentBundle\Form\Type\SegmentFormType:
+      tags:
+        - { name: form.type }
+  OpenLoyalty\Bundle\SegmentBundle\Form\Type\LabelFormType:
+      tags:
+        - { name: form.type }
+  OpenLoyalty\Bundle\SegmentBundle\Form\Type\EditSegmentFormType:
+      tags:
+        - { name: form.type }
+  OpenLoyalty\Bundle\SegmentBundle\Form\Type\CustomerType:
+      tags:
+        - { name: form.type }
+  OpenLoyalty\Bundle\SegmentBundle\ParamConverter\SegmentParamConverter:
+    arguments:
+      $repository: '@oloy.segment.repository'
+    tags:
+      - { name: request.param_converter, priority: 2, converter: segment_converter }
+  OpenLoyalty\Bundle\SegmentBundle\Service\OloyCustomerValidator: ~
+  OpenLoyalty\Bundle\SegmentBundle\Event\Listener\SegmentedCustomersSerializationListener:
+    tags:
+      - { name: jms_serializer.event_subscriber}
+  OpenLoyalty\Bundle\SegmentBundle\Service\OloySegmentValidator:
+    class: OpenLoyalty\Bundle\SegmentBundle\Service\OloySegmentValidator
+    arguments:
+      $segmentRepository: '@oloy.segment.repository'
+  OpenLoyalty\Bundle\SegmentBundle\Transformer\SegmentReadModelTransformer:
+    arguments:
+      - '@OpenLoyalty\Bundle\SegmentBundle\Provider\CustomerDetailsProvider'
+  OpenLoyalty\Bundle\SegmentBundle\Provider\CustomerDetailsProvider:
+    arguments:
+      $customerDetailsRepository: '@oloy.user.read_model.repository.customer_details'
+  OpenLoyalty\Bundle\SegmentBundle\Provider\CustomerIdProvider:
+    arguments:
+      $customerDetailsRepository: '@oloy.user.read_model.repository.customer_details'
+
+  OpenLoyalty\Bundle\SegmentBundle\Provider\CustomerDetailsProviderInterface: '@OpenLoyalty\Bundle\SegmentBundle\Provider\CustomerDetailsProvider'

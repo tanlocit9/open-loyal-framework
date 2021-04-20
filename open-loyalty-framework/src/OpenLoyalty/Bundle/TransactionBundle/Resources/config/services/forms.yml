@@ -1,0 +1,58 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    oloy.transaction.form_type.label:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\LabelFormType
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.item:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\ItemFormType
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.sku:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\SKUFormType
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.customer_details:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\CustomerDetailsFormType
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.customer_address:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\CustomerAddressFormType
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.manually_assign_customer_to_transaction:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\ManuallyAssignCustomerToTransactionFormType
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.transaction_id:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\TransactionIdFormType
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.customer_id:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\CustomerIdFormType
+        arguments:
+            - '@oloy.user.read_model.repository.customer_details'
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.transaction:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\TransactionFormType
+        arguments:
+            - '@oloy.pos.repository'
+        tags:
+            - { name: form.type }
+
+    oloy.transaction.form_type.transaction_simulation:
+        class: OpenLoyalty\Bundle\TransactionBundle\Form\Type\TransactionSimulationFormType
+        tags:
+            - { name: form.type }

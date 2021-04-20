@@ -1,0 +1,4 @@
+services:
+  oloy.sms_api:
+    class: OpenLoyalty\Bundle\SmsApiBundle\SmsApi\OloySmsApi
+    arguments: ['@ol.settings.manager', '@logger']

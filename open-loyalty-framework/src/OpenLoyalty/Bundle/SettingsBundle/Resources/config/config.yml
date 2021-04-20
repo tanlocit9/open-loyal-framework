@@ -1,0 +1,15 @@
+doctrine:
+    dbal:
+        types:
+            language_id: OpenLoyalty\Component\Translation\Infrastructure\Persistence\Doctrine\Type\LanguageIdDoctrineType
+
+open_loyalty_settings:
+    mapping:
+        small-logo:
+            sizes:
+                - { width: 192, height: 192 }
+                - { width: 512, height: 512 }
+    locales_map:
+        - { translation: english.json, locale: en }
+        - { translation: polish.json, locale: pl }
+

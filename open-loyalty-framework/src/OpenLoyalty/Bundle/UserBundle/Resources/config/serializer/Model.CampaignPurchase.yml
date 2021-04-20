@@ -1,0 +1,29 @@
+OpenLoyalty\Component\Customer\Domain\Model\CampaignPurchase:
+    exclusion_policy: all
+    properties:
+        purchaseAt:
+            expose: true
+        costInPoints:
+            expose: true
+        campaignId:
+            expose: true
+            inline: true
+        used:
+            expose: true
+        coupon:
+            expose: true
+        campaign:
+            expose: true
+        activeSince:
+            expose: true
+        activeTo:
+            expose: true
+        status:
+            expose: true
+        deliveryStatus:
+            expose: true
+        usageDate:
+            expose: true
+    virtual_properties:
+        canBeUsed:
+            serialized_name: canBeUsed

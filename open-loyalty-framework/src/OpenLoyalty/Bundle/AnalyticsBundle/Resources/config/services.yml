@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    OpenLoyalty\Bundle\AnalyticsBundle\Security\Voter\AnalyticsVoter:
+        class: OpenLoyalty\Bundle\AnalyticsBundle\Security\Voter\AnalyticsVoter
+        tags:
+          - { name: security.voter }
+
+    OpenLoyalty\Bundle\AnalyticsBundle\Controller\AnalyticsController:
+        arguments:
+            - '@OpenLoyalty\Component\Account\Domain\ReadModel\PointsTransferDetailsRepository'

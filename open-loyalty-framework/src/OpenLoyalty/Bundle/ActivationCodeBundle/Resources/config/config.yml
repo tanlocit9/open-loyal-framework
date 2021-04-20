@@ -1,0 +1,11 @@
+doctrine:
+    dbal:
+        types:
+            activation_code_id:  OpenLoyalty\Component\ActivationCode\Infrastructure\Persistence\Doctrine\Type\ActivationCodeIdDoctrineType
+
+jms_serializer:
+    metadata:
+      directories:
+        ActivationCode:
+          namespace_prefix: "OpenLoyalty\\Component\\ActivationCode\\Domain"
+          path: "@OpenLoyaltyActivationCodeBundle/Resources/config/serializer"

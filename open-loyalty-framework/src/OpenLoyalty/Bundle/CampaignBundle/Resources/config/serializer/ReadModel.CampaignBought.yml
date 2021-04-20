@@ -1,0 +1,13 @@
+OpenLoyalty\Component\Campaign\Domain\ReadModel\CampaignBought:
+    properties:
+        id:
+            exclude: true
+        campaignId:
+            expose: true
+            inline: true
+        customerId:
+            expose: true
+            inline: true
+    virtual_properties:
+        canBeUsed:
+            serialized_name: canBeUsed

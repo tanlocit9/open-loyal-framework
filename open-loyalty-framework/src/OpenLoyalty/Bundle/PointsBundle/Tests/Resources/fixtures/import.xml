@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pointsTransfers>
+    <pointsTransfer>
+        <customerId>00000000-0000-474c-b092-b0dd880c07e2</customerId>
+        <points>12</points>
+        <type>adding</type>
+        <validityDuration>30</validityDuration>
+    </pointsTransfer>
+    <pointsTransfer>
+        <customerId>00000000-0000-474c-b092-b0dd880c07e2</customerId>
+        <points>12</points>
+        <type>spending</type>
+        <validityDuration>60</validityDuration>
+    </pointsTransfer>
+</pointsTransfers>

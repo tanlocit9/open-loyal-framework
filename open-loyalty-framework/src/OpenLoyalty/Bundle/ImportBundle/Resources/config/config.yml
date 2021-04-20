@@ -1,0 +1,17 @@
+jms_serializer:
+    metadata:
+      directories:
+        Import:
+          namespace_prefix: "OpenLoyalty\\Component\\Import\\Infrastructure"
+          path: "@OpenLoyaltyImportBundle/Resources/config/serializer"
+
+knp_gaufrette:
+  adapters:
+    import_file_local:
+      local:
+        directory: "%kernel.root_dir%/var/import/"
+        create:     true
+  filesystems:
+    import:
+      adapter: "import_file_local"
+      alias: import_filesystem

@@ -1,0 +1,16 @@
+OpenLoyalty\Component\Seller\Domain\ReadModel\SellerDetails:
+  exlusion_policy: all
+  properties:
+    customerId:
+      expose: true
+      inline: true
+    sellerId:
+      expose: true
+      inline: true
+    posId:
+      expose: true
+      inline: true
+  virtual_properties:
+    getName:
+        serialized_name: name
+        type: string

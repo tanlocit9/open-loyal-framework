@@ -1,0 +1,7 @@
+OpenLoyalty\Component\Campaign\Domain\PhotoOriginalName:
+  type: embeddable
+  fields:
+    value:
+      type: string
+      column: original_name
+      nullable: false

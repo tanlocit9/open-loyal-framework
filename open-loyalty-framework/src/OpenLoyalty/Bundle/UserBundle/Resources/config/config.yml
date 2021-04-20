@@ -1,0 +1,13 @@
+doctrine:
+    orm:
+        mappings:
+          OpenLoyaltyUserBundle: ~
+jms_serializer:
+    metadata:
+      directories:
+        Customer:
+          namespace_prefix: "OpenLoyalty\\Component\\Customer\\Domain"
+          path: "@OpenLoyaltyUserBundle/Resources/config/serializer"
+        Seller:
+          namespace_prefix: "OpenLoyalty\\Component\\Seller\\Domain"
+          path: "@OpenLoyaltyUserBundle/Resources/config/serializer/Seller"

@@ -1,0 +1,15 @@
+services:
+    OpenLoyalty\Bundle\CoreBundle\Security\Voter\LevelVoter:
+        tags:
+            - { name: security.voter }
+
+    OpenLoyalty\Bundle\CoreBundle\Security\Voter\CampaignVoter:
+        tags:
+            - { name: security.voter }
+    OpenLoyalty\Bundle\CoreBundle\Security\Voter\SellerVoter:
+        tags:
+            - { name: security.voter }
+
+    OpenLoyalty\Bundle\CoreBundle\Security\Voter\SegmentVoter:
+        tags:
+            - { name: security.voter }

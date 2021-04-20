@@ -1,0 +1,18 @@
+OpenLoyalty\Component\Campaign\Domain\CampaignCategory:
+  type: entity
+  repositoryClass: OpenLoyalty\Component\Campaign\Infrastructure\Persistence\Doctrine\Repository\DoctrineCampaignCategoryRepository
+  table: ol__campaign_categories
+  id:
+    campaignCategoryId:
+      type: campaign_category_id
+      column: id
+  fields:
+    active:
+      type: boolean
+      options:
+        default: true
+    sortOrder:
+      type: integer
+      column: sort_order
+      options:
+        default: 0

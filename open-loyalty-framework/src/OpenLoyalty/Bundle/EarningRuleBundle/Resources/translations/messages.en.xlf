@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="earning_rule.campaign.not_exists">
+                <source>earning_rule.campaign.not_exists</source>
+                <target>Campaign not exists</target>
+            </trans-unit>
+            <trans-unit id="earning_rule.campaign.required">
+                <source>earning_rule.campaign.required</source>
+                <target>Campaign is required</target>
+            </trans-unit>
+            <trans-unit id="earning_rule.geo.limit_was_exceeded">
+                <source>earning_rule.geo.limit_was_exceeded</source>
+                <target>limit was exceeded </target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    OpenLoyalty\Bundle\CampaignBundle\Command\SendExpireCouponNotifications:
+        tags:
+            - { name: 'console.command' }

@@ -1,0 +1,31 @@
+services:
+    OpenLoyalty\Bundle\UserBundle\Security\Voter\CustomerVoter:
+        arguments:
+            - '@oloy.user.read_model.repository.seller_details'
+            - '@OpenLoyalty\Bundle\SettingsBundle\Service\SettingsManager'
+        tags:
+            - { name: security.voter }
+
+    OpenLoyalty\Bundle\UserBundle\Security\Voter\UserVoter:
+        tags:
+            - { name: security.voter }
+
+    OpenLoyalty\Bundle\UserBundle\Security\Voter\SellerVoter:
+        tags:
+            - { name: security.voter }
+
+    OpenLoyalty\Bundle\UserBundle\Security\Voter\CustomerSearchVoter:
+        tags:
+            - { name: security.voter }
+
+    OpenLoyalty\Bundle\UserBundle\Security\Voter\AdminVoter:
+        tags:
+            - { name: security.voter }
+
+    OpenLoyalty\Bundle\UserBundle\Security\Voter\InvitationVoter:
+        tags:
+            - { name: security.voter }
+
+    OpenLoyalty\Bundle\UserBundle\Security\Voter\AclVoter:
+        tags:
+            - { name: security.voter }

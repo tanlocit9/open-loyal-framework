@@ -1,0 +1,11 @@
+OpenLoyalty\Component\Import\Infrastructure\ImportResult:
+  exclusion_policy: all
+  properties:
+    items:
+      expose: true
+    totalProcessed:
+      expose: true
+    totalSuccess:
+      expose: true
+    totalFailed:
+      expose: true

@@ -1,0 +1,5 @@
+OpenLoyalty\Component\Campaign\Domain\CampaignCategoryId:
+  properties:
+    campaignCategoryId:
+      expose: true
+      serialized_name: campaignCategoryId

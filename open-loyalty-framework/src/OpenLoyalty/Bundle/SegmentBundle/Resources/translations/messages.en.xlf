@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="segment.parts.customer_not_found">
+                <source>segment.parts.customer_not_found</source>
+                <target>Customer not found: %data%</target>
+            </trans-unit>
+            <trans-unit id="segment.parts.too_many_customers_found">
+                <source>segment.parts.too_many_customers_found</source>
+                <target>Too many customers found: %data%</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

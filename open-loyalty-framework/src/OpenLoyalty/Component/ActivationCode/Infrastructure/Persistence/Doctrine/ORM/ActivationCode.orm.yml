@@ -1,0 +1,21 @@
+OpenLoyalty\Component\ActivationCode\Domain\ActivationCode:
+  type: entity
+  repositoryClass: OpenLoyalty\Component\ActivationCode\Infrastructure\Persistence\Doctrine\Repository\DoctrineActivationCodeRepository
+  table: ol__activation_code
+  id:
+    activationCodeId:
+      type: activation_code_id
+      column: activation_code_id
+  fields:
+    objectType:
+      type: string
+    objectId:
+      type: string
+    code:
+      type: string
+    createdAt:
+      type: datetime
+  uniqueConstraints:
+      ol__activation_code_code_idx:
+          columns:
+            - code

@@ -1,0 +1,6 @@
+OpenLoyalty\Component\EarningRule\Domain\InstantRewardRule:
+  exclusion_policy: ALL
+  properties:
+      rewardCampaignId:
+          expose: true
+          inline: true

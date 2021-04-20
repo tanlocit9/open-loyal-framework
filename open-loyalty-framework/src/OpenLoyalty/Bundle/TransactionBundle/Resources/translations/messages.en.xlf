@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="transaction.not_found">
+                <source>transaction.not_found</source>
+                <target>Transaction not found</target>
+            </trans-unit>
+            <trans-unit id="transaction.document_number_should_be_unique">
+                <source>transaction.document_number_should_be_unique</source>
+                <target>Document number should be unique</target>
+            </trans-unit>
+            <trans-unit id="transaction.document_return_incorrect_owner">
+                <source>transaction.document_return_incorrect_owner</source>
+                <target>Incorrect owner of the transaction</target>
+            </trans-unit>
+            <trans-unit id="transaction.document_return_not_exist">
+                <source>transaction.document_return_not_exist</source>
+                <target>Transaction not exist</target>
+            </trans-unit>
+            <trans-unit id="transaction.document_return_wrong_type">
+                <source>transaction.document_return_wrong_type</source>
+                <target>Transaction wrong type</target>
+            </trans-unit>
+            <trans-unit id="transaction.import.pos_not_found">
+                <source>transaction.import.pos_not_found</source>
+                <target>POS (%s) not found</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

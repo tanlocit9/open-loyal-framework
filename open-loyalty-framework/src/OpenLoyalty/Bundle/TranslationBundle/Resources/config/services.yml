@@ -1,0 +1,17 @@
+parameters:
+    knp.doctrine_behaviors.translatable_subscriber.translatable_trait: OpenLoyalty\Bundle\TranslationBundle\Model\FallbackTranslatable
+    knp.doctrine_behaviors.translatable_subscriber.translation_trait: OpenLoyalty\Bundle\TranslationBundle\Model\FallbackTranslation
+
+services:
+
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    OpenLoyalty\Bundle\TranslationBundle\Provider\A2lixLocaleProvider: ~
+    A2lix\TranslationFormBundle\Locale\LocaleProviderInterface: '@OpenLoyalty\Bundle\TranslationBundle\Provider\A2lixLocaleProvider'
+
+    OpenLoyalty\Bundle\TranslationBundle\Command\MigrateTranslationSchemaTo3Command:
+        tags:
+            - { name: 'console.command' }

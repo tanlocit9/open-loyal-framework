@@ -1,0 +1,71 @@
+imports:
+   - { resource: 'services/forms.yml' }
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    OpenLoyalty\Bundle\TransactionBundle\Validator\Constraints\:
+        resource: '../../Validator/Constraints/*'
+
+    OpenLoyalty\Bundle\TransactionBundle\Controller\:
+            resource: '../../Controller'
+            tags: ['controller.service_arguments']
+
+    oloy.transaction.param_converter:
+        class: OpenLoyalty\Bundle\TransactionBundle\ParamConverter\TransactionParamConverter
+        tags:
+            - { name: request.param_converter, priority: -2, converter: transaction_details_converter }
+
+    oloy.transaction.settings_based_customer_id_provider:
+        class: OpenLoyalty\Bundle\TransactionBundle\Service\SettingsBasedCustomerIdProvider
+        arguments:
+            - '@ol.doctrine_settings.manager'
+            - '@oloy.user.read_model.repository.customer_details'
+
+    oloy.transaction.customer_id_provider:
+        alias: oloy.transaction.settings_based_customer_id_provider
+
+    oloy.transaction.serialization_listener.transaction:
+        class: OpenLoyalty\Bundle\TransactionBundle\Event\Listener\TransactionSerializationListener
+        arguments: ['@oloy.points.account.repository.points_transfer_details', '@ol.settings.manager', '@oloy.pos.repository']
+        public: true
+        tags:
+            - { name: jms_serializer.event_subscriber }
+
+    OpenLoyalty\Bundle\TransactionBundle\Form\Handler\ManuallyAssignCustomerToTransactionFormHandler:
+        arguments:
+            $transactionRepository: '@oloy.transaction.repository'
+            $customerDetailsRepository: '@oloy.user.read_model.repository.customer_details'
+            $commandBus: '@broadway.command_handling.command_bus'
+            $eventDispatcher: '@broadway.event_dispatcher'
+            $authorizationChecker: '@security.authorization_checker'
+
+    OpenLoyalty\Bundle\TransactionBundle\Form\Handler\AppendLabelsToTransactionFormHandler:
+        arguments:
+            $commandBus: '@broadway.command_handling.command_bus'
+            $authorizationChecker: '@security.authorization_checker'
+
+    OpenLoyalty\Bundle\TransactionBundle\Form\Handler\EditTransactionLabelsFormHandler:
+        arguments:
+            $commandBus: '@broadway.command_handling.command_bus'
+            $authorizationChecker: '@security.authorization_checker'
+
+    OpenLoyalty\Bundle\TransactionBundle\Import\TransactionNodeStreamer: ~
+
+    OpenLoyalty\Bundle\TransactionBundle\Import\TransactionImportProcessor:
+        arguments:
+                - "@broadway.command_handling.command_bus"
+
+    OpenLoyalty\Bundle\TransactionBundle\Import\TransactionXmlImportConverter:
+        arguments:
+                - "@broadway.uuid.generator"
+
+    OpenLoyalty\Bundle\TransactionBundle\Import\TransactionXmlImporter:
+        calls:
+            - [setProcessor, ['@OpenLoyalty\Bundle\TransactionBundle\Import\TransactionImportProcessor']]
+            - [setXmlStreamer, ['@OpenLoyalty\Bundle\TransactionBundle\Import\TransactionNodeStreamer']]
+            - [setConverter, ['@OpenLoyalty\Bundle\TransactionBundle\Import\TransactionXmlImportConverter']]
+
+    OpenLoyalty\Bundle\TransactionBundle\Command\TransactionImportCommand: ~

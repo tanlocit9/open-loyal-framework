@@ -1,0 +1,6 @@
+OpenLoyalty\Component\EarningRule\Domain\CampaignId:
+  exclusion_policy: ALL
+  properties:
+    campaignId:
+      expose: true
+      serialized_name: rewardCampaignId

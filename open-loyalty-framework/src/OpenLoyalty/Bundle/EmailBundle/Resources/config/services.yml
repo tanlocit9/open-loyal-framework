@@ -1,0 +1,20 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    oloy.swiftmailer:
+        class: OpenLoyalty\Bundle\EmailBundle\Mailer\OloySwiftmailerMailer
+        arguments: ['@templating', '@swiftmailer.mailer']
+
+    oloy.mailer:
+        alias: oloy.swiftmailer
+
+    OpenLoyalty\Bundle\EmailBundle\Service\MessageFactory: ~
+
+    OpenLoyalty\Bundle\EmailBundle\Service\EmailMessageSender:
+        arguments:
+            $mailer: '@oloy.swiftmailer'
+
+    OpenLoyalty\Bundle\EmailBundle\Service\EmailMessageSenderInterface: '@OpenLoyalty\Bundle\EmailBundle\Service\EmailMessageSender'

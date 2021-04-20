@@ -1,0 +1,2617 @@
+{
+  "admin": {
+    "change_password": {
+      "current": "Aktualne hasło",
+      "do_not_match": "Hasła nie pasują do siebie",
+      "new_first": "Nowe hasło",
+      "new_second": "Powtórz nowe hasło"
+    },
+    "dashboard": {
+      "daily_registrations": "Nowi członkowie",
+      "heading": "Dashboard",
+      "orders": "Liczba zamówień",
+      "registrations_label": "Nowi członkowie",
+      "spending": "Wydatki",
+      "total_customers_registered": "Klienci",
+      "total_points_spent": "Wydane punkty"
+    },
+    "data": {
+      "basic": "Podstawowe informacje",
+      "change_password": "Zmień hasło",
+      "nav": "Edytuj swoje konto"
+    },
+    "email": "E-mail",
+    "emails": {
+      "actions": "Akcje",
+      "content": "Treść",
+      "edit": "Edytuj",
+      "edit_heading": "Edytuj",
+      "heading": "E-maile",
+      "key": "Klucz",
+      "list": "Lista maili",
+      "preview": "Podgląd",
+      "prompt": "",
+      "sender_email": "E-mail nadawcy",
+      "sender_name": "Nadawca",
+      "receiver_email": "E-mail odbiorcy",
+      "subject": "Temat",
+      "updated_at": "Zaktualizowano na",
+      "variables": "Atrybuty"
+    },
+    "first_name": "Imię",
+    "heading": "Dashboard",
+    "last_name": "Nazwisko",
+    "logs": {
+      "audit_log_id": "ID Logu",
+      "choose_dates": "Wybierz zakres danych",
+      "created_at": "Data utworzenia",
+      "entity_id": "ID obiektu",
+      "entity_type": "Typ obiektu",
+      "event_type": "Rodzaj zdarzenia",
+      "export_to_csv": "Wyeksportuj do CSV",
+      "from": "Od",
+      "heading": "Logi systemowe",
+      "list": "Lista Logów",
+      "Search": "Szukaj",
+      "search_by_date": "Wybierz okres czasu",
+      "to": "Do",
+      "username": "Nazwa użytkownika"
+    },
+    "phone": "Telefon",
+    "translations": {
+      "actions": "Akcje",
+      "add": "Dodaj wersję językową",
+      "add_heading": "Nowe tłumaczenia",
+      "content": "Tłumaczenie",
+      "content_error": "JSON nie jest prawidłowy",
+      "edit_heading": "Edytuj",
+      "heading": "Wersje językowe",
+      "list": "Dostępne wersje językowe",
+      "name": "Nazwa",
+      "name_prompt": "",
+      "updated_at": "Zaktualizowano w dniu",
+      "order": "Kolejność",
+      "order_prompt": "",
+      "default": "Domyślny",
+      "default_prompt": "",
+      "code": "Kod (locale)",
+      "code_prompt": "",
+      "delete_confirmation": "Czy chcesz usunąć ten język??",
+      "delete_confirmation_description": "Wybrany język zostanie usunięty pernamentnie"
+    }
+  },
+  "admin_edit": {
+    "heading": "Profil administratora"
+  },
+  "Bad credentials": "Niepoprawne dane logowania",
+  "campaign": {
+    "choose": "Wgraj plik",
+    "add_another": "Dodaj kolejny",
+    "add_photo": "Dodaj zdjęcie",
+    "photos": "Zdjęcia",
+    "export_csv": "Eksportuj do pliku CSV",
+    "export_title": "Eksportuj",
+    "download_report": "Pobierz raport",
+    "actions": "Akcje",
+    "active": "Status",
+    "active_from": "Obowiązuje od",
+    "active_from_prompt": "",
+    "active_prompt": "",
+    "active_to": "Obowiązuje do",
+    "active_to_prompt": "",
+    "activity": "Dostępność",
+    "activity_statuses": {
+      "active": "Aktywny",
+      "all": "Wszystkie",
+      "inactive": "Nieaktywny"
+    },
+    "status": "Status",
+    "coupon_statuses": {
+      "inactive": "Nieaktywny",
+      "active": "Aktywny",
+      "expired": "Wygasły",
+      "cancelled": "Anulowany"
+    },
+    "add": "Dodaj nagrodę",
+    "add_heading": "Dodaj nagrodę",
+    "add_label": "Dodaj kategorię",
+    "all_time": "Cały czas",
+    "all_time_active": "Bez ograniczeń",
+    "all_time_active_prompt": "Nagroda jest dostępna bez ograniczeń",
+    "all_time_visible": "Cały czas widoczne",
+    "all_time_visible_prompt": "Nagroda jest dostępna bez ograniczeń",
+    "basic_info": "Szczegóły",
+    "buy_campaign_manually_modal": "Kup kampanie {{name}} dla klienta",
+    "categories": "Kategorie",
+    "categories_prompt": "",
+    "category": {
+      "heading": "Kategorie kampanii",
+      "edit_heading": "Edycja",
+      "add_heading": "Dodaj kategorie kampanii",
+      "list": "List kategorii kampanii",
+      "name": "Nazwa",
+      "name_prompt": "",
+      "sort_order": "Kolejność",
+      "sort_order_prompt": "",
+      "active": "Aktywny",
+      "active_prompt": "",
+      "add": "Dodaj kategorie kampanii",
+      "basic_info": "Podstawowe informacje",
+      "basic_info_details": "Szczegóły"
+    },
+    "campaign_type": {
+      "all": "Wszystkie"
+    },
+    "cashback": "Cashback",
+    "connect_type": {
+      "heading": "Rodzaj relacji",
+      "none": "Brak",
+      "qrcode_earning_rule": "Reguła QRCode",
+      "geolocation_earning_rule": "Reguła Geolocation"
+    },
+    "connect_type_prompt": "",
+    "conditions_description": "Warunki otrzymania nagrody",
+    "coditions_description_prompt": "",
+    "cost_in_points": "Koszt w punktach",
+    "cost_in_points_prompt": "",
+    "coupon": "Kupon",
+    "coupon_used": "Wykorzystane przez klientów",
+    "coupons": "Kupony",
+    "coupons_count": "Dostępne ",
+    "coupons_info": "Kupony",
+    "coupons_prompt": "",
+    "coupons_upload": "Import z pliku",
+    "coupons_upload_prompt": "",
+    "current_points_amount": "Aktywne punkty klienta",
+    "custom_campaign_code": "Niestandardowa reguła",
+    "customer_email": "E-mail klienta",
+    "customer_email_or_phone": "E-mail lub telefon",
+    "customer_email_or_phone_prompt": "Znajdź klienta za pomocą adresu e-mail lub telefonu",
+    "customer_lastname": "Nazwisko klienta",
+    "customer_name": "Imię klienta",
+    "customer_phone": "Telefon",
+    "customers": "Klienci",
+    "days_inactive": "Dni nieaktywności:",
+    "days_inactive_prompt": "Ilość dni przez które kod będzie nieaktywny. Ustaw zero aby od razu kod był aktywny.",
+    "days_valid": "Dni ważności",
+    "days_valid_prompt": "Ilość dni po który kod straci ważność. Ustaw zero aby kod nigdy nie wygasł.",
+    "date_from": "Od",
+    "date_to": "Do",
+    "delivered": "Niewykorzystane/Wykorzystane",
+    "delivery_statuses": {
+      "all": "All",
+      "ordered": "Zamówiona",
+      "canceled": "Anulowana",
+      "shipped": "Wysłana",
+      "delivered": "Odebrana"
+    },
+    "delivery_status": "Status odbioru",
+    "details_heading": "Szczegóły nagrody",
+    "earning_rule": "Reguły nagradzania",
+    "earning_rule_prompt": "",
+    "earning_rule_points_amount": "Wartość punktowa dla reguły",
+    "discount_code": "Rabat procentowy",
+    "edit": "Edytuj nagrodę",
+    "edit_heading": "Edytuj nagrodę",
+    "event_code": "Zaproszenie na wydarzenie",
+    "featured": "Wyróżniona",
+    "featured_prompt": "",
+    "public": "Publiczna",
+    "public_prompt": "",
+    "free_delivery_code": "Darmowa dostawa",
+    "gift_code": "Nagroda rzeczowa",
+    "heading": "Katalog nagród",
+    "inactive": "Niedostępna",
+    "key": "Klucz",
+    "label": "Kategoria",
+    "label_key_prompt": "",
+    "label_value_prompt": "",
+    "labels": "Kategorie",
+    "levels": "Poziomy",
+    "levels_prompt": "",
+    "limit": "Limit",
+    "limit_info": "Limit użyć",
+    "limit_per_user": "Limit na osobę",
+    "limit_per_user_prompt": "",
+    "limit_prompt": "",
+    "list": "Lista nagród",
+    "more_information_link": "Dowiedz się więcej (link)",
+    "more_information_link_prompt": "",
+    "name": "Nazwa",
+    "name_prompt": "",
+    "no_data": "Brak danych do wyświetlenia",
+    "percentage_discount_code": "Kod ze zniżką procentową",
+    "photo": "Zdjęcie",
+    "point_value": "Wartość punktu",
+    "point_value_prompt": "Kwota (w PLN) za każdy wymieniony 1 punkt",
+    "purchase_at": "Data zakupu",
+    "push_notification_text": "Tekst wiadomości push",
+    "push_notification_text_prompt": "Wiadomość wysyłana użytkownikom, dla których kampania stała się dostępna",
+    "redeemed_heading": "Odebrane nagrody",
+    "redeemed_list": "Lista odebranych nagród",
+    "reward": "Rodzaj nagrody",
+    "reward_name": "Nagroda",
+    "reward_redeem_date": "Data odebrania",
+    "usage_date": "Data użycia",
+    "reward_type": "Rodzaj",
+    "reward_value": "Wartość nagrody",
+    "reward_value_description": "",
+    "reward_value_prompt": "Wartość otrzymanej nagrody",
+    "segments": "Segmenty",
+    "segments_prompt": "",
+    "short_description": "Opis",
+    "short_description_prompt": "",
+    "show_customers": "Pokaż klientów",
+    "singleCoupon": "Kupon",
+    "singleCoupon_prompt": "Ograniczona liczba możliwości wykorzystania kuponu",
+    "target_type": "Grupa odbiorców",
+    "target_type_prompt": "",
+    "tax": "VAT",
+    "tax_price_value": "Kwota VAT",
+    "tax_price_value_prompt": "Wartość podatku VAT",
+    "tax_prompt": "Stawka podatku VAT",
+    "transaction_document_number": "Numer dokumentu",
+    "transaction_document_number_prompt": "Znajdź transakcję za pomocą numeru dokumentu",
+    "transaction_percentage_value": "Procentowa wartość transakcji",
+    "transaction_percentage_value_prompt": "Wartość kuponu, ktora bedzie bazowała na wartości transakcji",
+    "fulfillment_tracking": "Śledzenie procesu realizacji",
+    "fulfillment_tracking_prompt": "",
+    "type": "Rodzaj",
+    "type_info": "Rodzaj nagrody",
+    "type_prompt": "",
+    "unlimited": "Bez limitu",
+    "unlimited_prompt": "Kupon można wykorzystać wiele razy",
+    "usage_instruction": "Sposób użycia kuponu",
+    "usage_instruction_prompt": "",
+    "usage_types": {
+      "both": "Wszystkie",
+      "false": "Niewykorzystane",
+      "true": "Wykorzystane"
+    },
+    "used_by_user": "Wykorzystano",
+    "users_in_campaign": "Użytkownicy przypisani do kampanii ",
+    "without_spending_points": "Bez wydawania punktów ",
+    "without_spending_points_prompt": "Punkty klienta nie będą używane ",
+    "quantity": "Liczba",
+    "quantity_prompt": "Możesz kupić więcej kuponów na raz",
+    "value": "Wartość",
+    "value_code": "Rabat kwotowy",
+    "visibility": "Widoczność",
+    "visible_from": "Widoczna Od",
+    "visible_from_prompt": "",
+    "visible_to": "Widoczna Do",
+    "visible_to_prompt": "",
+    "brand_description": "Opis marki",
+    "brand_description_prompt": "",
+    "coupon_active_since": "Kupon aktywny od",
+    "coupon_active_to": "Kupon aktywny do",
+    "coupon_forever_active": "zawsze",
+    "brand_icon": "Logo marki",
+    "brand_info": "Marka",
+    "brand_name": "Nazwa marki",
+    "brand_name_prompt": "",
+    "campaign_shipping_address": {
+      "details":  "Szczegóły dostawy",
+      "street": "Ulica",
+      "house_number": "Numer budynku",
+      "building_number": "Numer mieszkania",
+      "city": "Miasto",
+      "postal_code": "Kod pocztowy",
+      "country": "Kraj",
+      "voivodeship": "Województwo"
+    }
+  },
+  "campaign-value-code": "Rabat kwotowy",
+  "client_cockpit": {
+    "meta": {
+      "title": "Program motywacyjny"
+    },
+    "register": {
+      "submit_message": "Sprawdź swój email i aktywuj swoje konto",
+      "activation": {
+        "message_failed": "Wystąpił problem z aktywacją Twojego konta",
+        "message_success": "Twoje konto zostało aktywowane",
+        "failed": "Aktywacja konta nie powiodła się",
+        "success": "Aktywacja konta zakończona pomyślnie"
+      },
+      "form": {
+        "login": {
+          "prefix": "lub ",
+          "link": "zaloguj się",
+          "suffix": " do istniejącego konta"
+        }
+      }
+    },
+    "global": {
+      "errors": {
+        "this_field_is_required": "To pole jest wymagane",
+        "this_checkbox_is_required": "To pole jest wymagane",
+        "invalid_jwt_token": "Błąd! Nieprawidłowy token",
+        "not_found": "Błąd! Nie znaleziono informacji na serwerze"
+      }
+    },
+    "login": {
+      "headline": "Sprzedawaj, zarabiaj punkty i odbieraj nagrody!",
+      "subtitle": "Program motywacyjny",
+      "form": {
+        "label": {
+          "email": "Adres e-mail",
+          "password": "Hasło",
+          "button": "Zaloguj się",
+          "reset_password": "Zapomniałeś hasła?"
+        },
+        "register": {
+          "prefix": "",
+          "link": "Zarejestruj nowe konto",
+          "suffix": " w serwisie"
+        },
+        "validation": {
+          "api": {
+            "bad_credentials": "Nieprawidłowy adres e-mail lub hasło.",
+            "login_success": "Zalogowano pomyślnie!"
+          },
+          "email": {
+            "not_valid": "Wprowadź poprawny adres e-mail."
+          },
+          "password": {
+            "not_valid": "Hasło musi zawierać co najmniej 8 znaków"
+          }
+        }
+      }
+    },
+    "logout": {
+      "validation": {
+        "api": {
+          "logged_out": "Wylogowano pomyślnie"
+        }
+      }
+    },
+    "reset_password": {
+      "form": {
+        "label": {
+          "button": "Zresetuj hasło",
+          "back_to_login_prefix": "Lub wróć do ",
+          "back_to_login_text": "strony logowania",
+          "back_to_login_suffix": "",
+          "reset_your_password": "Resetowanie hasła",
+          "choose_new_password": "Zmień swoje hasło",
+          "new_password": "Nowe hasło"
+        },
+        "validation": {
+          "password_too_weak": "Hasło jest zbyt słąbe",
+          "password_reset_success": "Twoje hasło zostało zmienione pomyślnie.",
+          "password_reset_error": "Proces resetowania hasła został już zakończony",
+          "not_found": "Ten adres email jest niepoprawny",
+          "field_username_should_not_be_empty": "Podaj swój adres email",
+          "resetting_password_already_requested": "Proces resetowania hasła został już rozpoczety. Proszę sprawdź swoją skrzynkę email ",
+          "wrong_data": "Podany e-mail jest nieprawidłowy lub nie istnieje w bazie danych",
+          "email_with_reset_link_sent": "Na podany adres e-mail został wysłany link do zresetowania hasła. Prosimy sprawdzić skrzynkę mailową."
+        }
+      }
+    },
+    "change_password": {
+      "form": {
+        "label": {
+          "button": "Zmień hasło"
+        }
+      },
+      "validation": {
+        "invalid_reset_link": "Link resetujący hasło jest nieprawidłowy. Spróbuj ponownie.",
+        "password_has_been_changed": "Hasło zostało zmienione pomyślnie.",
+        "password": {
+          "this_value_should_not_be_blank": "Pole hasła nie może być puste.",
+          "your_password_must_be_at_least_8_characters_long": "Twoje hasło musi mieć minimum 8 znaków.",
+          "your_password_must_include_both_upper_and_lower_case_letters": "Hasło musi zawierać małe i duże litery.",
+          "your_password_must_include_at_least_one_number": "Hasło musi zawierać przynajmniej jedną liczbę.",
+          "your_password_must_contain_at_least_one_special_character": "Hasło musi zawierać przynajmniej jeden znak specjalny."
+        }
+      }
+    },
+    "homepage": {
+      "terms_popup": {
+        "button_text": "Przejdź do programu lojalnościowego",
+        "title": "Potwierdź warunki programu lojalnościowego",
+        "description": "Jeśli chcesz dołączyć do programu lojalnościowego musisz zaakceptować jego warunki i regulamin. Twoje dane zostaną wykorzystane wyłącznie na potrzeby programu lojalnościowego."
+      },
+      "headline": "Sprzedawaj, zarabiaj punkty i odbieraj nagrody!",
+      "subtitle": "Program motywacyjny",
+      "earning_points_rules": {
+        "headline": "Jak zdobyć punkty?",
+        "button_text": "Zarabiaj punkty"
+      },
+      "rewards": {
+        "headline": "Popularne nagrody",
+        "button_text": "Odbieraj nagrody"
+      }
+    },
+    "earning_points_rules": {
+      "list": {
+        "see_more_link_text": "inne sposoby zarabiania punktów",
+        "see_more_link_title": "Zobacz inne sposoby zarabiania punktów",
+        "see_more_prefix": "Zobacz ",
+        "see_more_suffix": " ",
+        "points": {
+          "points": {
+            "prefix": "1 ",
+            "suffix": " pkt"
+          },
+          "event": {
+            "prefix": "",
+            "suffix": " punktów"
+          },
+          "custom_event": {
+            "prefix": "",
+            "suffix": " punktów"
+          },
+          "product_purchase": {
+            "prefix": "",
+            "suffix": " punktów"
+          },
+          "multiply_for_product": {
+            "prefix": "",
+            "suffix": " razy więcej punktów"
+          },
+          "referral": {
+            "prefix": "",
+            "suffix": " punktów"
+          }
+        }
+      },
+      "single": {
+        "page": {
+          "referral": {
+            "send_invite_email": "Wyślij e-mail z zaproszeniem",
+            "invitation_email_sent": "E-mail z zaproszeniem został wysłany",
+            "invitation_form_contains_errors": "Formularz zawiera błędy",
+            "send_invite": "Wyślij zaproszenie",
+            "email_address": "Adres e-mail"
+          },
+          "back_to_earning_points_rules_list": "Zobacz inne sposoby zarabiania punktów",
+          "how_to_earn_points": "Jak zdobyć punkty?",
+          "points": {
+            "points": {
+              "prefix": "1 ",
+              "suffix": " pkt"
+            },
+            "event": {
+              "prefix": "",
+              "suffix": " punktów"
+            },
+            "custom_event": {
+              "prefix": "",
+              "suffix": " punktów"
+            },
+            "product_purchase": {
+              "prefix": "",
+              "suffix": " punktów"
+            },
+            "multiply_for_product": {
+              "prefix": "",
+              "suffix": " razy więcej punktów"
+            },
+            "referral": {
+              "prefix": "",
+              "suffix": " punktów"
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "page": {
+        "title": "Odbieraj nagrody",
+        "available_rewards": "Dostępne nagrody",
+        "redeemed_rewards": "Odebrane nagrody",
+        "show_more_rewards": "Pokaż więcej nagród"
+      },
+      "list": {
+        "see_more_link_text": "inne dostępne nagrody",
+        "see_more_link_title": "Zobacz inne dostępne nagrody",
+        "see_more_prefix": "Zobacz ",
+        "see_more_suffix": " "
+      },
+      "single": {
+        "type": {
+          "value_code": "rabat kwotowy",
+          "discount_code": "kupon zniżkowy",
+          "value code": "kupon o wartości",
+          "free_delivery_code": "darmowa dostawa",
+          "gift_code": "nagroda rzeczowa",
+          "event_code": "zaproszenie na wydarzenie",
+          "cashback": "cashback"
+        },
+        "page": {
+          "days": "d",
+          "hours": "g",
+          "minutes": "m",
+          "seconds": "s",
+          "reward_will_be_available_for": "Nagroda będzie dostępna za: ",
+          "back_to_rewards_list": "Przejdź do listy nagród",
+          "reward_availability_prefix": "Nagroda dostępna od ",
+          "reward_availability_suffix": " punktów",
+          "get_reward_button": "Odbierz nagrodę",
+          "reward_description": "Opis nagrody",
+          "see_full_reward_description": "Zobacz pełny opis nagrody",
+          "reward_type": "Typ nagrody: ",
+          "how_to_get_reward": "Jak odebrać nagrodę?",
+          "reward_confirmation_question_prefix": "Czy chcesz wydać punkty ",
+          "reward_confirmation_question_suffix": " i odebrać nagrodę ",
+          "reward_confirmation_question_sign": "?",
+          "reward_confirmation_button": "Tak, odbieram nagrodę",
+          "reward_count": "Ilość nagród: ",
+          "reward_limit_prefix": "Limit nagród wynosi ",
+          "reward_limit_suffix": " na osobę",
+          "reward_available_from": "Nagroda ważna od: ",
+          "reward_available_to": "Nagroda ważna do: ",
+          "popular_rewards": "Popularne nagrody",
+          "points": " punktów",
+          "not_enough_points_prefix": "Brakuje Ci",
+          "not_enough_points_suffix": " punktów, żeby odebrać nagrodę"
+        }
+      },
+      "redeemed": {
+        "page": {
+          "title": "Odbieraj nagrody",
+          "available_rewards": "Dostępne nagrody",
+          "redeemed_rewards": "Odebrane nagrody",
+          "show_more_rewards": "Pokaż więcej nagród"
+        },
+        "single": {
+          "page": {
+            "reward_bought": "Nagroda odebrana",
+            "reward_code": "Kod nagrody",
+            "reward_redeemed_notification": "Nagroda została odebrana pomyślnie"
+          }
+        }
+      }
+    },
+    "header": {
+      "get_rewards": "Odbieraj nagrody",
+      "earn_points": "Zdobywaj punkty",
+      "level": "level",
+      "points": "punktów",
+      "logo_alt_text": "logo",
+      "notification_text_prefix": "Witaj Anna Nowak, sprawdź ",
+      "notification_text": "nowe nagrody",
+      "notification_text_suffix": ", które dla Ciebie przygotowaliśmy!"
+    },
+    "footer": {
+      "section": {
+        "first": {
+          "headline": "O PROGRAMIE",
+          "link": {
+            "a_route": "http://pwacc-dev.herokuapp.com/link-1",
+            "b": "Warunki programu",
+            "b_route": "http://pwacc-dev.herokuapp.com/link-1",
+            "c": "Jak zdobyć wyższy level?",
+            "c_route": "http://pwacc-dev.herokuapp.com/link-1",
+            "d": "Regulamin programu",
+            "d_route": ""
+          }
+        },
+        "second": {
+          "headline": "PUNKTY",
+          "link": {
+            "a_route": "http://pwacc-dev.herokuapp.com/link-1",
+            "b": "Jak zarabiać punkty?",
+            "b_route": "http://pwacc-dev.herokuapp.com/link-2",
+            "c": "Moje punkty",
+            "c_route": "http://pwacc-dev.herokuapp.com/link-3",
+            "d": "",
+            "d_route": ""
+          }
+        },
+        "third": {
+          "headline": "NAGRODY",
+          "link": {
+            "a_route": "http://pwacc-dev.herokuapp.com/link-1",
+            "b": "Jak odbierać nagrody?",
+            "b_route": "http://pwacc-dev.herokuapp.com/link-2",
+            "c": "Jak odblokować nagrody?",
+            "c_route": "http://pwacc-dev.herokuapp.com/link-3",
+            "d": "Moje nagrody",
+            "d_route": ""
+          }
+        },
+        "fourth": {
+          "headline": "POMOC",
+          "link": {
+            "a_route": "http://pwacc-dev.herokuapp.com/link-1",
+            "b": "Pytania i odpowiedzi",
+            "b_route": "http://pwacc-dev.herokuapp.com/link-2",
+            "c": "Kontakt",
+            "c_route": "http://pwacc-dev.herokuapp.com/link-3",
+            "d": "",
+            "d_route": ""
+          }
+        }
+      },
+      "link": {
+        "cookie_policy": "<a href='https://test.web.cloud.openloyalty.io/terms-conditions'>Polityka plików cookie</a>"
+      },
+      "copyright_text": " 2018 Program motywacyjny. Wszystkie prawa zastrzeżone."
+    },
+    "customer": {
+      "navigation": {
+        "my_profile": "Mój profil",
+        "my_level": "Mój level",
+        "my_transactions": "Moje transakcje",
+        "my_points": "Moje punkty",
+        "my_rewards": "Moje nagrody",
+        "logout": "Wyloguj się"
+      },
+      "loyalty": {
+        "active_points": "Aktywne punkty",
+        "used_points": "Wykorzystane punkty",
+        "expired_points": "Nieaktywne punkty",
+        "locked_points": "Zablokowane punkty",
+        "total_points": "Suma zgromadzonych punktów",
+        "total_points_since_last_level_recalculation": "Suma zgromadzonych punktów od ostatniego przeliczenia poziomu",
+        "level_will_expire_in_days": "Poziom wygaśnie za",
+        "level_will_expire_in_days_prompt": " dni"
+      },
+      "table": {
+        "date_and_time": "Data i godzina",
+        "transaction_number": "Numer transakcji",
+        "value": "Wartość",
+        "points_number": "Zdobyte punkty",
+        "type": "Typ",
+        "operation": "Operacja na punktach",
+        "sell": "Sprzedaż",
+        "return": "Zwrot",
+        "name": "Nazwa",
+        "count": "Ilość",
+        "sku": "SKU",
+        "category": "Kategoria",
+        "brand_name": "Marka",
+        "level": "Level",
+        "level_description": "Opis levelu",
+        "available_from": "Dostępny od"
+      },
+      "profile": {
+        "general_information": "Informacje podstawowe",
+        "address_information": "Dane adresowe",
+        "company_information": "Dane firmy",
+        "terms_and_conditions": "Zgody",
+        "edit_data": "Edytuj dane",
+        "first_name": "Imię",
+        "last_name": "Nazwisko",
+        "male": "Mężczyzna",
+        "female": "Kobieta",
+        "not_disclosed": "Nie ujawniono",
+        "email": "Adres e-mail",
+        "date_of_birth": "Data urodzenia",
+        "password": "Hasło",
+        "confirm_password": "Powtórz hasło",
+        "phone_number": "Numer telefonu",
+        "street": "Ulica",
+        "house_number": "Numer domu",
+        "building_number": "Numer lokalu",
+        "city": "Miasto",
+        "postal_code": "Kod pocztowy",
+        "country": "Kraj",
+        "voivodeship": "Województwo",
+        "company_name": "Nazwa firmy",
+        "company_tax_id": "NIP",
+        "agreement": {
+          "first": "Akceptuję regulamin programu motywacyjnego",
+          "second": "Chcę otrzymywać oferty specjalne, akceptuję regulamin newslettera",
+          "third": "Wyrażam zgodę na wykorzystanie i przetwarzanie moich danych osobowych w ramach programu motywacyjnego (zgodnie z przepisami ustawy o ochronie danych osobowych z dnia 29.08.1997)"
+        },
+        "validation": {
+          "api": {
+            "profile_updated": "Twój profil został zaktualizowany"
+          }
+        }
+      },
+      "pts": "pkt",
+      "my_account": "Moje konto",
+      "client_name": "Imię i nazwisko: ",
+      "phone_number": "Numer telefonu: ",
+      "card_number": "Numer karty: ",
+      "email": "Adres e-mail: ",
+      "buy_date": "Data zakupu: ",
+      "points_count": "Zdobyte punkty: ",
+      "assigned_level": "Twój aktualny level to",
+      "delete_confirmation_description": "Konto zostanie dezaktywowane i nie będzie możliwości aktywowania go ponownie",
+      "transactions_amount": "Wartość transakcji",
+      "transactions_amount_to_next_level": "Wartość transakcji dla uzyskania następnego poziomu",
+      "transactions_amount_to_next_level_without_delivery_costs": "Wartość transakcji (bez kosztów dostawy) dla następnego poziomu",
+      "next_level": "Kolejny level to",
+      "rewards_page": "Moje nagrody",
+      "transactions_page": "Moje transakcje",
+      "transaction": "Transakcja ",
+      "no_transaction_placeholder": "Nie masz jeszcze żadnej zarejestrowanej transakcji.",
+      "no_points_operation_placeholder": "Nie masz jeszcze żadnych punktów.",
+      "no_rewards_redeemed_placeholder": "Nie masz jeszcze żadnych odebranych nagród.",
+      "no_rewards_available_placeholder": "Nie masz jeszcze żadnych dostępnych nagród.",
+      "no_earning_points_rules_available_placeholder": "Nie masz jeszcze żadnych dostępnych sposobów zarabiania punktów.",
+      "my_transactions": "Moje transakcje",
+      "profile_page": "Mój profil",
+      "register_new_account": "Rejestracja nowego konta",
+      "add_company_details": "Dodaj dane Twojej firmy",
+      "add_your_address": "Dodaj swój adres zamieszkania",
+      "register_button": "Zarejestruj się",
+      "points_from_rule": "Zdobyłeś nowe punkty",
+      "points_redeemed_for_reward": "Ilość punktów wydanych na nagrodę"
+    },
+    "form": {
+      "validation": {
+        "your_password_must_be_at_least_8_characters_long": "Twoje hasło musi mieć co najmniej 8 znaków.",
+        "your_password_must_include_at_least_one_letter.": "Twoje hasło musi zawierać co najmniej jedną literę",
+        "your_password_must_include_at_least_one_number": "Twoje hasło musi zawierać co najmniej jedną cyfrę.",
+        "your_password_must_contain_at_least_one_special_character": "Twoje hasło musi zawierać co najmniej jeden znak specjalny.",
+        "your_password_must_include_both_upper_and_lower_case_letters.": "Twoje hasło musi zawierać zarówno duże, jak i małe litery",
+        "customer_with_such_email_already_exists": "Klient z takim adresem email już istnieje",
+        "please_fill_form": "Proszę uzupełnij wymagane pola",
+        "form_contains_errors": "Formularz zawiera błędy"
+      }
+    }
+  },
+    "role": {
+      "heading": "Role",
+      "add": "Dodaj rolę",
+      "list": "Lista ról",
+      "actions": "Akcje",
+      "edit_heading": "Edytuj rolę",
+      "basic_info": "Informacje Podstawowe",
+      "name": "Nazwa",
+      "name_prompt": "",
+      "permissions": "Uprawnienia",
+      "access": "Dostęp",
+      "access_prompt": "",
+      "resource": "Zasób",
+      "resource_prompt": "",
+      "add_permission": "Nadaj uprawnienie",
+      "add_heading": "Dodaj rolę",
+      "delete_confirmation": "Czy chcesz usunąć wybraną rolę?",
+      "delete_confirmation_description": "Ta operacja nie może zostać cofnięta."
+    },
+  "customer": {
+    "actions": "Akcje",
+    "activate_confirmation": "Aktywacja klienta",
+    "activate_confirmation_description": "Czy chcesz aktywować klienta?",
+    "add": "Dodaj klienta",
+    "add_address": "Adres",
+    "add_company": "Firma",
+    "add_heading": "Dodaj klienta",
+    "add_label": "Dodaj etykietę",
+    "add_profile_id": "dodaj Profile ID",
+    "add_points_transfer": "Dodaj nowy transfer punktów",
+    "address": "Adres",
+    "address_address1_prompt": "",
+    "address_address2_prompt": "",
+    "address_city_prompt": "",
+    "address_country_prompt": "",
+    "address_province_prompt": "",
+    "address_street_prompt": "",
+    "agreement1": "Regulamin",
+    "agreement1_prompt": "To pole jest wymagane",
+    "agreement2": "Zgoda marketingowa",
+    "agreement2_prompt": "",
+    "agreement3": "Zgoda na przetwarzanie danych osobowych",
+    "agreement3_prompt": "",
+    "agreements": "Umowy",
+    "all_campaigns": "Katalog nagród",
+    "all_profile_details": "Pokaż wszystkie szczegóły profilu",
+    "all_rewards": "Wszystkie nagrody",
+    "all_transactions": "Wszystkie transakcje",
+    "all_transfers": "Wszystkie transfery punktów",
+    "assign_level": "Zmień poziom",
+    "assigned_level": "Obecny poziom",
+    "assigned_pos": "Przypisany sklep",
+    "assigned_seller": "Przypisany Sprzedawca",
+    "average_transaction_amount": "Średnia wartość zamówień",
+    "basic_info": "Informacje Podstawowe",
+    "birth_date": "Data urodzenia",
+    "birth_date_prompt": "",
+    "building_name": "Numer domu",
+    "campaign": {
+      "active_points": "Zrealizuj nowe nagrody, możesz użyć <b>{{points}}</b> aktywnych punktów",
+      "all_time_Active": "Cały czas dostępna",
+      "bought_list": "Moje odebrane nagrody",
+      "coupon_used": "Ten kupon został wykorzystany",
+      "date_from": "Od",
+      "date_to": "Do",
+      "export_csv": "Export CSV",
+      "export_title": "Export CSV raport",
+      "footer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "list": "Moje nagrody",
+      "no_bought_rewards": "Brak zrealizowanych nagród",
+      "no_desc": "Opis nagrody nie jest ustawiony",
+      "no_name": "Brak nazwy kampanii nagród",
+      "no_rewards": "Brak dostępnych nagród",
+      "not_enough_points": "Niewystarczająca ilość punktów",
+      "points": "Punkty",
+      "redeem": "Zrealizowana nagroda",
+      "reward_code": "KOD NAGRODY",
+      "reward_congratulations": "Gratulacje!",
+      "reward_footer": "Instrukcja dla nagrody, lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "reward_ready": "Twoja nagroda jest gotowa do odbioru.",
+      "see_bought": "Zobacz nagrody, które już wykorzystałeś",
+      "singleCoupon": "Pojedynczy kupon",
+      "singleCoupon_prompt": "Aby odkupić klientów, będzie można użyć tego samego kuponu",
+      "used_confirmation": "Potwierdź użycie nagrody",
+      "used_confirmation_description": "Proszę potwierdź użycie nagrody",
+      "will_be_active_all_time": "Ta kampania będzie dostępna cały czas",
+      "will_be_active_dates": "Ta kampania nagród będzie dostępna od {{from}} do {{to}}",
+      "will_be_active_soon": "Jeszcze niedostępna"
+    },
+    "campaigns_heading": "Nagrody",
+    "campaigns_list": "Katalog Nagród, których może użyć użytkownik ",
+    "change_level": "Zmień poziom",
+    "change_password": {
+      "current": "Obecne hasło",
+      "do_not_match": "Hasła nie pasują",
+      "new_first": "Nowe hasło",
+      "new_second": "Powtórz nowe hasło"
+    },
+    "city": "Miasto",
+    "company_data": "Dane Firmy",
+    "company_name": "Nazwa firmy",
+    "company_name_prompt": "",
+    "company_nip_prompt": "",
+    "country": "Państwo",
+    "created_at": "Data utworzenia",
+    "current_level": "Obecny poziom",
+    "days_from_last_transaction": "Dni od ostatniego zamówienia",
+    "delete_confirmation": "Czy chcesz dezaktywować tego klienta?",
+    "delete_confirmation_description": "Ten klient zostanie dezaktywowany i nie będzie już możliwości jego aktywacji",
+    "edit": "Edytuj",
+    "edit_heading": "Edytuj klienta",
+    "email": "E-mail",
+    "email_prompt": "",
+    "empty_campaigns": "Brak danych do wyświetlenia",
+    "empty_rewards": "Brak danych do wyświetlenia",
+    "empty_transactions": "Brak danych do wyświetlenia",
+    "empty_transfers": "Brak danych do wyświetlenia",
+    "female": "Kobieta",
+    "not_disclosed": "Nie ujawniono",
+    "first_name_prompt": "",
+    "flat_name": "Numer mieszkania",
+    "gender": "Płeć",
+    "gender_prompt": "",
+    "heading": "Klienci",
+    "import": "Importuj klientów",
+    "import_title": "Import klientów",
+    "import_xml_field": "Wybierz plik",
+    "inactive": "Nieaktywny",
+    "key": "Klucz",
+    "label": "Etykieta",
+    "label_key_prompt": "",
+    "label_value_prompt": "",
+    "labels": "Etykiety",
+    "last_name_prompt": "",
+    "lc_number": "Numer karty lojalnościowej",
+    "list": "Lista klientów",
+    "loyalty": {
+      "active_points": "Aktywne punkty",
+      "expired_points": "Wygasłe punkty",
+      "title": "Balans punktów",
+      "used_points": "Wykorzystane punkty",
+      "locked_points": "Zablokowane punkty",
+      "total_points": "Suma zgromadzonych punktów",
+      "total_points_since_last_level_recalculation": "Suma zgromadzonych punktów od ostatniego przeliczenia poziomu",
+      "level_will_expire_in_days": "Poziom wygaśnie za",
+      "level_will_expire_in_days_prompt": " dni"
+    },
+    "loyalty_card_number_prompt": "",
+    "male": "Mężczyzna",
+    "name": "Imię",
+    "nip": "Numer Identyfikacji Podatkowej",
+    "no_level": "Klient nie jest przypisany do żadnego poziomu",
+    "no_pos": "Klient nie jest przypisany do żadnego POS",
+    "no_segments": "Klient nie został przypisany do żadnego segmentu",
+    "password": "Hasło",
+    "phone": "Telefon",
+    "phone_prompt": "",
+    "postal": "Kod pocztowy",
+    "postal_prompt": "",
+    "profile_details": "Szczegóły profilu",
+    "profile_id": "Profile ID",
+    "profile_id_prompt": "Unikalny Profile ID klienta",
+    "profile_ids": "Profile_ID",
+    "profitability": {
+      "avo": "Średnia wartość zamówień",
+      "clv": "Całkowita wartość zamówień",
+      "orders": "Liczba zamówień",
+      "title": "Historia transakcji"
+    },
+    "referred": {
+      "heading": "Lista polecających i zaproszonych klientów",
+      "list": "Zaproszeni klienci",
+      "recipient_email": "E-mail Odbiorcy",
+      "recipient_phone": "Telefon odbiorcy",
+      "recipient_id": "Identifikator Odbiorcy",
+      "recipient_name": "Imię i nazwisko odbiorcy",
+      "referred_completed": "Zaproszeni klienci, którzy się zarejestrowali",
+      "referred_registered": "Zaproszeni klienci, którzy dokonali zakupu",
+      "referred_total": "Liczba wysłanych zaproszeń",
+      "referrer_id": "ID polecającego",
+      "referrer_name": "Imię i nazwisko polecającego",
+      "status": "Status",
+      "statuses": {
+        "all": "Wszystkie",
+        "invited": "Zaproszony",
+        "made_purchase": "Dokonano zakupu",
+        "registered": "Zarejestrowany"
+      }
+    },
+    "remove_manually_level_title": "Usuń poziom przypisany ręcznie",
+    "resend_activation_code": "Wyślij ponownie kod aktywacyjny",
+    "rewards_heading": "Wykorzystane nagrody",
+    "rewards_list": "Odebrane nagrody przez klienta ",
+    "segments": "Segmenty",
+    "show_address_prompt": "",
+    "show_company_prompt": "",
+    "single_data": "Dane klienta",
+    "state": "Województwo",
+    "street": "Ulica",
+    "surname": "Nazwisko",
+    "tabs": {
+      "campaigns": "Dostępne nagrody",
+      "rewards": "Wykorzystane nagrody",
+      "transactions": "Transakcje",
+      "transfers": "Transfery punktów"
+    },
+    "transactions_amount": "Całkowita wartość zamówień",
+    "transactions_count": "Liczba zamówień",
+    "transactions_heading": "Transakcje",
+    "transactions_list": "Wszystkie Transakcje powiązane z klientem ",
+    "transfers_heading": "Transfery punktów dla klienta",
+    "transfers_list": "Lista transferów punktowych",
+    "value": "Wartość"
+  },
+  "customer with such loyalty card number already exists": "Klient z takim numerem karty lojalnościowej już istnieje",
+  "customer with such phone already exists": "Klient z takim numerem telefonu już istnieje",
+  "customer_campaign": {
+    "active_points": "Zrealizuj nowe nagrody, możesz użyć <b>{{points}}</b> aktywnych punktów",
+    "all_time_Active": "Cały czas dostępna",
+    "bought_list": "Moje odebrane nagrody",
+    "coupon_used": "Ten kupon został wykorzystany",
+    "footer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+    "list": "Moje nagrody",
+    "will_be_active_since": "Kupon będzie ważny od  {{ date }}",
+    "will_be_active_till": "Kupon będzie ważny do {{ date }}",
+    "more_information": {
+      "button": "Kliknij tutaj, aby uzyskać więcej informacji"
+    },
+    "no_bought_rewards": "Brak odebranych nagród",
+    "no_desc": "Opis nagrody nie jest ustawiony",
+    "no_name": "Brak nazwy kampanii nagród",
+    "no_rewards": "Brak dostępnych nagród",
+    "not_enough_points": "Niewystarczająca ilość punktów",
+    "points": "Punkty",
+    "redeem": "Zrealizuj nagrodę",
+    "reward_code": "KOD NAGRODY",
+    "reward_congratulations": "Gratulacje!",
+    "reward_ended": "Kampania została zakończona",
+    "reward_footer": "Instrukcja nagrody, lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+    "reward_not_available": "Ta nagroda nie jest dostępna",
+    "reward_ready": "Twoja nagroda jest gotowa do odbioru.",
+    "see_bought": "Zobacz nagrody, które odebrałeś",
+    "singleCoupon_prompt": "Aby odkupić klientów, będzie można użyć tego samego kuponu",
+    "used_confirmation": "Potwierdź użycie nagrody",
+    "used_confirmation_description": "Proszę potwierdź użycie nagrody",
+    "will_be_active_all_time": "Ta kampania będzie dostępna cały czas",
+    "will_be_active_dates": "Ta kampania nagród będzie dostępna od {{from}} do {{to}}",
+    "will_be_active_soon": "Jeszcze nieaktywne"
+  },
+  "customer_dashboard": {
+    "benefits_title": "Korzyści",
+    "check_transactions": {
+      "button_name": "ZOBACZ TRANSAKCJE",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "Sprawdź swoje transakcje"
+    },
+    "connect_with_online_store": {
+      "button_name": "POŁĄCZ",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "Dopasuj do eCommerce"
+    },
+    "current_level": "Twój obecny poziom:  <b>{{levelName}}</b>, twoja <br /> zniżka <b>-{{level}}</b> nagrody.",
+    "customize_profile": {
+      "button_name": "EDYTUJ PROFIL",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "Dostosuj profil"
+    },
+    "earn_points": {
+      "button_name": "ZDOBĄDŹ WIĘCEJ PUNKTÓW",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "Zdobywaj punkty"
+    },
+    "earning_rules": "Dowiedz się <a href=\"#\" ui-sref=\"customer.panel.earning_rules\">jak zdobywać nowe punkty</a>.",
+    "earning_rules_title": "Zdobądź punkty",
+    "faq": {
+      "button_name": "przeczytaj FAQ",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "FAQ"
+    },
+    "get_rewards": {
+      "button_name": "ZREALIZUJ NAGRODY",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "Zdobądź nagrody"
+    },
+    "invite": {
+      "button_name": "Zaproś",
+      "input_placeholder": "E-mail",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "Zaproś przyjaciela"
+    },
+    "my_benefits": {
+      "button_name": "Sprawdź poziom",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "Moje korzyści"
+    },
+    "points_to_next_level": "Potrzebujesz <b>{{pointsToNextLevel}}</b> punktów do następnego poziomu, <a href=\"#\" ui-sref=\"customer.static({'pageName':'benefits'})\">zobacz szczegóły</a>",
+    "rewards": "Zrealizuj nowe nagrody, możesz korzystać z <br /><b>{{points}}</b> aktywnych punktów. <a href=\"#\" ui-sref=\"customer.panel.campaign-list\">Otrzymasz nagrody</a> lub <a href=\"#\" ui-sref=\"customer.panel.bought-campaign-list\">Zobacz nagrody</a> jakie wykorzystałeś",
+    "rewards_title": "Zdobądź nagrody",
+    "see_all_benefits": "<a href=\"#\" ui-sref=\"customer.static({'pageName':'benefits'})\">See all benefits</a> from your level",
+    "title": "Witamy ",
+    "transaction_amount_to_next_level": "Potrzebujesz <b>{{transactionsAmountToNextLevel}}</b> do następnego poziomu.",
+    "transaction_amount_without_delivery_costs_to_next_level": "Potrzebujesz <b>{{transactionsAmountToNextLevelWithoutDeliveryCosts}}</b> do następnego poziomu.",
+    "visit_offline_stores": {
+      "button_name": "sklepy offline",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+      "title": "Odwiedź sklepy offline"
+    }
+  },
+  "customer_earning_rules": {
+    "custom_event": "Niestandardowe wydarzenie",
+    "points": "Każdy {{pointsValue}}{{currency}} = 1 punkt",
+    "product_purchase": "Dodatkowe punkty do zakupu {{sku}}",
+    "table": {
+      "description": "Opis",
+      "end_at": "Skończyć na",
+      "name": "Jak?",
+      "points": "Punkty",
+      "start_at": "Zacząć od",
+      "type": "Rodzaj"
+    },
+    "title": "Jak zdobyć punkty?"
+  },
+  "customer_global": {
+    "account": "Konto",
+    "active": "Aktywny",
+    "admin_footer": "2016 Open Loyalty",
+    "all_time_active": "Czy cały czas jest aktywny",
+    "and": "I",
+    "cancel": "Anuluj",
+    "change": "Zmień",
+    "configuration": "Konfiguracja",
+    "confirm": "Tak",
+    "edit": "Edytuj",
+    "emails": "E-maile dotyczące transakcji",
+    "false": "Fałsz",
+    "home": "Panel główny",
+    "inactive": "Nieaktywny",
+    "level": "Poziom",
+    "loading": "ładowanie",
+    "logout": "Wyloguj",
+    "menu": "Menu",
+    "no": "Nie",
+    "no_rows_to_display": "Brak wierszy do wyświetlenia",
+    "not_set": "Nieustawione",
+    "ok": "OK",
+    "or": "LUB",
+    "owner_data": {
+      "text": "Lorem ipsum dolor sit amet"
+    },
+    "save": "Zapisz",
+    "search": "Szukaj",
+    "segment": "Segment",
+    "settings": "Ustawienia",
+    "show": "Pokaż",
+    "start_typing_an_email": "wprowadź adres e-mail, aby wyszukać",
+    "static_content": {
+      "benefits": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+        "title": "Moje korzyści"
+      },
+      "connect_online_stores": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+        "title": "Dopasuj do eCommerce"
+      },
+      "contact": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+        "title": "Kontakt"
+      },
+      "faq": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+        "title": "FAQ"
+      },
+      "how_to_earn": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+        "title": "Jak zdobywać punkty?"
+      },
+      "match_with_ecommerce": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+        "title": "Dopasuj do eCommerce"
+      },
+      "rules": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+        "title": "Zasady i warunki"
+      },
+      "visit_offline": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget tincidunt est. Sed fringilla dapibus venenatis.",
+        "title": "Odwiedź sklepy offline"
+      }
+    },
+    "true": "Prawda",
+    "unlimited": "Nieograniczony",
+    "users": "Użytkownicy",
+    "yes": "Tak"
+  },
+  "customer_nav": {
+    "copyrights": "",
+    "earning_points": "Moje punkty",
+    "home": "Panel główny",
+    "logo1": "Loyalty",
+    "logo2": "Program",
+    "match_with_ecommerce": "Dopasuj do eCommerce",
+    "my_level": "Mój poziom",
+    "my_profile": "Mój profil",
+    "my_rewards": "Moje nagrody",
+    "my_transactions": "Moje transakcje"
+  },
+  "customer_profile": {
+    "activate_confirmation": "Czy chcesz aktywować konto klienta?",
+    "activate_confirmation_description": "Czy chcesz aktywować klienta?",
+    "add": "Dodaj klienta",
+    "add_address": "Adres",
+    "add_company": "Firma",
+    "add_heading": "Dodaj klienta",
+    "add_profile_id": "dodaj Profile ID",
+    "address_address1_prompt": "",
+    "address_address2_prompt": "",
+    "address_city_prompt": "",
+    "address_country_prompt": "",
+    "address_province_prompt": "",
+    "address_street_prompt": "",
+    "agreement1": "Regulamin",
+    "agreement1_prompt": "Ta zgoda jest wymagana",
+    "agreement2": "Zgoda marketingowa",
+    "agreement2_prompt": "",
+    "agreement3": "Zgoda na przetwarzanie danych osobowych",
+    "agreement3_prompt": "",
+    "agreements": "Zgody",
+    "basic_info": "Informacje Podstawowe",
+    "birth_date": "Data urodzenia",
+    "birth_date_prompt": "",
+    "building_name": "Budynek",
+    "change_password": {
+      "current": "Obecne hasło",
+      "do_not_match": "Hasła nie pasują do siebie",
+      "new_first": "Nowe hasło",
+      "new_second": "Powtórz nowe hasło"
+    },
+    "city": "Miasto",
+    "company_name": "Firma",
+    "company_name_prompt": "",
+    "company_nip_prompt": "",
+    "country": "Państwo",
+    "created_at": "Data utworzenia",
+    "data": {
+      "basic": "Informacje podstawowe",
+      "change_password": "Zmień hasło"
+    },
+    "delete_confirmation": "Czy chcesz dezaktywować tego klienta?",
+    "delete_confirmation_description": "Ten klient zostanie dezaktywowany i nie będzie już możliwości jego aktywacji",
+    "edit": "Edytuj",
+    "edit_heading": "Edytuj klienta",
+    "email": "E-mail",
+    "email_prompt": "",
+    "female": "Kobieta",
+    "not_disclosed": "Nie ujawniono",
+    "first_name_prompt": "",
+    "flat_name": "Mieszkanie",
+    "gender": "Płeć",
+    "gender_prompt": "",
+    "heading": "Klienci",
+    "import": "Import klientów",
+    "import_title": "Import klientów",
+    "import_xml_field": "Wybierz plik",
+    "inactive": "Nieaktywny",
+    "last_name_prompt": "",
+    "lc_number": "Numer Karty Lojalnościowej",
+    "list": "Lista klientów",
+    "loyalty_card_number_prompt": "",
+    "male": "Mężczyzna",
+    "name": "Imię",
+    "nip": "Numer Identyfikacji Podatkowej",
+    "password": "Hasło",
+    "phone": "Telefon",
+    "phone_prompt": "",
+    "postal": "Kod pocztowy",
+    "postal_prompt": "",
+    "profile_details": "Szczegóły",
+    "profile_id": "Profile ID",
+    "profile_id_prompt": "",
+    "profile_ids": "Profile IDs",
+    "show_address_prompt": "",
+    "show_company_prompt": "",
+    "state": "Status",
+    "street": "Ulica",
+    "surname": "Nazwisko",
+    "transfers_heading": "Transfery punktowe dla klienta",
+    "transfers_list": "Lista transferów punktowych"
+  },
+  "customer_security": {
+    "back_to_login": "Powróć do strony logowania",
+    "change_password": "Zmień hasło",
+    "login": {
+      "copyrights": "2016 Open Loyalty",
+      "credentials": "Niepoprawne dane logowania",
+      "forgot": "Zapomniałeś hasła?",
+      "get_terms_conditions": "Pobierz regulamin",
+      "heading": "Zaloguj się na swoje konto",
+      "log_in": "Zaloguj",
+      "password": "Hasło",
+      "remember_me": "Nie wylogowuj mnie",
+      "username": "Login"
+    },
+    "new_password": "Nowe hasło",
+    "registration": {
+      "add_address": "Dodaj dane adresowe",
+      "add_company": "Dodaj dane firmy",
+      "address": "Adres",
+      "agreement1": "Regulamin",
+      "agreement2": "Zgoda marketingowa",
+      "agreement3": "Zgoda na przetwarzanie danych osobowych",
+      "agreements": "Zgody",
+      "basic_info": "Informacje Podstawowe",
+      "birth_date": "Data urodzenia",
+      "building_name": "Numer domu",
+      "check": {
+        "first": "Osiągnij poziomy!",
+        "second": "Zdobądź punkty!",
+        "third": "Zrealizuj nagrody!"
+      },
+      "city": "Miasto",
+      "company_data": "Dane Firmy",
+      "company_name": "Nazwa firmy",
+      "country": "Państwo",
+      "create_account": "Stwórz konto",
+      "description": "Możesz utworzyć tutaj konto w programie lojalnościowym.",
+      "email": "E-mail",
+      "female": "Kobieta",
+      "not_disclosed": "Nie ujawniono",
+      "flat_name": "Numer mieszkania",
+      "gender": "Płeć",
+      "heading": "Utwórz konto",
+      "lc_number": "Numer Karty Lojalnościowej",
+      "male": "Mężczyzna",
+      "name": "Imię",
+      "nip": "Numer Identyfikacji Podatkowej",
+      "password": "Hasło",
+      "password_repeat": "Powtórz hasło",
+      "phone": "Telefon",
+      "postal": "Kod pocztowy",
+      "state": "Województwo",
+      "street": "Ulica",
+      "surname": "Nazwisko"
+    },
+    "registration_activation": {
+      "activate_or_resend_code": "Aktywuj konto lub ponownie wyślij kod",
+      "code": "Kod aktywacyjny",
+      "phone": "Numer telefonu",
+      "resend_code": "Wyślij ponownie kod",
+      "title": "Aktywacja konta"
+    },
+    "request_description": "Wpisz swój login, a my wyślemy Ci hasło do odzyskiwania",
+    "request_heading": "Zapomniałeś hasła?",
+    "reset_description": "Wprowadź nowe hasło",
+    "reset_heading": "Odzyskiwanie hasła",
+    "send_request": "ODZYSKAJ HASŁO",
+    "username": "Nazwa użytkownika"
+  },
+  "customer_status": {
+    "active_points": "Aktywne punkty",
+    "current_discount": "Aktualny rabat",
+    "expired_points": "Wygasłe punkty",
+    "my_profile": "Mój profil",
+    "my_profile_edit": "Edytuj profil",
+    "next_level_discount": "Następny poziom rabatu",
+    "points_to_next_level": "Potrzebujesz {{ pointsToNextLevel }} więcej punktów, aby przejść do następnego poziomu",
+    "points_to_next_level2": "Punkty do następnego poziomu",
+    "title": "Moje konto",
+    "transactions_amount": "Wartość transakcji",
+    "transactions_amount_to_next_level": "Wartość transakcji dla uzyskania następnego poziomu",
+    "transactions_amount_to_next_level_without_delivery_costs": "Wartość transakcji (bez kosztów dostawy) dla następnego poziomu",
+    "used_points": "Wykorzystane punkty"
+  },
+  "customer_transaction": {
+    "actions": "Akcje",
+    "amount": "Kwota",
+    "building_name": "Numer domu",
+    "category": "Kategoria",
+    "city": "Miasto",
+    "country": "Państwo",
+    "customer_email": "E-mail",
+    "customer_email_prompt": "Znajdź transakcję za pomocą e-mail",
+    "customer_id": "ID Klienta",
+    "customer_id_prompt": "Wpisz unikalny ID klienta",
+    "customer_loyalty_card_number": "Numer karty lojalnościowej",
+    "customer_name": "Imię i nazwisko",
+    "customer_phone_number": "Numer telefonu",
+    "details": "Szczegóły przedmiotu",
+    "document_number": "Numer dokumentu",
+    "document_type": "Typ dokumentu",
+    "document_types": {
+      "both": "Wszystkie",
+      "return": "Zwrot",
+      "sell": "Sprzedaż"
+    },
+    "email": "E-mail",
+    "empty_transactions": "Brak transakcji do wyświetlenia",
+    "gross": "Wartość brutto",
+    "heading": "Transakcje",
+    "id": "ID Transakcji",
+    "item_details": "Szczegóły przedmiotu",
+    "labels": "Etykiety",
+    "link": "Dopasuj do klienta",
+    "link_modal": "Dopasuj klienta do transakcji",
+    "list": "Lista transakcji",
+    "loyaltyCardNumber": "Numer karty lojalnościowej",
+    "maker": "Marka",
+    "name": "Nazwa",
+    "phone": "Telefon",
+    "points_earned": "Zdobyte punkty",
+    "pos_name": "Nazwa sklepu",
+    "postal_code": "Kod pocztowy",
+    "purchase_date": "Data zakupu",
+    "purchase_place": "POS",
+    "quantity": "Ilość",
+    "revised_document": "Poprawiony dokument",
+    "sku": "SKU",
+    "state": "Państwo",
+    "street": "Ulica",
+    "sum": "Suma",
+    "transaction_document_number": "Numer dokumentu",
+    "transaction_document_number_prompt": "Znajdź transakcję za pomocą numeru dokumentu",
+    "transaction_id": "Id transakcji",
+    "unit_name": "Numer mieszkania"
+  },
+  "customer_transfer": {
+    "comment": "Komentarz",
+    "created_at": "Data utworzenia",
+    "empty_transfers": "Brak danych do wyświetlenia",
+    "expire_at": "Wygaśnie w",
+    "heading": "Zdobądź punkty",
+    "list": "Lista transferów punktowych",
+    "state": "Status",
+    "type": "Rodzaj",
+    "value": "Wartość",
+    "locked_until": "Zablokowane do"
+  },
+  "dashboard": {
+    "heading": "Dashboard"
+  },
+  "earning_rule": {
+    "actions": "Akcje",
+    "active": "Status",
+    "active_prompt": "",
+    "add": "Dodaj regułę",
+    "add_earning_rule": "Dodaj regułę",
+    "add_excluded_label": "Dodaj wyłączoną etykietę",
+    "add_included_label": "Dodaj etykietę",
+    "add_excluded_sku": "Dodaj SKU",
+    "add_heading": "Dodaj regułę",
+    "add_label_multiplier": "Dodaj mnożnik",
+    "all_time_active": "Cały czas dostępna",
+    "all_time_active_prompt": "",
+    "basic_info": "Podstawowe Informacje",
+    "code": "Code",
+    "code_prompt": "",
+    "custom_event_name": "Nazwa zdarzenia",
+    "custom_event_name_prompt": "",
+    "custom_event_usage": "Użycie",
+    "description": "Opis",
+    "description_prompt": "",
+    "details": "Szczegóły reguły",
+    "edit": "Edytuj regułę nagradzania",
+    "edit_heading": "Edytuj regułę",
+    "end_at": "Obowiązuje do",
+    "end_at_prompt": "",
+    "event_name": "Rodzaj zdarzenia",
+    "event_name_prompt": "",
+    "exclude_delivery_cost": "Nie obejmuje kosztów dostawy",
+    "excluded_delivery_cost_prompt": "",
+    "excluded_labels": "Z wyłączeniem etykiet:",
+    "included_labels": "Zawiera etykiety:",
+    "excluded_skus": "Z wyłączeniem SKU:",
+    "excluded_skus_prompt": "",
+    "exluded_labels": "Z wyłączeniem etykiet:",
+    "labels_inclusion_type": "Etykiety",
+    "labels_inclusion_type_none": "brak",
+    "labels_inclusion_type_exclude": "z wyłączeniem",
+    "labels_inclusion_type_include": "tylko wybrane",
+    "labels_inclusion_type_prompt": "",
+    "heading": "Zasady przyznawania punktów",
+    "key": "Klucz",
+    "key_prompt": "",
+    "label_multiplier_prompt": "",
+    "label_multipliers": "Mnożniki",
+    "label_value_prompt": "",
+    "last_executed_rule": "Jest ostatnią wykonaną regułą",
+    "last_executed_rule_prompt": "Jeśli zaznaczone, zatrzymane zostanie wykonywanie innych reguł ktore wykonywane są przy transakcji",
+    "levels": "Poziomy",
+    "levels_prompt": "",
+    "limit": {
+      "1 day": "1 Dzień",
+      "1 month": "1 Miesiąc",
+      "1 week": "1 Tydzień",
+      "active": "Ograniczenia obowiązywania",
+      "active_prompt": "",
+      "limit": "Limit zastosowań",
+      "limit_prompt": "",
+      "period": "Ramy czasowe",
+      "period_prompt": "",
+      "3 months": "3 miesiące",
+      "6 months": "6 miesięcy",
+      "1 year": "1 rok",
+      "forever": "Na zawsze"
+    },
+    "limit_info": "Limit użycia",
+    "limit_period": {
+      "day": "dzień",
+      "month": "miesiąc",
+      "week": "tydzień",
+      "3 months": "3 miesiące",
+      "6 months": "6 miesięcy",
+      "1 year": "1 rok",
+      "forever": "Na zawsze"
+    },
+    "list": "Lista reguł zdobywania punktów",
+    "min_order_value": "Minimalna wartość zamówienia",
+    "min_order_value_prompt": "Minimalna wartość zamówienia wymagana do zdobywania punktów",
+    "multiplier": "Mnożnik",
+    "multiplier_prompt": "",
+    "name": "Nazwa",
+    "name_prompt": "",
+    "photo": "Zdjęcie",
+    "point_value": "Wartość punktu",
+    "point_value_prompt": "Ilość punktów za każdy wydany 1 zł",
+    "points_amount": "Punkty",
+    "points_amount_prompt": "",
+    "pos": "POS",
+    "pos_prompt": "",
+    "promoted_events": {
+      "oloy.account.created": "Konto utworzone",
+      "oloy.customer.logged_in": "Klient zalogowany",
+      "oloy.customer.newsletter_subscription": "Subskrypcja newslettera",
+      "oloy.customer.referral": "Zaproszenia do programu",
+      "oloy.transaction.customer_first_transaction": "Pierwszy zakup"
+    },
+    "referral_events": {
+      "every_purchase": "Każdy zakup",
+      "first_purchase": "Pierwszy zakup",
+      "register": "Zarejestruj"
+    },
+    "referral_types": {
+      "both": "obaj",
+      "referred": "zaproszony",
+      "referrer": "polecający"
+    },
+    "reward": "Osoba nagradzana",
+    "reward_campaign": "Kampania nagroda",
+    "reward_campaign_prompt": "",
+    "reward_prompt": "",
+    "reward_type": "Nagroda",
+    "segments": "Segmenty",
+    "segments_prompt": "",
+    "select_currency": "Wybierz walutę",
+    "sku": "SKU",
+    "SKU": "SKU",
+    "sku_prompt": "",
+    "start_at": "Obowiązuje od",
+    "start_at_prompt": "",
+    "target_type": "Grupa odbiorców",
+    "target_type_prompt": "Poziom lub segment klientów, do którego przypisano regułę",
+    "type": "Rodzaj",
+    "type_details": "Szczegóły reguły",
+    "type_prompt": "",
+    "types": {
+      "custom_event": "Zdarzenie niestandardowe",
+      "event": "Zdarzenie systemowe",
+      "instant_reward": "Nagroda natychmiastowa",
+      "multiply_by_product_labels": "Mnożenie punktów przez podany mnożnik w etykiecie",
+      "multiply_for_product": "Pomnóż zdobyte punkty",
+      "points": "Punkty za każdą wydaną złotówkę",
+      "product_purchase": "Zakup produktu",
+      "referral": "Zaproszenia do programu",
+      "geolocation": "Geolokalizacja",
+      "qrcode": "QRcode"
+    },
+    "value": "Wartość",
+    "visibility_and_activity": "Dostępność reguły",
+    "latitude": "Szerokość",
+    "latitude_prompt": "",
+    "longitude": "Długość",
+    "longitude_prompt": "",
+    "radius": "Promień",
+    "radius_prompt": "w kilometrach od podanego punktu",
+    "points": "Punkty",
+    "points_prompt": ""
+  },
+  "front_error": {
+    "at_least_one": "Wypełnij przynajmniej jedno pole",
+    "not_blank": "To pole nie powinno być puste",
+    "not_blank_or_customerLoyaltyCardNumber": "Musisz podać numer telefonu lub karty lojalnościowej",
+    "not_blank_or_customerPhoneNumber": "Musisz podać numer telefonu lub karty lojalnościowej",
+    "not_blank_or_documentNumber": "Musisz podać numer dokumentu",
+    "not_equal_plainPassword": "Hasła nie są równe",
+    "not_equal_plainPassword2": "Hasła nie są równe"
+  },
+  "global": {
+    "account": "Konto",
+    "active": "Aktywny",
+    "admin_footer": "2018 Open Loyalty",
+    "all_time_active": "Bez ograniczeń",
+    "and": "I",
+    "cancel": "Anuluj",
+    "change": "Zmień",
+    "configuration": "Konfiguracja",
+    "roles": "Uprawnienia",
+    "confirm": "Tak",
+    "edit": "Edytuj",
+    "emails": "E-maile",
+    "false": "Fałsz",
+    "home": "Panel główny",
+    "import": "Importuj",
+    "inactive": "Nieaktywny",
+    "level": "Poziom",
+    "loading": "ładowanie",
+    "logout": "Wyloguj",
+    "logs": "Logi systemowe",
+    "menu": "Menu",
+    "no": "Nie",
+    "no_rows_to_display": "Nie ma żadnych wierszy do wyświetlenia",
+    "not_set": "Nieustawione",
+    "or": "LUB",
+    "program_name": "Open Loyalty",
+    "remove": "Usuń",
+    "save": "Zapisz",
+    "search": "Wyszukaj",
+    "segment": "Segment",
+    "settings": "Ustawienia",
+    "show": "Pokaż",
+    "start_typing_a_number": "Wprowadź numer dokumentu transakcji",
+    "start_typing_an_email": "Wprowadź nazwę do wyszukania",
+    "start_typing_an_email_or_phone": "Wprowadź e-mail lub telefon do wyszukania",
+    "translations": "Tłumaczenia",
+    "translations_list": "Tłumaczenia",
+    "true": "Prawda",
+    "unlimited": "Nieograniczone",
+    "unlink": "Odłącz",
+    "upload": "Załaduj",
+    "users": "Użytkownicy",
+    "yes": "Tak"
+  },
+  "level": {
+    "active": "Status",
+    "active_prompt": "",
+    "add": "Dodaj poziom",
+    "add_heading": "Dodaj poziom",
+    "add_special_reward": "Dodaj specjalną nagrodę",
+    "assign_level": "Przypisz poziom",
+    "assign_pos": "Przypisz POS",
+    "assigned_manually": "Poziom przypisany ręcznie",
+    "basic_info": "Informacje Podstawowe",
+    "code": "Kupon",
+    "condition_value": "Warunek osiągnięcia poziomu",
+    "condition_value_prompt": "",
+    "created_at": "Data utworzenia",
+    "description": "Opis",
+    "description_prompt": "",
+    "edit": "Edytuj poziom",
+    "edit_heading": "Edytuj ",
+    "end_at": "Obowiązuje do",
+    "heading": "Poziomy",
+    "inactive": "Nieaktywny",
+    "list": "Lista poziomów",
+    "min_order": "Minimalna wartość zamówienia",
+    "min_order_prompt": "",
+    "name": "Nazwa",
+    "name_prompt": "",
+    "no_level": "Nie ma zdefiniowanych poziomów",
+    "photo": "Zdjęcie",
+    "reward_code": "Kod nagrody",
+    "reward_code_prompt": "",
+    "reward_details": "Szczegóły nagrody",
+    "reward_name": "Nazwa nagrody",
+    "reward_name_prompt": "",
+    "reward_value": "Wartość nagrody",
+    "reward_value_prompt": "",
+    "select_level": "Przypisz poziom",
+    "special_reward_details": "Szczegóły specjalnej nagrody",
+    "special_rewards": "Specjalne nagrody",
+    "specialreward_active_prompt": "",
+    "specialreward_code_prompt": "",
+    "specialreward_endat_prompt": "",
+    "specialreward_name_prompt": "",
+    "specialreward_startat_prompt": "",
+    "specialreward_value_prompt": "",
+    "start_at": "Obowiązuje od",
+    "users": "Klienci",
+    "users_in_level": "Klienci przypisani do poziomu",
+    "value": "Wartość"
+  },
+  "login": {
+    "copyrights": "2016 Open Loyalty",
+    "credentials": "Niepoprawne dane logowania",
+    "forgot": "Zapomniałeś hasła?",
+    "heading": "Zaloguj się na swoje konto",
+    "log_in": "Zaloguj",
+    "password": "Hasło",
+    "remember_me": "Nie wylogowuj mnie",
+    "username": "Login"
+  },
+  "nav": {
+    "add_campaign": "Dodaj nagrodę",
+    "add_customer": "Dodaj klienta",
+    "add_earning_rule": "Dodaj regułę",
+    "add_level": "Dodaj poziom",
+    "add_pos": "Dodaj sklep",
+    "add_segment": "Dodaj segment",
+    "add_seller": "Dodaj sprzedawcę",
+    "all_campaigns": "Katalog nagród",
+    "all_customers": "Wszyscy klienci",
+    "all_earning_rules": "Wszystkie reguły",
+    "all_levels": "Wszystkie poziomy",
+    "all_pos": "Wszystkie sklepy",
+    "all_segments": "Wszystkie segmenty",
+    "all_sellers": "Wszyscy sprzedawcy",
+    "all_transactions": "Wszystkie transakcje",
+    "all_transfers": "Wszystkie transfery punktów",
+    "campaigns": "Nagrody",
+    "customers": "Klienci",
+    "dashboard": "Dashboard",
+    "earning_rules": "Reguły nagradzania",
+    "guide": "Poradnik",
+    "home": "Panel główny",
+    "levels": "Poziomy",
+    "pos": "POS",
+    "redeemed_campaigns": "Odebrane nagrody",
+    "referred_customer": "Zaproszeni klienci",
+    "retention_matrix": "Macierz retencji",
+    "segments": "Segmenty",
+    "sellers": "Sprzedawcy",
+    "support": "Wsparcie",
+    "transactions": "Transakcje",
+    "transfers": "Transfery punktów",
+    "all_campaign_categories": "Wszystkie kategorie kampanii"
+  },
+  "Plik nie mógł zostać odnaleziony.": "Nie można znaleźć pliku",
+  "pos": {
+    "actions": "Akcje",
+    "add": "Dodaj sklep",
+    "add_heading": "Dodaj sklep",
+    "address1_prompt": "",
+    "address2_prompt": "",
+    "basic_info": "Informacje Podstawowe",
+    "building_name": "Numer domu",
+    "city": "Miasto",
+    "city_prompt": "",
+    "country": "Państwo",
+    "country_prompt": "",
+    "description": "Opis",
+    "description_prompt": "",
+    "edit": "Edytuj sklep",
+    "edit_heading": "Edytuj sklep",
+    "heading": "POS",
+    "identifier": "POS ID",
+    "identifier_prompt": "",
+    "lat": "Szerokość geograficzna",
+    "lat_prompt": "",
+    "list": "Lista sklepów",
+    "localization": "Adres",
+    "long": "Długość geograficzna",
+    "long_prompt": "",
+    "name": "Nazwa",
+    "name_prompt": "",
+    "no_pos": "Brak zdefiniowanych sklepów",
+    "postal_code": "Kod pocztowy",
+    "postal_prompt": "",
+    "province_prompt": "",
+    "select_country": "Wybierz państwo",
+    "select_pos": "Przypisz POS",
+    "state": "Województwo",
+    "street_name": "Ulica",
+    "street_prompt": "",
+    "transactions_amount": "Wartość transakcji",
+    "transactions_count": "Liczba transakcji",
+    "unit_name": "Numer mieszkania"
+  },
+  "registration": {
+    "add_address": "Dodaj dane adresowe",
+    "add_company": "Dodaj dane firmy",
+    "address": "Adres",
+    "agreement1": "Regulamin",
+    "agreement2": "Zgoda marketingowa",
+    "agreement3": "Zgoda na przetwarzanie danych osobowych",
+    "agreements": "Umowy",
+    "basic_info": "Informacje Podstawowe",
+    "birth_date": "Data urodzenia",
+    "building_name": "Numer domu",
+    "check": {
+      "first": "Osiągnij poziom!",
+      "second": "Zdobądź punkty!",
+      "third": "Zrealizuj nagrody!"
+    },
+    "city": "Miasto",
+    "company_data": "Dane Firmy",
+    "company_name": "Nazwa firmy",
+    "country": "Państwo",
+    "create_account": "Utwórz konto",
+    "description": "Możesz utworzyć konto lojalnościowe tutaj.",
+    "email": "E-mail",
+    "female": "Kobieta",
+    "not_disclosed": "Nie ujawniono",
+    "flat_name": "Numer mieszkania",
+    "gender": "Płeć",
+    "heading": "Stwórz konto",
+    "lc_number": "Numer Karty Lojalnościowej",
+    "male": "Mężczyzna",
+    "name": "Imię",
+    "nip": "Numer Identyfikacji Podatkowej",
+    "password": "Hasło",
+    "password_repeat": "Powtórz hasło",
+    "phone": "Telefon",
+    "postal": "Kod pocztowy",
+    "state": "Województwo",
+    "street": "Ulica",
+    "surname": "Nazwisko"
+  },
+  "registration_activation": {
+    "basic_info": "Aktywacja konta",
+    "code": "Kod aktywacyjny"
+  },
+  "security": {
+    "back_to_login": "Wróć do strony logowania",
+    "change_password": "Zmień hasło",
+    "new_password": "Nowe hasło",
+    "request_description": "Wprowadź login, wyślemy ci tymczasowe hasło",
+    "request_heading": "Zapomniałeś hasła?",
+    "reset_description": "Wprowadź nowe hasło",
+    "reset_heading": "Odzyskiwanie hasła",
+    "send_request": "ODZYSKIWANIE HASŁA",
+    "username": "Nazwa użytkownika"
+  },
+  "segment": {
+    "actions": "Akcje",
+    "active": "Status",
+    "active_prompt": "",
+    "add": "Dodaj segment",
+    "add_criterion": "Dodaj warunek OR",
+    "add_heading": "Dodaj segment",
+    "add_identification_priority": "Dodaj kryterium",
+    "add_segment_part": "Dodaj warunek AND",
+    "anniversary_type_days_prompt": "",
+    "anniversary_type_prompt": "",
+    "basic_info": "Informacje podstawowe",
+    "created_at": "Data utworzenia",
+    "days_prompt": "",
+    "delete_confirmation": "Czy chcesz usunąć wybrany segment?",
+    "delete_confirmation_description": "Ta operacja nie może zostać cofnięta.",
+    "description": "Opis",
+    "description_prompt": "",
+    "details_heading": "Szczegóły nagrody",
+    "edit": "Edytuj segment",
+    "edit_heading": "Edytuj segment",
+    "from_amount_prompt": "",
+    "from_date_prompt": "",
+    "heading": "Segmenty",
+    "label_key_prompt": "",
+    "label_value_prompt": "",
+    "list": "Lista segmentów",
+    "maker_prompt": "",
+    "mas_prompt": "",
+    "min_prompt": "",
+    "name": "Nazwa",
+    "name_prompt": "",
+    "no_data": "Brak danych do wyświetlenia",
+    "partials": {
+      "add_label": "Dodaj etykietę",
+      "anniversary": "Wydarzenie",
+      "average_transaction_amount": "Średnia wartość transakcji",
+      "birthday": "Urodziny",
+      "bought_in_pos": "Sklep, w którym dokonano zakupu",
+      "bought_labels": "Produkty o danych etykietach",
+      "bought_makers": "Zakupione produkty (marka)",
+      "bought_skus": "Zakupione produkty (SKU)",
+      "choose_pos": "Wybierz POS",
+      "customers": "Klienci",
+      "customers_prompt": "Dodaj dowolnych klientów",
+      "customer_has_labels": "Klienci oznaczeni etykietami",
+      "customer_list": "Dowolna lista klientów",
+      "customer_with_labels_values": "Klienci oznaczeni etykietami o wartości",
+      "date_from": "Data od",
+      "date_to": "Data do",
+      "days": "Ilość dni",
+      "key": "Klucz",
+      "last_purchase_n_days_before": "Ostatni zakup n dni temu",
+      "makers": "Marki",
+      "max": "Max",
+      "max_amount": "Max",
+      "min": "Min",
+      "min_amount": "Min",
+      "percent": "Procent",
+      "percent_prompt": "",
+      "pos": "POS",
+      "pos_id_prompt": "",
+      "purchase_period": "Czas zakupu",
+      "registration": "Rejestracja",
+      "select_pos": "Wybierz POS...",
+      "select_type": "Wybierz rodzaj...",
+      "skus": "SKU",
+      "transaction_amount": "Wartość transakcji",
+      "transaction_count": "Częstotliwość zakupów",
+      "transaction_percent_in_pos": "Procent zakupów w sklepie",
+      "type": "Typ",
+      "value": "Wartość"
+    },
+    "parts": "Kryteria",
+    "percent_prompt": "",
+    "pos_id_prompt": "",
+    "pos_ids_prompt": "",
+    "skus_prompt": "",
+    "to_amount_prompt": "",
+    "to_date_prompt": "",
+    "type_prompt": "",
+    "users": "Klienci",
+    "users_in_segment": "Klienci przypisani do segmentu"
+  },
+  "seller": {
+    "actions": "Akcje",
+    "active": "Status",
+    "active_prompt": "",
+    "add": "Dodaj sprzedawcę",
+    "add_heading": "Dodaj sprzedawcę",
+    "allow_point_transfer": "Zezwól sprzedawcy dodawać nowy transfer punktów",
+    "change_passowrd": "Zmień hasło",
+    "customer_search": {
+      "city": "Miasto",
+      "city_prompt": "Miasto klienta",
+      "email": "Adres e-mail",
+      "email_prompt": "Adres e-mail klienta",
+      "find": "Szukaj klienta",
+      "heading": "Zidentyfikuj klienta",
+      "loyalty_card_number": "Numer karty lojalnościowej",
+      "name": "Imię i nazwisko",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "phone": "Numer telefonu",
+      "phone_prompt": "Numer telefonu klienta",
+      "postcode": "Kod pocztowy",
+      "postcode_prompt": "Kod pocztowy klienta",
+      "result": "Wyniki wyszukiwania"
+    },
+    "dashboard": {
+      "campaigns": "Kampanie nagród",
+      "earning_points_rules": "Zasady przyznawania punktów",
+      "find_customer": "Szukaj klienta",
+      "find_transaction": "Znajdź transakcję",
+      "heading": "Dashboard",
+      "match_transaction_and_customer": "Dopasuj transakcję i klienta",
+      "register_customer": "Zarejestruj klienta",
+      "title": {
+        "campaign_list": "Katalog nagród",
+        "customer_campaigns": "kampanie klienta",
+        "customer_edit": "Edytuj klienta",
+        "customer_registration": "Rejestracja klienta",
+        "customer_registration_activation": "rejestracja klienta",
+        "customer_rewards": "nagrody klienta",
+        "customer_transactions": "transakcje klienta",
+        "customer_transfers": "transfery klienta",
+        "earning_rules": "Reguły nagradzania",
+        "find_customer": "Znajdź klienta",
+        "find_transaction": "Znajdź transakcję",
+        "transactions": "Transakcje"
+      }
+    },
+    "delete_confirmation": "Czy chcesz usunąć konto sprzedawcy?",
+    "delete_confirmation_description": "Tej akcji nie można cofnąć.",
+    "details": "Informacje podstawowe",
+    "discount_code": "",
+    "edit": "Edytuj sprzedawcę",
+    "edit_heading": "Edytuj sprzedawcę",
+    "email": "E-mail",
+    "email_prompt": "",
+    "first_name_prompt": "",
+    "heading": "Sprzedawcy",
+    "last_name_prompt": "",
+    "list": "Lista sprzedawców",
+    "name": "Imię",
+    "no_seller": "Brak dostępnych sprzedawców",
+    "pass_prompt": "Wprowadź hasło",
+    "pass_prompt_change": "",
+    "password": "Hasło",
+    "phone": "Telefon",
+    "phone_prompt": "",
+    "pos": "POS",
+    "pos_prompt": "",
+    "posCity": "Miasto",
+    "posId": "POS ID",
+    "posName": "Nazwa",
+    "select_pos": "Przypisz POS",
+    "select_seller": "Przypisz sprzedawcę",
+    "surname": "Nazwisko",
+    "transaction": {
+      "customer_loyalty_card_number_prompt": "Wprowadź numer karty lub wypełnij telefon poniżej",
+      "customer_phone_number_prompt": "Wprowadź numer karty lub wypełnij telefon powyżej",
+      "find": {
+        "document_number_prompt": "",
+        "heading": "Znajdź transakcję"
+      },
+      "heading": "Dopasuj klienta do transakcji",
+      "search_results": "Wyniki wyszukiwania",
+      "transaction_id_prompt": "Wprowadź numer dokumentu"
+    }
+  },
+  "settings": {
+    "level_downgrade": {
+      "title": "Ustawienia związane ze zmianą poziomu na niższy",
+      "mode": "Tryb",
+      "mode_prompt": "",
+      "days": "Sprawdź co",
+      "days_prompt": "dni",
+      "base": "W oparciu o",
+      "base_prompt": "",
+      "active_points": "atkywne punkty",
+      "earned_points": "punkty zgromadzone przez ostatnie X dni",
+      "earned_points_since_last_level_change": "punkty zgromadzone od ostatniej zmiany levelu",
+      "after_x_days": "co X dni",
+      "none": "brak spadku",
+      "automatic": "automatycznie",
+      "reset_points": "resetuj punkty"
+    },
+    "allow_customers_profile_edits": "Pozwalaj użytkownikom na edycję swojego profilu",
+    "allow_customers_profile_edits_prompt": "Pozwalaj",
+    "point_will_expire_after": "Metoda wygaśnięcia punktów",
+    "at_the_end_of_the_year": "Punkty wygasną na koniec roku",
+    "after_x_days": "Punkty wygasną po X dniach",
+    "all_time_active": "Punkty nigdy nie wygasają",
+    "all_time_not_locked": "Punkty nie są blokowane",
+    "all_time_not_locked_prompt": "",
+    "at_the_end_of_the_month": "Punkty wygasną na koniec miesiąca",
+    "accent_color": "Zdefiniuj kolor",
+    "conditions_file": "Warunki i Zasady Użytkowania",
+    "accent_color_prompt": "Kolor w HEX (#000000)",
+    "account_activation": "Aktywacja konta",
+    "account_activation_method": "Metoda aktywacji konta",
+    "account_activation_method_prompt": "",
+    "add_identification_priority": "",
+    "big_logo": "Duże logo",
+    "coditions_url": "Adres URL polityki prywatności",
+    "conditions_url": "Adres URL polityki prywatności",
+    "count_points_immediately": "Nalicz punkty natychmiast",
+    "css_template": "Szablon CSS",
+    "css_template_prompt": "",
+    "currency": "Waluta",
+    "currency_plural": "Liczba mnoga waluty",
+    "currency_prompt": "",
+    "currency_singular": "Liczba pojedyncza waluty",
+    "customerStatusesEarning_prompt": "",
+    "customerStatusesSpending_prompt": "",
+    "defaultTranslations": "Domyślny plik tłumaczeń",
+    "defaultTranslations_prompt": "",
+    "enable_webhooks": "aktywuj Webhook",
+    "exclude_delivery_costs": "Koszty dostawy",
+    "exclude_delivery_costs_prompt": "Koszt dostawy produktów o danym SKU nie będzie generować punktów",
+    "excluded_level_skus": "SKU wyłączone z obliczania poziomu",
+    "excluded_skus": "Dotyczy SKU",
+    "excluded_skus_prompt": "",
+    "excludes_level_skus_prompt": "",
+    "expire_coupons_notification_days": "Ilość dni przed wygaśnięciem kuponu do poinformowania użytkownika",
+    "expire_coupons_notification_days_prompt": "[dni]",
+    "expire_points_notification_days": "Ilość dni przed wygaśnięciem punktów do poinformowania użytkownika",
+    "expire_points_notification_days_prompt": "[dni]",
+    "expire_levels_notification_days": "Ilość dni do rekalkulacji levelu",
+    "expire_levels_notification_days_prompt": "[dni]",
+    "faq_url": "Adres URL FAQ",
+    "field_prompt": "",
+    "fields": "Kryterium",
+    "heading": "Konfiguracja",
+    "help_email": "Email do kontaktu z działem pomocy",
+    "help_email_address_prompt": "",
+    "hero_image": "Baner",
+    "identification_priority": "Kryteria dopasowania klienta do transakcji",
+    "lang": "Język",
+    "lang_prompt": "",
+    "logo": "Logo",
+    "marketing": "Marketing Automation Tool",
+    "marketing_vendor": "Wybierz integrację",
+    "marketing_vendor_prompt": "",
+    "points_days_active": "Punkty wygasną po upływie",
+    "points_days_locked": "Punkty będą zablokowane przez",
+    "points_days_active_prompt": "[dni]",
+    "points_days_locked_prompt": " [dni]",
+    "points_plural": "Liczba mnoga punktów",
+    "points_singular": "Liczba pojedyncza punktów",
+    "posints_days_active_prompt": " [dni]",
+    "priority": "Priorytet",
+    "priority_prompt": "",
+    "program_conditions_url_prompt": "",
+    "program_faq_url_prompt": "",
+    "program_logo": "Logo programu",
+    "program_name": "Nazwa programu",
+    "program_name_prompt": "",
+    "program_points_plural_prompt": "",
+    "program_points_singular_prompt": "",
+    "program_url": "Adres URL programu",
+    "program_url_prompt": "",
+    "push_notification": "Powiadomienia Push",
+    "pushy_secret_key": "Klucz API Pushy",
+    "pushy_secret_key_prompt": "Aby użyć powiadomień Pushy, wklej tutaj klucz API.",
+    "returns": "Zwroty",
+    "returns_prompt": "Aktywuj zwroty",
+    "sales_manago": {
+      "api_key": "Klucz API",
+      "api_key_prompt": "",
+      "api_secret": "API secret",
+      "api_secret_prompt": "",
+      "api_url": "API URL",
+      "api_url_prompt": "",
+      "customer_id": "ID Klienta",
+      "customer_id_prompt": "",
+      "email": "Email",
+      "email_prompt": ""
+    },
+    "select_currency": "Wybierz walutę",
+    "select_lang": "Wybierz język",
+    "select_timezone": "Wybierz strefę czasową",
+    "small_logo": "Małe logo",
+    "smsAccountId": "ID konta",
+    "smsApiKey": "Klucz Api",
+    "smsApiToken": "SmsApi token",
+    "statuses": "Statusy umożliwiające zdobywanie i wydawanie punktów",
+    "statuses_earning": "Statusy umożliwiające zdobywanie punktów",
+    "statuses_spending": "Statusy umożliwiające wydawanie punktów",
+    "template": "Szablon",
+    "tier_assign_type": "Poziomy będą obliczane za pomocą",
+    "tier_assign_type_prompt": "",
+    "timezone": "Strefa czasowa",
+    "timezone_prompt": "",
+    "title": "Konfiguracja",
+    "uri_webhooks": "Adres URL",
+    "uri_webhooks_prompt": "adres URL usługi, gdzie przesyłane są zdarzenia",
+    "webhook_header_name": "Nazwa nagłówka",
+    "webhook_header_name_prompt": "np. Content-Acme-Key",
+    "webhook_header_value": "Wartość nagłówka",
+    "webhook_header_value_prompt": "",
+    "webhooks": "Webhook"
+  },
+  "Ta wartość nie powinna być pusta.": "Ta wartość nie powinna być pusta",
+  "Ten plik nie jest obrazem.": "Ten plik nie jest obrazem",
+  "transaction": {
+    "actions": "Akcje",
+    "amount": "Kwota",
+    "building_name": "Numer domu",
+    "category": "Kategoria",
+    "city": "Miasto",
+    "country": "Państwo",
+    "customer_email": "E-mail",
+    "customer_email_or_phone": "E-mail lub telefon",
+    "customer_email_or_phone_prompt": "Znajdź klienta za pomocą adresu e-mail lub telefonu",
+    "customer_email_prompt": "Znajdź klienta za pomocą adresu e-mail",
+    "customer_id": "ID Klienta",
+    "customer_id_prompt": "Wpisz unikalne ID klienta",
+    "customer_loyalty_card_number": "Numer karty lojalnościowej",
+    "customer_name": "Imię i nazwisko",
+    "customer_phone_number": "Numer telefonu",
+    "details": "Szczegóły przedmiotu",
+    "document_number": "Numer dokumentu",
+    "document_number_should_be_unique": "Numer dokumentu musi być unikalny",
+    "document_type": "Rodzaj dokumentu",
+    "document_types": {
+      "both": "Wszystkie",
+      "return": "Zwrot",
+      "sell": "Sprzedaż"
+    },
+    "edit_labels": "Edytuj etykiety transakcji",
+    "email": "E-mail",
+    "gross": "Wartość brutto",
+    "heading": "Transakcje",
+    "id": "ID Transakcji",
+    "import": "Importuj transakcję",
+    "import_title": "Import transakcji",
+    "import_xml_field": "Wybierz plik",
+    "item_details": "Szczegóły przedmiotu",
+    "labels": "Etykiety",
+    "link": "Dopasuj do klienta",
+    "link_modal": "Dopasuj klienta do transakcji",
+    "list": "Lista transakcji",
+    "loyaltyCardNumber": "Numer karty lojalnościowej",
+    "maker": "Marka",
+    "name": "Nazwa",
+    "phone": "Telefon",
+    "points_earned": "Zdobyte punkty",
+    "points_revoked": "Punkty odwołane",
+    "pos_name": "Nazwa POS",
+    "postal_code": "Kod pocztowy",
+    "purchase_date": "Data zakupu",
+    "purchase_place": "POS",
+    "quantity": "Ilość",
+    "revised_document": "Poprawiony dokument",
+    "sku": "SKU",
+    "state": "Państwo",
+    "street": "Ulica",
+    "sum": "SUMA",
+    "transaction_document_number": "Numer dokumentu",
+    "transaction_document_number_prompt": "Znajdź transakcję za pomocą numeru dokumentu",
+    "transaction_id": "ID transakcji",
+    "unit_name": "Numer mieszkania"
+  },
+  "transaction_labels": {
+    "add_label": "Dodaj etykietę",
+    "key": "Klucz",
+    "key_prompt": "",
+    "title": "Etykiety",
+    "value": "Wartość",
+    "value_prompt": ""
+  },
+  "transfer": {
+    "actions": "Akcje",
+    "add_points": "Dodaj punkty",
+    "add_transfer": "Dodaj transfer",
+    "comment": "Komentarz",
+    "created_at": "Data utworzenia",
+    "customer_loyalty_card_number": "Numer karty lojalnościowej",
+    "delete_confirmation": "Potwierdzenie",
+    "delete_confirmation_description": "Czy chcesz usunąć transfer?",
+    "details": "Szczegóły",
+    "email": "E-mail",
+    "heading": "Transfery punktów",
+    "import": "Importuj punkty",
+    "import_title": "Import punktów",
+    "import_xml_field": "Wybierz plik",
+    "issuer": {
+      "admin": "admin",
+      "api": "API",
+      "seller": "sprzedawca",
+      "system": "system",
+      "title": "Sposób przyznania punktów"
+    },
+    "list": "Lista transferów punktowych",
+    "name": "Imię",
+    "phone": "Telefon",
+    "points_to_add": "Punkty to dodania/wydania",
+    "points_to_spend": "Punkty do wydania",
+    "pos_identifier": "POS",
+    "revised_transaction": "Zwrócona transakcja",
+    "revised_transaction_id": "Numer zwróconej transakcji",
+    "locked_until": "Punkty będą zablokowane do",
+    "expires_at": "Punkty wygasną w dniu",
+    "select_customer": "Wybierz klienta",
+    "spend_points": "Wydaj punkty",
+    "state": "Status",
+    "surname": "Nazwisko",
+    "transfer_points": "Transfer punktów",
+    "transfer_type": "Typ transferu",
+    "type": "Rodzaj",
+    "value": "Wartość"
+  },
+  "users": {
+    "roles": "Role",
+    "roles_prompt": "",
+    "actions": "Akcje",
+    "active": "Aktywny",
+    "active_prompt": "",
+    "add": "Dodaj",
+    "api_key": "Klucz Api",
+    "create": "Stwórz użytkownika",
+    "create_heading": "Dodaj użytkownika",
+    "edit": "Edycja użytkownika",
+    "edit_heading": "Edytuj użytkownika",
+    "email": "E-mail",
+    "external": "Utworzony przez API",
+    "first_name": "Imię",
+    "heading": "Użytkownicy",
+    "last_name": "Nazwisko",
+    "list": "Lista użytkowników",
+    "name": "Imię",
+    "password": "Hasło",
+    "phone": "Telefon",
+    "surname": "Nazwisko"
+  },
+  "xhr": {
+    "pos_coupon_usage": {
+      "error": "An error occurred",
+      "success": "Success"
+    },
+    "get_delivery_statuses": {
+      "error": "Błąd",
+      "success": "Sukces"
+    },
+    "put_change_delivery_status": {
+      "error": "Błąd",
+      "success": "Sukces"
+    },
+    "customer_buy": {
+      "error": "Błąd",
+      "success": "Sukces"
+    },
+    "customer_search": {
+      "error": "Błąd",
+      "nothing_found": "Nie znaleziono klientów",
+      "success": "Sukces",
+      "to_many_results": "Istnieje wiele wyników, proszę podać dodatkowe dane"
+    },
+    "delete_campaign_image": {
+      "error": "Wystąpił błąd",
+      "success": "Obraz usunięty"
+    },
+    "delete_earning_rule_image": {
+      "error": "Wystąpił błąd",
+      "success": "Obraz usunięty"
+    },
+    "delete_level_image": {
+      "error": "Wystąpił błąd",
+      "success": "Obraz usunięty"
+    },
+    "delete_segment": {
+      "error": "Wystąpił błąd",
+      "success": "Segment usunięty"
+    },
+    "delete_settings_conditions_file": {
+      "error": "Regulamin nie został usunięty",
+      "success": "Regulamin został usunięty"
+    },
+    "delete_settings_hero_image": {
+      "error": "Baner nie został usunięty",
+      "success": "Baner został usunięty"
+    },
+    "delete_settings_logo": {
+      "error": "Logo nie zostało usunięte",
+      "success": "Logo zostało usunięte"
+    },
+    "delete_settings_small_logo": {
+      "error": "Małe logo nie zostało usunięte",
+      "success": "Małe logo zostało usunięte"
+    },
+    "delete_user": {
+      "error": "Wystąpił błąd",
+      "success": "Użytkownik usunięty"
+    },
+    "get_available_rewards": {
+      "error": "Nie możemy uzyskać dostępnych nagród"
+    },
+    "get_buy": {
+      "success": "Sukces"
+    },
+    "get_campaign": {
+      "error": "Wystąpił błąd",
+      "no_id": "Nie odnaleziono nagród"
+    },
+    "get_campaigns": {
+      "error": "Nie można uzyskać listy nagród"
+    },
+    "post_role": {
+      "error": "Wystąpił błąd",
+      "success": "Dodano rolę"
+    },
+    "put_role": {
+      "error": "Wystąpił błąd",
+      "success": "Rola została zmieniona"
+    },
+    "post_delete_role": {
+      "error": "Wystąpił błąd",
+      "success": "Role została usunięta"
+    },
+    "get_customer": {
+      "cant_edit": "Nie masz praw do edycji tego klienta",
+      "error": "Nie można uzyskać listy klientów",
+      "no_id": "ID klienta nie znaleziono"
+    },
+    "get_customers": {
+      "error": "Nie można uzyskać listy klientów"
+    },
+    "get_customers_for_campaign": {
+      "error": "Wystapił błąd",
+      "no_id": "Nagroda nie została odnaleziona"
+    },
+    "get_earning_rule": {
+      "error": "Wystąpił błąd",
+      "no_id": "ID reguły nagradzania nie odnaleziono"
+    },
+    "get_earning_rules": {
+      "error": "Nie można uzyskać listy reguł zdobywania punktów"
+    },
+    "get_level": {
+      "error": "Nie można uzyskać przypisanego poziomu"
+    },
+    "get_levels": {
+      "error": "Nie można uzyskać listy dostępnych poziomów"
+    },
+    "get_levels_list": {
+      "error": "Nie można uzyskać listy poziomów"
+    },
+    "get_pos": {
+      "error": "Wystąpił błąd",
+      "no_id": "POS ID nie znaleziono"
+    },
+    "get_pos_list": {
+      "error": "Nie można uzyskać listy POS"
+    },
+    "get_redeemed_campaigns": {
+      "error": "Wystąpił błąd"
+    },
+    "get_segment": {
+      "error": "Wystąpił błąd",
+      "no_id": "ID segmentu nie znaleziono"
+    },
+    "get_segments": {
+      "error": "Nie można pobrać listy segmentów"
+    },
+    "get_seller": {
+      "error": "Wystąpił błąd",
+      "no_id": "Nie znaleziono ID sprzedawcy"
+    },
+    "get_sellers": {
+      "error": "Nie można uzyskać listy sprzedawców"
+    },
+    "get_settings": {
+      "error": "Nie można pobrać danych ustawień"
+    },
+    "get_single_level": {
+      "error": "Błąd serwera",
+      "no_id": "Nie znaleziono ID poziomu"
+    },
+    "get_transations": {
+      "error": "Nie można uzyskać listy transakcji"
+    },
+    "get_transfers": {
+      "error": "Nie można uzyskać listy transferów punktowych"
+    },
+    "get_translation": {
+      "error": "Błąd",
+      "no_id": "Nie określono klucza tłumaczeń"
+    },
+    "get_translations": {
+      "error": "Błąd"
+    },
+    "get_ustomers_for_campaign": {
+      "error": "Wystąpił błąd",
+      "no_id": "Nie odnaleziono ID nagrody"
+    },
+    "import": {
+      "error": "Import nie został zrealizowany",
+      "no_data": "Brak pozycji do importu",
+      "success": "Import został ukończony (Przetworzonych {{ processed }})",
+      "warning": "Import został ukończony, pojawiły się błędy: (Przetworzonych {{ processed }}, ukończono z sukcesem{{ success }}, błędy pojawiły się {{ failed }})"
+    },
+    "post_activate_customer": {
+      "error": "Błąd",
+      "success": "Sukces."
+    },
+    "post_activate_level": {
+      "error": "Wystąpił błąd",
+      "success": "Zmieniono status poziomu"
+    },
+    "post_activate_rule": {
+      "error": "Błąd serwera",
+      "success": "Status zmieniony"
+    },
+    "post_activate_segment": {
+      "error": "Wystąpił błąd",
+      "success": "Aktywowano segment"
+    },
+    "post_activate_seller": {
+      "error": "Wystąpił błąd",
+      "success": "Aktywowano sprzedawcę"
+    },
+    "post_add_transfer": {
+      "error": "Błąd serwera",
+      "success": "Punkty zostały dodane"
+    },
+    "post_campaign": {
+      "error": "Błąd serwera",
+      "success": "Dodano nagrodę",
+      "warning": "Dodano nagrodę bez zdjęcia"
+    },
+    "post_campaign_buy_manually_assign": {
+      "error": "Błąd podczas kupowania kampanii dla klienta",
+      "error_occurred": "Wystąpił błąd",
+      "success": "Kupiono kampanie dla klienta"
+    },
+    "post_cancel_transfer": {
+      "error": "Błąd serwera",
+      "success": "Transfer anulowany."
+    },
+    "post_customer": {
+      "error": "Wystąpił błąd",
+      "success": "Pomyślnie dodano klienta"
+    },
+    "post_deactivate_customer": {
+      "error": "Wystąpił błąd",
+      "success": "Klient został dezaktywowany"
+    },
+    "post_deactivate_segment": {
+      "error": "Wystąpił błąd",
+      "success": "Segment nieaktywny"
+    },
+    "post_deactivate_seller": {
+      "error": "Wystąpił błąd",
+      "success": "Sprzedawca został dezaktywowany"
+    },
+    "post_delete_seller": {
+      "error": "Wystąpił błąd",
+      "success": "Usunięto sprzedawcę"
+    },
+    "post_earning_rule": {
+      "error": "Wystąpił błąd",
+      "success": "Dodano regułę zdobywania punktów",
+      "warning": "Dodano regułę zdobywania punktów bez zdjęcia"
+    },
+    "post_level": {
+      "error": "Wystąpił błąd",
+      "success": "Poziom klienta został przypisany"
+    },
+    "post_password_change": {
+      "error": "Błąd",
+      "success": "Sukces"
+    },
+    "post_password_request": {
+      "error": "Wystąpił błąd",
+      "success": "Jeśli użytkownik istnieje w naszej bazie danych, wyślemy następną instrukcję na podany adres e-mail"
+    },
+    "post_password_reset": {
+      "error": "Wystąpił błąd",
+      "success": "Hasło zostało zmienione."
+    },
+    "post_pos": {
+      "error": "Wystąpił błąd",
+      "success": "Dodano sklep"
+    },
+    "post_registration_customer": {
+      "error": "Wystąpił błąd",
+      "success": "Klient został zarejestrowany"
+    },
+    "post_registration_customer_activate": {
+      "error": "Wystąpił błąd",
+      "success": "Konto zostało aktywowane"
+    },
+    "post_remove_customer_manually_level": {
+      "error": "Wystąpił błąd",
+      "success": "Zadanie zostało ukończone"
+    },
+    "post_resend_activation_code": {
+      "success": "Kod został wysłany na telefon klienta"
+    },
+    "post_resend_customer_code": {
+      "error": "Nie można ponownie wysłać kodu aktywacyjnego. Upewnij się,że numer telefonu jest prawidłowy lub odczekaj kilka minut i spróbuj ponownie.",
+      "success": "Kod został wysłany na twój telefon"
+    },
+    "post_segment": {
+      "error": "Wystąpił błąd",
+      "success": "Dodano segment"
+    },
+    "post_seller": {
+      "error": "Wystąpił błąd",
+      "success": "Dodano sprzedawcę"
+    },
+    "post_single_level": {
+      "error": "Wystąpił błąd",
+      "success": "Poziom został edytowany.",
+      "warning": "Poziom został dodany bez zdjęcia"
+    },
+    "post_spend_transfer": {
+      "error": "Błąd serwera",
+      "success": "Punkty zostały wydane"
+    },
+    "post_transaction_assign": {
+      "error": "Wystąpił błąd. Sprawdź szczegóły formularza",
+      "success": "Transakcja została przypisana do konta Klienta"
+    },
+    "post_transaction_labels": {
+      "error": "Wystąpił błąd. Sprawdź szczegóły.",
+      "success": "Etykiety zostały zmodyfikowane."
+    },
+    "post_translations": {
+      "error": "Błąd",
+      "success": "Sukces"
+    },
+    "post_user": {
+      "error": "Wystąpił błąd",
+      "success": "Użytkownik utworzony"
+    },
+    "put_admin_data": {
+      "error": "Błąd",
+      "success": "Sukces"
+    },
+    "put_campaign": {
+      "error": "Błąd serwera",
+      "success": "Reward campaign edited"
+    },
+    "put_customer": {
+      "error": "Wystąpił błąd",
+      "success": "Klient został edytowany"
+    },
+    "put_earning_rule": {
+      "error": "Wystąpił błąd",
+      "success": "Reguła zdobywania punktów została zmieniona.",
+      "warning": "Nie można przesłać obrazu reguły zdobywania punktów"
+    },
+    "put_pos": {
+      "error": "Wystąpił błąd",
+      "success": "Sprzedawca został edytowany"
+    },
+    "put_segment": {
+      "error": "Wystąpił błąd",
+      "success": "Segment został edytowany"
+    },
+    "put_seller": {
+      "error": "Wystąpił błąd",
+      "success": "Sprzedawca został edytowany."
+    },
+    "put_settings": {
+      "error": "Błąd serwera",
+      "success": "Ustawienia zaktualizowane"
+    },
+    "put_single_level": {
+      "error": "Wystąpił błąd",
+      "success": "Poziom został edytowany",
+      "warning": "Poziom edytowany bez zdjęcia"
+    },
+    "put_translations": {
+      "error": "Błąd",
+      "success": "Sukces"
+    },
+    "put_user": {
+      "error": "Wystąpił błąd",
+      "success": "Użytkownik edytowany"
+    },
+    "upload_settings_conditions_file": {
+      "error": "Regulamin nie został zapisany",
+      "success": "Regulamin został zapisany"
+    },
+    "upload_settings_hero_image": {
+      "error": "Baner nie został zapisany",
+      "success": "Baner został zapisany"
+    },
+    "upload_settings_logo": {
+      "error": "Logo nie zostało zapisane",
+      "success": "Logo zostało zapisane"
+    },
+    "upload_settings_small_logo": {
+      "error": "Małe logo nie zostało zapisane",
+      "success": "Małe logo zostało zapisane"
+    },
+    "put_campaign_brand_icon": {
+      "error": "Wystąpił błąd",
+      "success": "Logo marki zostało dodane",
+      "warning": "Kampania została zapisana bez loga marki"
+    },
+    "delete_campaign_brand_icon": {
+      "error": "Wystąpił błąd",
+      "success": "Logo marki zostało wysynięte"
+    },
+    "post_campaign_brand_icon": {
+      "error": "Server error",
+      "success": "Logo marki zostało dodane",
+      "warning": "Kampania została zapisana bez loga marki"
+    },
+    "post_campaign_category": {
+      "error": "Kategoria kampanii nie została zapisana",
+      "success": "Kategoria kampani została zapisana"
+    },
+    "put_campaign_category": {
+      "error": "Kategoria kampanii nie została zapisana",
+      "success": "Kategoria kampani została zapisana"
+    },
+    "post_activate_campaign": {
+      "error": "Kampania nie została zapisana",
+      "success": "Kampania została zapisana"
+    },
+    "post_activate_campaign_category": {
+      "error": "Kategoria kampanii nie została zapisana",
+      "success": "Kategoria kampani została zapisana"
+    }
+  },
+  "Your password must be at least 8 characters long.": "Twoje hasło musi mieć co najmniej 8 znaków",
+  "Your password must contain at least one special character.": "Twoje hasło musi zawierać co najmniej jeden znak specjalny",
+  "Your password must include at least one letter.": "Twoje hasło musi zawierać co najmniej jedną literę",
+  "Your password must include at least one number.": "Twoje hasło musi zawierać co najmniej jedną liczbę",
+  "Your password must include both upper and lower case letters.": "Twoje hasło musi zawierać zarówno duże, jak i małe litery"
+}

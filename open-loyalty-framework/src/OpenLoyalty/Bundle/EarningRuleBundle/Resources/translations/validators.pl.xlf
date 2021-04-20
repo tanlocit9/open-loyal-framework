@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="account_points_transfer_not_exist">
+                <source>earning_rule.points_rule.labels_inclusion_type.choice_not_valid</source>
+                <target>To nie jest prawidłowa wartość</target>
+            </trans-unit>
+            <trans-unit id="earning_rule.geo_rule.constraints.coordinates_field">
+               <source>earning_rule.geo_rule.constraints.coordinates_field</source>
+               <target>Ta wartość nie może być pusta i powinna byc numeryczna</target>
+            </trans-unit>
+            <trans-unit id="earning_rule.geo_rule.constraints_radius">
+               <source>earning_rule.geo_rule.constraints_radius</source>
+               <target>Ta wartość nie może być pusta i powinna wynosić 1 lub więcej</target>
+            </trans-unit>
+            <trans-unit id="earning_rule.geo_rule.constraints_points">
+               <source>earning_rule.geo_rule.constraints_points</source>
+               <target>Ta wartość nie może być pusta i powinna wynosić 1 lub więcej</target>
+            </trans-unit>
+            <trans-unit id="earningRule_geo_entity_not_exist">
+                <source>earningRule_geo_entity_not_exist</source>
+                <target>Podana earningRule nie istnieje</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,5 @@
+activation:
+  temporary_password:
+    content: "Your %program_name% account password is: %password%"
+  reset_code:
+    content: "%program_name% password reset code (no. %code_number%): %code%"

@@ -1,0 +1,6 @@
+OpenLoyalty\Component\EarningRule\Domain\MultiplyPointsByProductLabelsEarningRule:
+  type: entity
+  fields:
+    labelMultipliers:
+      type: label_multipliers_json_array
+      column: label_multipliers

@@ -1,0 +1,64 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    oloy.transaction.command_handler:
+        class: OpenLoyalty\Component\Transaction\Domain\Command\TransactionCommandHandler
+        arguments:
+            - '@oloy.transaction.repository'
+            - '@broadway.event_dispatcher'
+        lazy: true
+        tags:
+            - { name: broadway.command_handler }
+
+    OpenLoyalty\Component\Transaction\Domain\EventSourcedTransactionRepository:
+        arguments:
+            - '@broadway.event_store'
+            - '@broadway.event_handling.event_bus'
+            - ['@broadway.metadata_enriching_event_stream_decorator']
+
+    OpenLoyalty\Component\Transaction\Domain\TransactionRepository:
+        arguments:
+            - '@OpenLoyalty\Component\Transaction\Domain\EventSourcedTransactionRepository'
+            - '@broadway.event_store'
+            - '@OpenLoyalty\Bundle\CoreBundle\Repository\DBALSnapshotRepository'
+            - '@Broadway\Snapshotting\Snapshot\Trigger\EventCountTrigger'
+
+    OpenLoyalty\Component\Transaction\Infrastructure\Repository\TransactionDetailsElasticsearchRepository:
+        class: 'Broadway\ReadModel\ReadModel'
+        factory: ['@oloy.read_model.repository.factory', create]
+        arguments:
+            - 'oloy.transactions_details'
+            - 'OpenLoyalty\Component\Transaction\Domain\ReadModel\TransactionDetails'
+            - 'OpenLoyalty\Component\Transaction\Infrastructure\Repository\TransactionDetailsElasticsearchRepository'
+
+    OpenLoyalty\Component\Transaction\Domain\ReadModel\TransactionDetailsProjector:
+        tags:
+            - { name: broadway.domain.event_listener }
+        arguments:
+            $transactionRepository: '@oloy.transaction.repository'
+            $repository: '@OpenLoyalty\Component\Transaction\Infrastructure\Repository\TransactionDetailsElasticsearchRepository'
+            $posRepository: '@oloy.pos.repository'
+
+    oloy.transaction.listener.assing_customer_to_transaction:
+        class: OpenLoyalty\Component\Transaction\Domain\Event\Listener\AssignCustomerToTransactionListener
+        arguments:
+            $customerIdProvider: '@oloy.transaction.customer_id_provider'
+            $commandBus: '@broadway.command_handling.command_bus'
+            $eventDispatcher: '@broadway.event_dispatcher'
+            $customerRepository: '@oloy.user.customer.repository'
+            $transactionRepository: '@oloy.transaction.repository'
+            $transactionDetailsRepository: '@OpenLoyalty\Component\Transaction\Domain\ReadModel\TransactionDetailsRepository'
+        lazy: true
+        tags:
+            - { name: broadway.domain.event_listener }
+
+    OpenLoyalty\Component\Transaction\Domain\Provider\ParentTransactionIdProvider: ~
+    OpenLoyalty\Component\Transaction\Domain\Provider\TransactionValueProvider:
+        arguments:
+            $transactionRepository: '@oloy.transaction.repository'
+
+    OpenLoyalty\Component\Transaction\Domain\Provider\ParentTransactionIdProviderInterface: '@OpenLoyalty\Component\Transaction\Domain\Provider\ParentTransactionIdProvider'
+    OpenLoyalty\Component\Transaction\Domain\Provider\TransactionValueProviderInterface: '@OpenLoyalty\Component\Transaction\Domain\Provider\TransactionValueProvider'
+    OpenLoyalty\Component\Transaction\Domain\ReadModel\TransactionDetailsRepository: '@OpenLoyalty\Component\Transaction\Infrastructure\Repository\TransactionDetailsElasticsearchRepository'

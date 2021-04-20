@@ -1,0 +1,4 @@
+services:
+    open_loyalty_world_text.sender:
+        class: OpenLoyalty\Bundle\WorldTextBundle\Service\WorldTextSender
+        arguments: ["@ol.settings.manager", "@monolog.logger"]

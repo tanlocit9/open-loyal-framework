@@ -1,0 +1,37 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    _instanceof:
+        OpenLoyalty\Bundle\SettingsBundle\Provider\ChoiceProvider:
+            tags:
+            - { name: ol.settings.choices }
+
+    OpenLoyalty\Bundle\ActivationCodeBundle\Service\:
+        resource: '../../Service/*'
+
+    OpenLoyalty\Bundle\ActivationCodeBundle\Method\:
+        resource: '../../Method/*'
+
+    OpenLoyalty\Bundle\ActivationCodeBundle\Generator\:
+        resource: '../../Generator/*'
+
+    OpenLoyalty\Bundle\ActivationCodeBundle\Provider\:
+        resource: '../../Provider/*'
+
+    OpenLoyalty\Bundle\ActivationCodeBundle\Generator\CodeGenerator: '@OpenLoyalty\Bundle\ActivationCodeBundle\Generator\NumericCodeGenerator'
+
+    OpenLoyalty\Bundle\ActivationCodeBundle\Service\ActivationCodeManager:
+        arguments:
+            $codeLength: '%activation_code_length%'
+
+    OpenLoyalty\Bundle\ActivationCodeBundle\Service\ActionTokenManager:
+        arguments:
+            $availableMethods: {'email': '@oloy.activation_method.email', 'sms': '@oloy.activation_method.sms'}
+
+    OpenLoyalty\Bundle\ActivationCodeBundle\Method\EmailActivationMethod:
+        arguments:
+            $frontendCustomerPanelUrl: '%frontend_customer_panel_url%'
+            $frontendActivationUrl: '%frontend_activate_account_url%'

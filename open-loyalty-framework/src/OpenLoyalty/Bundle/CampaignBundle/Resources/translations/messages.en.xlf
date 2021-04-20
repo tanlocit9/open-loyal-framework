@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="campaign.bought.deliver_status.changed">
+                <source>campaign.bought.deliver_status.changed</source>
+                <target>Delivery status changed!</target>
+            </trans-unit>
+            <trans-unit id="campaign.bought.deliver_status.empty">
+                <source>campaign.bought.deliver_status.empty</source>
+                <target>Delivery status is required and can't be empty!</target>
+            </trans-unit>
+            <trans-unit id="campaign.invalid_data">
+                <source>campaign.invalid_data</source>
+                <target>Invalid data provided</target>
+            </trans-unit>
+            <trans-unit id="campaign.missing_data_in_rows">
+                <source>campaign.missing_data_in_rows</source>
+                <target>Missing data in rows</target>
+            </trans-unit>
+            <trans-unit id="campaign.invalid_value_field_in_row">
+                <source>campaign.invalid_value_field_in_row</source>
+                <target>Invalid value for %name% in row %row%</target>
+            </trans-unit>
+            <trans-unit id="campaign.purchase_not_available">
+                <source>campaign.purchase_not_available</source>
+                <target>No purchase available with given %name% in row %row%. Maybe the user didn't buy the campaign yet, the purchase is inactive or the couponId is not the one found in customer details?</target>
+            </trans-unit>
+            <trans-unit id="campaign.purchase_not_found">
+                <source>campaign.purchase_not_found</source>
+                <target>No purchase found with given %name% in row %row%. Maybe the user didn't buy the campaign yet or the couponId is not the one found in customer details?</target>
+            </trans-unit>
+            <trans-unit id="campaign.invalid_value_in_row">
+                <source>campaign.invalid_value_in_row</source>
+                <target>%content% in row %row%</target>
+            </trans-unit>
+            <trans-unit id="campaign.no_coupons_left">
+                <source>campaign.no_coupons_left</source>
+                <target>No coupons left</target>
+            </trans-unit>
+            <trans-unit id="campaign.too_low_coupon_value">
+                <source>campaign.too_low_coupon_value</source>
+                <target>Generated coupon value is 0</target>
+            </trans-unit>
+            <trans-unit id="campaign.transaction_required">
+                <source>campaign.transaction_required</source>
+                <target>Transaction required</target>
+            </trans-unit>
+            <trans-unit id="campaign.invalid_transaction">
+                <source>campaign.invalid_transaction</source>
+                <target>Invalid transaction</target>
+            </trans-unit>
+            <trans-unit id="campaign.not_allowed">
+                <source>campaign.not_allowed</source>
+                <target>Not allowed</target>
+            </trans-unit>
+            <trans-unit id="campaign.not_enough_points">
+                <source>campaign.not_enough_points</source>
+                <target>Not enough points</target>
+            </trans-unit>
+            <trans-unit id="campaign.limit_per_customer_exceeded">
+                <source>campaign.limit_per_customer_exceeded</source>
+                <target>Limit per customer exceeded</target>
+            </trans-unit>
+            <trans-unit id="campaign.limit_exceeded">
+                <source>campaign.limit_exceeded</source>
+                <target>Limit exceeded</target>
+            </trans-unit>
+            <trans-unit id="campaign.field_used_is_required">
+                <source>campaign.field_used_is_required</source>
+                <target>Field "used" is required</target>
+            </trans-unit>
+            <trans-unit id="campaign.cannot_be_bought_manually">
+                <source>campaign.cannot_be_bought_manually</source>
+                <target>This campaign cannot be bought manually.</target>
+            </trans-unit>
+            <trans-unit id="campaign.removing_used_coupons_is_not_permitted">
+                <source>campaign.removing_used_coupons_is_not_permitted</source>
+                <target>Removing used coupons (%s) is not permitted</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
